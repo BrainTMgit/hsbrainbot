@@ -6,7 +6,7 @@ client.on("message", message => { //Пришло сообщение.
 
 if(message.content.toLowerCase()==config.prefix + "test") //Если текст сообщения равен префиксу плюс help, то происходит код в {} Часть кода .toLowerCase() превращает текст в строчный. (Делает из заглавных букв обычные.) 
 {
-message.reply();
+message.reply("привет!");
 }
 
 
