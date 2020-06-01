@@ -1,0 +1,11 @@
+{
+  "name": "brainbot",
+  "version": "0.1",
+  "description": "discord bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "braintm",
+  "license": "ISC"
+}
