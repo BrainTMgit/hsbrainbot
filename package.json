@@ -12,9 +12,9 @@
    {"discord.js": "^11.5.1"
    },
   "cacheDirectories":
-   {"client/node_modules",
+   ["client/node_modules",
     "server/node_modules",
     "node_modules",
     "data"
-   }
+   ]
 }
