@@ -1,6 +1,6 @@
 {
   "name": "brainbot",
-  "version": "0.1",
+  "version": "1.0",
   "description": "discord bot",
   "main": "index.js",
   "scripts":
