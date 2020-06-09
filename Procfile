@@ -1,2 +1,1 @@
-release: npm install discord.js --save && npm install pm2 --save && node index.js
-worker: node index.js
+worker: npm install discord.js --save && npm install pm2 --save && pm2 start index.js
