@@ -1,2 +1,2 @@
-release: npm install discord.js --save
+release: npm install  --save
 worker: node index.js
