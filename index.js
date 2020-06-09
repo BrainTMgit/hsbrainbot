@@ -9,5 +9,10 @@ if(message.content.toLowerCase()==config.prefix + "help") //Если текст 
 message.reply("сам разбирайся!");
 }
 
+if(message.content.toLowerCase()=="тупой бот") //реакция на тупого бота
+{
+message.reply("кожаный ублюдок");
+}
+
 })
 
