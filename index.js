@@ -5,7 +5,7 @@ const client = new Discord.Client();
 client.on("message", message => { //Пришло сообщение.
 
 // Хелпер
-if(message.content.toLowerCase()==prefix + "help") //Если текст сообщения равен префиксу плюс help, то происходит код в {} Часть кода .toLowerCase() превращает текст в строчный. (Делает из заглавных букв обычные.) 
+if(message.content.toLowerCase()==config.prefix + "help") //Если текст сообщения равен префиксу плюс help, то происходит код в {} Часть кода .toLowerCase() превращает текст в строчный. (Делает из заглавных букв обычные.) 
 {
 message.reply("сам разбирайся!");
 }
