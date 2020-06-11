@@ -1,4 +1,4 @@
-const { prefix, token } = require('./config.json'); // в конфиге прописан токен и префикс
+const { prefix, token } = require('config.json'); // в конфиге прописан токен и префикс
 const Discord = require("discord.js"); //Подключаем discord.js для дальнейшего использования.
 const client = new Discord.Client(); 
 client.login(token); //Где token уже был взят из config.json
