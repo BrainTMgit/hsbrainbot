@@ -7,39 +7,23 @@ client.on("message", message => { //Пришло сообщение.
 // Хелпер
 if(message.content.toLowerCase()==config.prefix + "help") //Если текст сообщения равен префиксу плюс help, то происходит код в {} Часть кода .toLowerCase() превращает текст в строчный. (Делает из заглавных букв обычные.) 
 {
-
-
-
-
-message.channel.send({embed: {
-    color: 3447003,
-    author: {
-      name: client.user.username,
-      icon_url: client.user.avatarURL
-    },
-    title: "Список поддерживаемых комманд:",
-    description: "будет дополняться по мере обновления бота",
-    fields: [{
-        name: ".help",
-        value: "выводит список всех команд"
-      }
-    ],
-    timestamp: new Date(),
-    footer: {
-      text: "Brain™"
-    }
-  }
+ message.channel.send({embed:
+ {
+  color: 3447003,
+  title: "Список поддерживаемых комманд:",
+  description: "будет дополняться по мере обновления бота",
+  fields:[
+   {
+    name: ".help",
+    value: "выводит список всех команд"
+   }]
+ }
 });
-
-
-
-
-
 }
 
 if(message.content.toLowerCase()=="тупой бот") //реакция на тупого бота
 {
-message.reply("кожаный ублюдок");
+ message.reply("кожаный ублюдок");
 }
 
 //Выдача ролей
