@@ -32,8 +32,8 @@ if(message.content.toLowerCase()=="тупой бот") //реакция на т�
 //Выдача ролей 
 if(message.content.toLowerCase()==config.prefix + "getrole")
 {
-const role = roles.cache.find(role => role.name === 'кз8');
-const member = mentions.members.first();
+const role = message.guild.roles.cache.find(role => role.name === 'кз8');
+const member = message.mentions.members.first();
 member.roles.add(role);
 }
 
