@@ -2,7 +2,7 @@ const Discord = require('discord.js'); //Подключаем discord.js для 
 const config = require('./config.json'); // в конфиге прописан токен и префикс
 const client = new Discord.Client(); 
 
-client.once('ready',()=>{console.log('Ready!');});
+client.once('ready',()=>{console.log"Bot started!");});
 
 client.on("message", message => { //Пришло сообщение.
 
@@ -28,7 +28,7 @@ if(message.content.toLowerCase()=="тупой бот") //реакция на т�
  message.reply("кожаный ублюдок");
 }
 
-
+/*
 //Выдача ролей 
 if(message.content.toLowerCase()==config.prefix + "getrole")
 {
@@ -36,7 +36,7 @@ const role = message.guild.roles.cache.find(role => role.name === 'кз8');
 const member = message.mentions.members.first();
 member.roles.add(role);
 }
-
+*/
 
 });
 
