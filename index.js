@@ -27,9 +27,9 @@ if(message.content.toLowerCase()=="тупой бот") //реакция на т�
 }
 
 //Выдача ролей 
-if(message.content.toLowerCase()==config.prefix + "getrole8")
+if(message.content.toLowerCase()==config.prefix + "getrole")
 {
-let myRole = message.guild.roles.find(role => role.name === "кз8");
+let myRole = message.guild.roles.get("722351414096953354");
 }
 
 });
