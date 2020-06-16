@@ -26,7 +26,11 @@ if(message.content.toLowerCase()=="тупой бот") //реакция на т�
  message.reply("кожаный ублюдок");
 }
 
-//Выдача ролей
+//Выдача ролей 
+if(message.content.toLowerCase()==config.prefix + "getrole8")
+{
+let myRole = message.guild.roles.find(role => role.name === "кз8");
+}
 
 });
 
