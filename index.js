@@ -28,13 +28,15 @@ if(message.content.toLowerCase()=="тупой бот") //реакция на т�
  message.reply("кожаный ублюдок");
 }
 
-/*
+
 //Выдача ролей 
 if(message.content.toLowerCase()==config.prefix + "getrole")
 {
-message.member.addRole("722358491892940800");
+const role = roles.cache.find(role => role.name === 'кз8');
+const member = mentions.members.first();
+member.roles.add(role);
 }
-*/
+
 
 });
 
