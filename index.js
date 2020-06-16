@@ -30,7 +30,7 @@ if(message.content.toLowerCase()=="тупой бот") //реакция на т�
 
 /*
 //Выдача ролей 
-if(message.content.toLowerCase()==config.prefix + "getrole")
+if(message.content.toLowerCase()=="rs s 8")
 {
 const role = message.guild.roles.cache.find(role => role.name === 'кз8');
 const member = message.mentions.members.first();
