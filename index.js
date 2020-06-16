@@ -29,7 +29,7 @@ if(message.content.toLowerCase()=="тупой бот") //реакция на т�
 //Выдача ролей 
 if(message.content.toLowerCase()==config.prefix + "getrole")
 {
-let myRole = message.guild.roles.get("722358491892940800");
+message.member.addRole("722358491892940800");
 }
 
 });
