@@ -2,6 +2,8 @@ const Discord = require('discord.js'); //Подключаем discord.js для 
 const config = require('./config.json'); // в конфиге прописан токен и префикс
 const client = new Discord.Client(); 
 
+client.once('ready',()=>{console.log('Ready!');});
+
 client.on("message", message => { //Пришло сообщение.
 
 // Хелпер
@@ -26,11 +28,13 @@ if(message.content.toLowerCase()=="тупой бот") //реакция на т�
  message.reply("кожаный ублюдок");
 }
 
+/*
 //Выдача ролей 
 if(message.content.toLowerCase()==config.prefix + "getrole")
 {
 message.member.addRole("722358491892940800");
 }
+*/
 
 });
 
