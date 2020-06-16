@@ -25,13 +25,12 @@ if(message.content.toLowerCase()=="тупой бот") //реакция на т�
 {
  message.reply("кожаный ублюдок");
 }
-/*
+
 //Выдача ролей 
 if(message.content.toLowerCase()==config.prefix + "getrole")
 {
-let myRole = message.guild.roles.get("722351414096953354");
+let myRole = message.guild.roles.get("722358491892940800");
 }
-*/
 
 });
 
