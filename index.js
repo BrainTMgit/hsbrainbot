@@ -38,7 +38,9 @@ if(message.content.toLowerCase()==config.prefix + "price") //Если текст
   fields:[
    {
     name: "RS9",
-    value: "выводит список всех команд",
+    value: "выводит список всех команд"
+   },
+   {
     value: "aaaaa"
    },
    {
