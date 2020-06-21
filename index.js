@@ -38,28 +38,23 @@ if(message.content.toLowerCase()==config.prefix + "price") //Если текст
   fields:[
    {
     name: "RS9",
-    value: "выводит список \n всех команд"
+    value: "RS8 . . . . 2.5\nRS7 . . . . 3.0\nRS6 . . . . 3.5\nRS5 . . . . 5.0\nRS4 . . . . 6.5"
    },
    {
-    value: "aaaaa"
+    name: "RS8",
+    value: "RS7 . . . . 2.5\nRS6 . . . . 3.0\nRS5 . . . . 4.0\nRS4 . . . . 5.5"
    },
    {
-    name: ".price",
-    value: "Показать курс обмена артефактов"
+    name: "RS7",
+    value: "RS6 . . . . 2.5\nRS5 . . . . 3.0\nRS4 . . . . 4.0"
+   },
+   {
+    name: "RS6",
+    value: "RS5 . . . . 2.5\nRS4 . . . . 3.0"
    }]
  }
 });
 }
-
-
-
-
-
-
-
-
-
-
 
 if(message.content.toLowerCase()=="тупой бот") //реакция на тупого бота
 {
