@@ -21,11 +21,43 @@ if(message.content.toLowerCase()==config.prefix + "help") //Если текст 
    },
    {
     name: ".price",
-    value: "ценник"
+    value: "Показать курс обмена артефактов"
    }]
  }
 });
 }
+
+//Показ ценника
+if(message.content.toLowerCase()==config.prefix + "price") //Если текст сообщения равен префиксу плюс help, то происходит код в {} Часть кода .toLowerCase() превращает текст в строчный. (Делает из заглавных букв обычные.) 
+{
+ message.channel.send({embed:
+ {
+  color: 3447003,
+  title: "Текущий курс обмена артефактов",
+  description: "корпоративный бонус не менее +10%",
+  fields:[
+   {
+    name: "RS9",
+    value: "выводит список всех команд",
+    value: "aaaaa"
+   },
+   {
+    name: ".price",
+    value: "Показать курс обмена артефактов"
+   }]
+ }
+});
+}
+
+
+
+
+
+
+
+
+
+
 
 if(message.content.toLowerCase()=="тупой бот") //реакция на тупого бота
 {
