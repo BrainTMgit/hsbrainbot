@@ -18,6 +18,10 @@ if(message.content.toLowerCase()==config.prefix + "help") //Если текст 
    {
     name: ".help",
     value: "выводит список всех команд"
+   },
+   {
+    name: ".price",
+    value: "ценник"
    }]
  }
 });
