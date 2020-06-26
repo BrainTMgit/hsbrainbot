@@ -4,8 +4,6 @@ const client = new Discord.Client();
 
 client.once('ready',()=>{console.log("Bot started!");});
 
-const guild = client.guilds.get('605822204856369162')
-
 client.on("message", message => { //Пришло сообщение.
 
 // Хелпер
@@ -66,9 +64,7 @@ if(message.content.toLowerCase()=="тупой бот") //реакция на т�
 //Выдача ролей 
 if(message.content.toLowerCase()=="Rs s 10")
 {
-const role = guild.roles.cache.find(role => role.name === 'кз10');
-const member = message.mentions.members.first();
-member.roles.add(role);
+let myRole = message.guild.roles.find(role => role.name === "кз10");
 }
 
 });
