@@ -61,15 +61,13 @@ if(message.content.toLowerCase()=="тупой бот") //реакция на т�
  message.reply("кожаный ублюдок");
 }
 
-/*
 //Выдача ролей 
-if(message.content.toLowerCase()=="rs s 8")
+if(message.content.toLowerCase()=="Rs s 10")
 {
-const role = message.guild.roles.cache.find(role => role.name === 'кз8');
-const member = message.mentions.members.first();
+const role = <guild>.roles.cache.find(role => role.name === 'кз10');
+const member = <message>.mentions.members.first();
 member.roles.add(role);
 }
-*/
 
 });
 
