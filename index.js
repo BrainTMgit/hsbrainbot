@@ -68,7 +68,7 @@ if(message.content.toLowerCase()=="бот, извинись") //реакция �
 //Выдача ролей 
 if(message.content.toLowerCase()=="Rs s 10")
 {
-let myRole = message.guild.roles.find(role => role.name === "кз10");
+let myRole = message.guild.roles.get("722351148463292436");
 }
 
 });
