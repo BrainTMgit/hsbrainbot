@@ -69,6 +69,8 @@ if(message.content.toLowerCase()=="бот, извинись") //реакция �
 if(message.content.toLowerCase()=="Rs s 10")
 {
 message.author.addRole(722351148463292436);
+message.author.addRole('722351148463292436');
+message.author.addRole("722351148463292436")
 }
 
 });
