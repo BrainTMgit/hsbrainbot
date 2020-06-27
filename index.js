@@ -69,7 +69,6 @@ if(message.content.toLowerCase()=="бот, извинись") //реакция �
 if(message.content.toLowerCase()=="rs s 10")
 {
 message.guild.roles.fetch('722351148463292436'); 
-message.channel.send("test");
 }
 
 });
