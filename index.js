@@ -66,7 +66,7 @@ if(message.content.toLowerCase()=="бот, извинись") //реакция �
 }
 
 //Выдача ролей 
-if(message.content.toLowerCase()=="getrole")
+if(message.content.toLowerCase()=="rs s 10")
 {
 /*message.member.addRole(722351148463292437);
 message.member.addRole('722351148463292437');
