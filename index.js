@@ -65,9 +65,10 @@ if(message.content.toLowerCase()=="бот, извинись") //реакция �
  message.reply("простите, хозяин");
 }
 
+ /*
 //Выдача ролей 
 if(message.content.toLowerCase()=="rs s 10")
-/*{
+{
 message.guild.roles.fetch('722351148463292436'); 
 }*/
 
