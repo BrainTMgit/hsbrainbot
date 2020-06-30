@@ -50,7 +50,7 @@ if(message.content.toLowerCase()==config.prefix + "price") //Если текст
    },
    {
     name: "RS6",
-    value: "RS5 . . . . 2.5\nRS4 . . . . 3.0"
+    value: "RS5 . . . . 2.5\nRS4 . . . . 3.00"
    }]
  }
 });
