@@ -43,7 +43,7 @@ if(message.content.toLowerCase()==config.prefix + "price") //Если текст
    {
     name: "RS8",
     value: "RS7 . . . . 2.5\nRS6 . . . . 3.0\nRS5 . . . . 4.0\nRS4 . . . . 5.5"
-   },
+   }/*,
    {
     name: "RS7",
     value: "RS6 . . . . 2.5\nRS5 . . . . 3.0\nRS4 . . . . 4.0"
@@ -51,7 +51,7 @@ if(message.content.toLowerCase()==config.prefix + "price") //Если текст
    {
     name: "RS6",
     value: "RS5 . . . . 2.5\nRS4 . . . . 3.0"
-   }]
+   }*/]
  }
 });
 }
