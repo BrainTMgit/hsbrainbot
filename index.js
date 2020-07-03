@@ -69,7 +69,7 @@ if(message.content.toLowerCase()=="бот, извинись") //реакция �
 //Выдача ролей 
 if(message.content.toLowerCase()==".test")
 {
- message.channel.send(member);
+ message.channel.send(member.user.name);
 }
 
 });
