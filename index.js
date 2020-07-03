@@ -67,9 +67,12 @@ if(message.content.toLowerCase()=="бот, извинись") //реакция �
 
 
 //Выдача ролей 
-if(message.content.toLowerCase()==".getrole")
+if(message.content.toLowerCase()==".test")
 {
- member.roles.add('722351148463292436');
+ const member = message.mentions.members.first();
+if (member.roles.cache.some(role => role.name === '<ws>')) {
+	message.reply("test");
+}
 }
 
 });
