@@ -65,12 +65,13 @@ if(message.content.toLowerCase()=="бот, извинись") //реакция �
  message.reply("простите, хозяин");
 }
 
- /*
+
 //Выдача ролей 
-if(message.content.toLowerCase()=="rs s 10")
+if(message.content.toLowerCase()==".getrole")
 {
-message.guild.roles.fetch('722351148463292436'); 
-}*/
+ message.reply("test");
+/*message.guild.roles.fetch('722351148463292436'); */
+}
 
 });
 
