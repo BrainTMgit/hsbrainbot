@@ -70,6 +70,7 @@ if(message.content.toLowerCase()=="бот, извинись") //реакция �
 if(message.content.toLowerCase()==".test")
 {
  const member = message.mentions.members.first();
+ const role = new Discord.Role();
 if (member.roles.cache.some(role => role.name === 'admin')) {
 	message.reply('admin');
 }
