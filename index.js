@@ -69,12 +69,10 @@ if(message.content.toLowerCase()=="бот, извинись") //реакция �
 //Выдача ролей 
 if(message.content.toLowerCase()==".test")
 {
- message.channel.send('test');
-/*
-const role = <guild>.roles.cache.find(role => role.name === '<role name>');
-const member = <message>.mentions.members.first();
-member.roles.add(role);
-*/
+ const member = message.mentions.members.first();
+if (member.roles.cache.some(role => role.name === 'admin')) {
+	message.reply('admin');
+}
 }
 
 });
