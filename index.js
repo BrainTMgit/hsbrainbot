@@ -38,15 +38,15 @@ if(message.content.toLowerCase()==config.prefix + "price") //Если текст
   fields:[
    {
     name: "RS9",
-    value: "RS8 . . . . 2.0\nRS7 . . . . 2.5\nRS6 . . . . 3.0\nRS5 . . . . 4.5\nRS4 . . . . 5.5"
-   }/*,
-   {
-    name: "RS8",
-    value: "RS7 . . . . 2.0\nRS6 . . . . 2.5\nRS5 . . . . 3.5\nRS4 . . . . 4.5"
+    value: "RS8 . . . . 2.5\nRS7 . . . . 3.0\nRS6 . . . . 3.5\nRS5 . . . . 5.0\nRS4 . . . . 6.5"
    },
    {
+    name: "RS8",
+    value: "RS7 . . . . 2.5\nRS6 . . . . 3.0\nRS5 . . . . 4.0\nRS4 . . . . 5.5"
+   }/*,
+   {
     name: "RS7",
-    value: "RS6 . . . . 2.0\nRS5 . . . . 2.5\nRS4 . . . . 3.5"
+    value: "RS6 . . . . 2.5\nRS5 . . . . 3.0\nRS4 . . . . 4.0"
    },
    {
     name: "RS6",
@@ -68,10 +68,10 @@ if(message.content.toLowerCase()=="бот, извинись") //реакция �
 
 //Выдача ролей 
 if(message.content.toLowerCase()==".test")
-{/*
+{
  const member = message.mentions.members.first();
  const role = new Discord.Role();
- if (member.roles.cache.some(role => role.name === 'admin')) {
+/*if (member.roles.cache.some(role => role.name === 'admin')) {
 	message.reply('admin');*/
 }
 }
