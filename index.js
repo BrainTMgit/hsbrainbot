@@ -46,7 +46,7 @@ if(message.content.toLowerCase()==config.prefix + "price") //Если текст
    },
    {
     name: "RS7",
-    value: "RS6 . . . . 2.5\nRS5 . . . . 3.0\nRS4 . . . . 4.0"
+    value: "RS6 . . . . 2.0\nRS5 . . . . 2.5\nRS4 . . . . 3.5"
    },
    {
     name: "RS6",
@@ -68,10 +68,10 @@ if(message.content.toLowerCase()=="бот, извинись") //реакция �
 
 //Выдача ролей 
 if(message.content.toLowerCase()==".test")
-{
+{/*
  const member = message.mentions.members.first();
  const role = new Discord.Role();
-/*if (member.roles.cache.some(role => role.name === 'admin')) {
+ if (member.roles.cache.some(role => role.name === 'admin')) {
 	message.reply('admin');*/
 }
 }
