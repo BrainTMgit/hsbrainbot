@@ -74,7 +74,6 @@ if(message.content.toLowerCase()==".test")
 /*if (member.roles.cache.some(role => role.name === 'admin')) {
 	message.reply('admin');*/
 }
-}
 
 });
 
