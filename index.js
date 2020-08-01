@@ -34,7 +34,7 @@ if(message.content.toLowerCase()==config.prefix + "price") //Если текст
  {
   color: 3447003,
   title: "Текущий курс обмена артефактов",
-  description: "корпоративный бонус не менее +10%",
+  description: "корпоративный бонус не менее +10%\nне более 50% артефактов одного вида",
   fields:[
    {
     name: "RS9",
