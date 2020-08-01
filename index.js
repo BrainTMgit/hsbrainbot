@@ -2,7 +2,18 @@ const Discord = require('discord.js'); //Подключаем discord.js для 
 const config = require('./config.json'); // в конфиге прописан токен и префикс
 const client = new Discord.Client(); 
 
+//говорят, что это важный пункт, чтобы бот обрабатывал события только после этого пункта
 client.once('ready',()=>{console.log("Bot started!");});
+
+//реакция на приход нового юзера на сервер
+client.on('guildMemberAdd', member => {
+	//отправляется сообщение в основной канал
+	const channel = member.guild.channels.cache.find(ch => ch.name === 'основной');
+ 	//ничего не делать если канал не найден
+	if (!channel) return;
+ 	//отправляем сообщение с упоминанием пользователя
+	channel.send(`Привет, ${member}. Добро пожаловать на наш скромный сервер. Вообще, я тут главный и всем заправляю. Узнать все, что я умею можно командой .help`);
+}
 
 client.on("message", message => { //Пришло сообщение.
 
