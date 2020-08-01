@@ -38,10 +38,8 @@ if(message.content.toLowerCase()==config.prefix + "price") //Если текст
   fields:[
    {
     name: "RS9",
-    /*value: "RS8 . . . . 2.0\nRS7 . . . . 2.5\nRS6 . . . . 3.0\nRS5 . . . . 4.5\nRS4 . . . . 5.5"*/
-    	value: "RS8 . . . . 2.0",
-	value: "RS7 . . . . 2.5"
-	   
+    value: "RS8 . . . . 2.0\nRS7 . . . . 2.5\nRS6 . . . . 3.0\nRS5 . . . . 4.5\nRS4 . . . . 5.5"
+    	
    }/*,
    {
     name: "RS8",
