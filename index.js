@@ -41,51 +41,36 @@ if(message.content.toLowerCase()==config.prefix + "help") //Если текст 
 //Показ ценника
 if(message.content.toLowerCase()==config.prefix + "price") //Если текст сообщения равен префиксу плюс help, то происходит код в {} Часть кода .toLowerCase() превращает текст в строчный. (Делает из заглавных букв обычные.) 
 {
- message.channel.send({embed:
- {
-  color: 3447003,
-  title: "Текущий курс обмена артефактов",
-  description: "корпоративный бонус не менее +10%\nне более 50% артефактов одного вида",
-  fields:[
-   {
-    name: "RS9",
-    value: "RS8 . . . . 2.0\nRS7 . . . . 2.5\nRS6 . . . . 3.0\nRS5 . . . . 4.5\nRS4 . . . . 5.5"
-    	
-   }/*,
-   {
-    name: "RS8",
-    value: "RS7 . . . . 2.5\nRS6 . . . . 3.0\nRS5 . . . . 4.0\nRS4 . . . . 5.5"
-   },
-   {
-    name: "RS7",
-    value: "RS6 . . . . 2.5\nRS5 . . . . 3.0\nRS4 . . . . 4.0"
-   },
-   {
-    name: "RS6",
-    value: "RS5 . . . . 2.5\nRS4 . . . . 3.0"
-   }*/]
- }
+	message.channel.send({embed:
+			      {
+				      color: 3447003,
+				      title: "Текущий курс обмена артефактов",
+				      description: "корпоративный бонус не менее +10%\nне более 50% артефактов одного вида",
+				      fields:[
+					      {
+						      name: "RS9",
+						      value: "RS8 . . . . 2.0\nRS7 . . . . 2.5\nRS6 . . . . 3.0\nRS5 . . . . 4.5\nRS4 . . . . 5.5"
+					      }
+				      ]
+			      }
 });
 }
 
 if(message.content.toLowerCase()=="тупой бот") //реакция на тупого бота
 {
- message.reply("кожаный ублюдок");
+	message.reply("кожаный ублюдок");
 }
 if(message.content.toLowerCase()=="бот, извинись") //реакция на тупого бота
 {
- message.reply("простите, хозяин");
+	message.reply("простите, хозяин");
 }
 
 
 //Выдача ролей 
 if(message.content.toLowerCase()==".test")
 {
-message.channel.send('test');
- /*const member = message.mentions.members.first();
- const role = new Discord.Role();
- if (member.roles.cache.some(role => role.name === 'admin')) {
-	message.reply('admin');*/
+	message.channel.send('test');
+ 
 }
 
 });
