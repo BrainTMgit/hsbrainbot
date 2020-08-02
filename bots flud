@@ -1,1 +1,8 @@
-
+if(message.content.toLowerCase()=="тупой бот") //реакция на тупого бота
+{
+	message.reply("кожаный ублюдок");
+}
+if(message.content.toLowerCase()=="бот, извинись") //реакция на тупого бота
+{
+	message.reply('простите, пожалуйста.');
+}
