@@ -56,14 +56,7 @@ if(message.content.toLowerCase()==config.prefix + "price") //Если текст
 });
 }
 
-if(message.content.toLowerCase()=="тупой бот") //реакция на тупого бота
-{
-	message.reply("кожаный ублюдок");
-}
-if(message.content.toLowerCase()=="бот, извинись") //реакция на тупого бота
-{
-	message.reply('простите, пожалуйста.');
-}
+// Вырезал болтовню бота. Код лежит в bots flud
 
 
 //Выдача ролей 
