@@ -16,7 +16,6 @@ client.on('guildMemberAdd', member => {
 });
 
 client.on("message", message => { //Пришло сообщение.
-	console.log([member.name,send,message.content]);
 
 // Хелпер
 if(message.content.toLowerCase()==config.prefix + "help") //Если текст сообщения равен префиксу плюс help, то происходит код в {} Часть кода .toLowerCase() превращает текст в строчный. (Делает из заглавных букв обычные.) 
