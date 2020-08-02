@@ -23,5 +23,6 @@
   {
     "type" : "ISC",
     "url" : "https://opensource.org/licenses/ISC"
-  }
+  },
+  "private": true
 }
