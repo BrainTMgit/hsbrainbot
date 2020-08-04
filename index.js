@@ -83,7 +83,7 @@ if(message.content.toLowerCase()==config.prefix + "price")
 // Выдача ролей
 if(message.content.toLowerCase()==".test")
 {
-	const guild = client.guilds.get('605822204856369162');
+	const guild = client.guilds.cache.get('605822204856369162');
 	const role = guild.roles.cache.find(role => role.name === '<кз9>');
 	const member = message.mentions.members.first();
 	member.roles.add(role);
