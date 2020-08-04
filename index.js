@@ -39,18 +39,28 @@ if(message.content.toLowerCase()==config.prefix + "help")
   color: 3447003,
   title: "Список поддерживаемых комманд:",
   description: "будет дополняться по мере обновления бота",
-  fields:[
-   {
-    name: ".help",
-    value: "выводит список всех команд"
-   },
-   {
-    name: ".price",
-    value: "Показать курс обмена артефактов"
-   }]
+  fields:
+	 [
+		 {
+			 name: ".help",
+			 value: "выводит список всех команд"
+		 },
+		 {
+			 name: ".price",
+			 value: "Показать курс обмена артефактов"
+		 },
+		 {
+			 name: ".ver",
+			 value: "Здесь вы можете узнать текущую версию бота."
+		 }
+	 ]
  }
 });
 }
+	
+//Текущая версия
+	if(message.content.toLowerCase()==config.prefix + "ver")
+	{message.channel.send("Release v117");}
 
 //Показ ценника
 if(message.content.toLowerCase()==config.prefix + "price")
