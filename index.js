@@ -52,7 +52,15 @@ if(message.content.toLowerCase()==config.prefix + "help")
 		 {
 			 name: ".ver",
 			 value: "Здесь вы можете узнать текущую версию бота."
-		 }
+		 },
+{
+name: "%help",
+value: "Помощь по боту от Hades Star Compendium"
+},
+{
+name: "!help",
+value: "Помощь по боту HadesBotty. Но последнее время бот часто не работает.“
+}
 	 ]
  }
 });
@@ -60,7 +68,7 @@ if(message.content.toLowerCase()==config.prefix + "help")
 	
 //Текущая версия
 	if(message.content.toLowerCase()==config.prefix + "ver")
-	{message.channel.send("Release v117");}
+	{message.channel.send("Release v120");}
 
 //Показ ценника
 if(message.content.toLowerCase()==config.prefix + "price")
@@ -83,10 +91,10 @@ if(message.content.toLowerCase()==config.prefix + "price")
 // Выдача ролей
 if(message.content.toLowerCase()==".test")
 {
-	const guild = client.guilds.cache.get('605822204856369162');
+	/*const guild = client.guilds.cache.get('605822204856369162');
 	const role = guild.roles.cache.find(role => role.name === '<кз9>');
 	const member = message.mentions.members.first();
-	member.roles.add(role);
+	member.roles.add(role);*/
 	message.channel.send('test'); 
 }
 
