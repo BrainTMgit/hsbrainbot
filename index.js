@@ -91,7 +91,7 @@ if(message.content.toLowerCase()==config.prefix + "price")
 // Выдача ролей
 if(message.content.toLowerCase()==".test")
 {
-	
+	let member = message.mentions.members.first();
 	member.roles.add("722351369662627850");
 	message.channel.send('test'); 
 }
