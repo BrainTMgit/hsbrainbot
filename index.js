@@ -59,7 +59,7 @@ value: "Помощь по боту от Hades Star Compendium"
 },
 {
 name: "!help",
-value: "Помощь по боту HadesBotty. Но последнее время бот часто не работает.“
+value: "Помощь по боту HadesBotty. Но последнее время бот часто не работает."
 }
 	 ]
  }
@@ -68,7 +68,7 @@ value: "Помощь по боту HadesBotty. Но последнее врем�
 	
 //Текущая версия
 	if(message.content.toLowerCase()==config.prefix + "ver")
-	{message.channel.send("Release v120");}
+	{message.channel.send("Release v121");}
 
 //Показ ценника
 if(message.content.toLowerCase()==config.prefix + "price")
