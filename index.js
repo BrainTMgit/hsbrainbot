@@ -2,7 +2,6 @@
 const Discord = require('discord.js'); // Подключаем discord.js для дальнейшего использования.
 const config = require('./config.json'); // в конфиге прописан токен и префикс
 const client = new Discord.Client(); 
-const roles = new Discord.GuidMember();
 
 // говорят, что это важный пункт, чтобы бот обрабатывал события только после этого пункта
 client.once('ready',()=>{console.log("Bot started!");});
@@ -92,8 +91,8 @@ if(message.content.toLowerCase()==config.prefix + "price")
 if(message.content.toLowerCase()==".test")
 {
 	let member = message.mentions.members.first();
-	member.roles.add("722351369662627850");
-	message.channel.send('test'); 
+	/*member.roles.add("722351369662627850");*/
+	message.channel.send('test ${member}'); 
 }
 
 });
