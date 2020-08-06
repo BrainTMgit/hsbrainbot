@@ -94,6 +94,7 @@ if(message.content.toLowerCase()==".test")
 	const member = message.guild.member(user);
 	console.log(user);
 	console.log(member);
+	console.log(message.mentions.users);
 	//console.log(message.mentions.users.first);
 	//console.log(message.mentions.users.first());
 	
