@@ -67,7 +67,7 @@ value: "Помощь по боту HadesBotty. Но последнее врем�
 	
 //Текущая версия
 	if(message.content.toLowerCase()==config.prefix + "ver")
-	{message.channel.send("Release v137");}
+	{message.channel.send("Release v138");}
 
 //Показ ценника
 if(message.content.toLowerCase()==config.prefix + "price")
@@ -90,7 +90,7 @@ if(message.content.toLowerCase()==config.prefix + "price")
 // Выдача ролей
 if(message.content.toLowerCase()==".test")
 {
-	let user = message.mentions.users.first();
+	const user = message.mentions.users.first();
 	console.log(user);
 	//console.log(message.mentions.users.first);
 	//console.log(message.mentions.users.first());
