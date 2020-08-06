@@ -90,7 +90,8 @@ if(message.content.toLowerCase()==config.prefix + "price")
 // Выдача ролей
 if(message.content.toLowerCase()==".test")
 {
-	/*let user = message.mentions.members.first();*/
+	let user = message.mentions.members.first();
+        console.log(user);
 	message.guild.member("605817048337219597").roles.add("722351369662627850");
 	/*message.channel.send("test ${member}"); */
 }
