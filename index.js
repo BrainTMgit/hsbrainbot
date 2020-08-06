@@ -91,7 +91,9 @@ if(message.content.toLowerCase()==config.prefix + "price")
 if(message.content.toLowerCase()==".test")
 {
 	const user = message.mentions.users.first();
+	const member = message.guild.member(user);
 	console.log(user);
+	console.log(member);
 	//console.log(message.mentions.users.first);
 	//console.log(message.mentions.users.first());
 	
