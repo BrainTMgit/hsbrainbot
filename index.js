@@ -90,7 +90,7 @@ if(message.content.toLowerCase()==config.prefix + "price")
 // Выдача ролей
 if(message.content.toLowerCase()==".test")
 {
-	const user = message.author.id.first();
+	const user = message.author.id;
 	/*const user = message.mentions.users.first();
 	const member = message.guild.member(user);*/
 	console.log(user);
