@@ -67,7 +67,7 @@ value: "Помощь по боту HadesBotty. Но последнее врем�
 	
 //Текущая версия
 	if(message.content.toLowerCase()==config.prefix + "ver")
-	{message.channel.send("Release v121");}
+	{message.channel.send("Release v133");}
 
 //Показ ценника
 if(message.content.toLowerCase()==config.prefix + "price")
@@ -90,7 +90,7 @@ if(message.content.toLowerCase()==config.prefix + "price")
 // Выдача ролей
 if(message.content.toLowerCase()==".test")
 {
-	let user = message.mentions.members.first();
+	let user = message.mentions.users.first();
         console.log(user);
 	message.guild.member("605817048337219597").roles.add("722351369662627850");
 	/*message.channel.send("test ${member}"); */
