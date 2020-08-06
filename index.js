@@ -67,7 +67,7 @@ value: "Помощь по боту HadesBotty. Но последнее врем�
 	
 //Текущая версия
 	if(message.content.toLowerCase()==config.prefix + "ver")
-	{message.channel.send("Release v140");}
+	{message.channel.send("Release v149");}
 
 //Показ ценника
 if(message.content.toLowerCase()==config.prefix + "price")
@@ -94,13 +94,11 @@ if(message.content.toLowerCase()==".test")
 	/*const user = message.mentions.users.first();
 	const member = message.guild.member(user);*/
 	console.log(user);
-	console.log(member);
-	console.log(message);
 	//console.log(message.mentions.users.first);
 	//console.log(message.mentions.users.first());
 	
 	//эта строка кода работает, просто спрятал пока
-	/*message.guild.member("605817048337219597").roles.add("722351369662627850");*/
+	message.guild.member(user).roles.add("722351369662627850");
 	
 	//а эта не работает...
 	/*message.channel.send("test ${member}"); */
