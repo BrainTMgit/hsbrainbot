@@ -11,7 +11,8 @@ client.once('ready',()=>{console.log("Bot started!");});
 // добавим к верхнему коду строчку, чтобы бот при рестарте отправлял сообщение о рестарте в канал #admin
 client.once('ready',()=>{
 	console.log("Bot started!");
-	client.channels.get('706060221126017054').send('Hello here!');
+	const channel = client.channels.fetch('706060221126017054');
+	channel.send('BrainBot restarted...');
 });
 
 // реакция на приход нового юзера на сервер
