@@ -12,8 +12,8 @@ client.once('ready',()=>{console.log("Bot started!");});
 client.once('ready',()=>{
 	console.log("Bot started!");
 	let channel = client.channels.fetch('706060221126017054');
-	//client.channels.send(`Text`);
-	console.log(channel);
+	if (!channel) return;
+	channel.send('bla-bla');
 });
 
 // реакция на приход нового юзера на сервер
