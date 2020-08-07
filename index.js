@@ -80,11 +80,10 @@ if(message.content.toLowerCase()==config.prefix+"test")
 {
 	var x = 2;
 	var y = 7;
-	var z = y % x;
-console.log("x=",x);
-console.log("y=",y);
-console.log("z=y/x=",z);
-	console.log(typeof z);
+	var z = y / x;
+	console.log("x=",x);
+	console.log("y=",y);
+	console.log("z=y/x= ",z);
 }
 	
 });
