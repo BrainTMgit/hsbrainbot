@@ -43,7 +43,7 @@ if(message.content.toLowerCase()==config.prefix + "help")
 }
 	
 //Текущая версия
-	if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v171");}
+	if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v181");}
 
 //Показ ценника
 if(message.content.toLowerCase()==config.prefix + "price")
