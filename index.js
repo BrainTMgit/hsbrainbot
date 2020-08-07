@@ -82,7 +82,7 @@ if(message.content.toLowerCase()==config.prefix+"test")
 	var y = 7;
 	var z = y % x;
 console.log("x=",x);
-consloe.log("y=",y);
+console.log("y=",y);
 console.log("z=y/x=",z);
 }
 	
