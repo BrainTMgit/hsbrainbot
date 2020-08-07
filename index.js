@@ -12,7 +12,7 @@ client.once('ready',()=>{console.log("Bot started!");});
 client.once('ready',()=>{
 	console.log("Bot started!");
 	const channel = client.channels.fetch('706060221126017054');
-	channel.send('BrainBot restarted...');
+	console.log(channel);
 });
 
 // реакция на приход нового юзера на сервер
