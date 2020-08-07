@@ -3,16 +3,8 @@ const Discord = require('discord.js'); // Подключаем discord.js для
 const config = require('./config.json'); // в конфиге прописан токен и префикс
 const client = new Discord.Client(); 
 
-/*
 // говорят, что это важный пункт, чтобы бот обрабатывал события только после этого пункта
-client.once('ready',()=>{console.log("Bot started!");});
-*/
-
-// добавим к верхнему коду строчку, чтобы бот при рестарте отправлял сообщение о рестарте в канал #admin
-client.on('ready',()=>{
-	console.log("Bot started!");
-	
-});
+client.on('ready',()=>{console.log("Bot started!");});
 
 // реакция на приход нового юзера на сервер
 client.on('guildMemberAdd', member => {
@@ -65,7 +57,7 @@ value: "Помощь по боту HadesBotty. Но последнее врем�
 	
 //Текущая версия
 	if(message.content.toLowerCase()==config.prefix + "ver")
-	{message.channel.send("Release v167");}
+	{message.channel.send("Release v168");}
 
 //Показ ценника
 if(message.content.toLowerCase()==config.prefix + "price")
@@ -86,20 +78,10 @@ if(message.content.toLowerCase()==config.prefix + "price")
 }
 
 // Выдача ролей
-if(message.content.toLowerCase()==".test")
+if(message.content.toLowerCase()=="rs s 9")
 {
 	let user = message.author.id;
-	/*const user = message.mentions.users.first();
-	const member = message.guild.member(user);*/
-	console.log(user);
-	//console.log(message.mentions.users.first);
-	//console.log(message.mentions.users.first());
-	
-	//эта строка кода работает, просто спрятал пока
 	message.guild.member(user).roles.add("722351369662627850");
-	
-	//а эта не работает...
-	/*message.channel.send("test ${member}"); */
 }
 
 });
