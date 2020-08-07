@@ -11,7 +11,7 @@ client.once('ready',()=>{console.log("Bot started!");});
 // добавим к верхнему коду строчку, чтобы бот при рестарте отправлял сообщение о рестарте в канал #admin
 client.once('ready',()=>{
 	console.log("Bot started!");
-	const channel = guild(605822204856369162).channels.cache.find(ch => ch.name === 'admin');
+	const channel = guild("605822204856369162").channels.cache.find(ch => ch.name === 'admin');
 	if (!channel) return;
 	channel.send(`BrainBot restarted!`);
 });
@@ -67,7 +67,7 @@ value: "Помощь по боту HadesBotty. Но последнее врем�
 	
 //Текущая версия
 	if(message.content.toLowerCase()==config.prefix + "ver")
-	{message.channel.send("Release v149");}
+	{message.channel.send("Release v151");}
 
 //Показ ценника
 if(message.content.toLowerCase()==config.prefix + "price")
