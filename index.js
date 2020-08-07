@@ -27,37 +27,23 @@ if(message.content.toLowerCase()==config.prefix + "help")
  {
   color: 3447003,
   title: "Список поддерживаемых комманд:",
-  description: "будет дополняться по мере обновления бота",
+  description: "Дополняется по мере обновления бота",
   fields:
 	 [
-		 {
-			 name: ".help",
-			 value: "выводит список всех команд"
-		 },
-		 {
-			 name: ".price",
-			 value: "Показать курс обмена артефактов"
-		 },
-		 {
-			 name: ".ver",
-			 value: "Здесь вы можете узнать текущую версию бота."
-		 },
-{
-name: "%help",
-value: "Помощь по боту от Hades Star Compendium"
-},
-{
-name: "!help",
-value: "Помощь по боту HadesBotty. Но последнее время бот часто не работает."
-}
+		 { name: ".help", value: "выводит список всех команд" },
+		 { name: ".price", value: "Показать курс обмена артефактов" },
+		 { name: ".ver", value: "Здесь вы можете узнать текущую версию бота." },
+		 { name: "Rs s X", value: "Присвоение роли @кз7-@кз10. Вместо Х вписать цифру от 7 до 10." },
+		 { name: "Rs u X", value: "Удаление роли @кз7-@кз10. Вместо Х вписать цифру от 7 до 10." },
+		 { name: "%help", value: "Помощь по боту от Hades Star Compendium" },
+		 { name: "!help", value: "Помощь по боту HadesBotty. Но последнее время бот часто не работает." }
 	 ]
  }
 });
 }
 	
 //Текущая версия
-	if(message.content.toLowerCase()==config.prefix + "ver")
-	{message.channel.send("Release v169");}
+	if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v170");}
 
 //Показ ценника
 if(message.content.toLowerCase()==config.prefix + "price")
@@ -78,27 +64,10 @@ if(message.content.toLowerCase()==config.prefix + "price")
 }
 
 // Выдача ролей
-if(message.content.toLowerCase()=="rs s 10")
-{
-	let user = message.author.id;
-	message.guild.member(user).roles.add("722351148463292436");
-}
-if(message.content.toLowerCase()=="rs s 9")
-{
-	let user = message.author.id;
-	message.guild.member(user).roles.add("722351369662627850");
-}
-if(message.content.toLowerCase()=="rs s 8")
-{
-	let user = message.author.id;
-	message.guild.member(user).roles.add("722351414096953354");
-}
-if(message.content.toLowerCase()=="rs s 7")
-{
-	let user = message.author.id;
-	message.guild.member(user).roles.add("722351455666831410");
-}
-//выдача ролей закончена	
+if(message.content.toLowerCase()=="rs s 10"){let user = message.author.id;message.guild.member(user).roles.add("722351148463292436");}
+if(message.content.toLowerCase()=="rs s 9"){let user = message.author.id;message.guild.member(user).roles.add("722351369662627850");}
+if(message.content.toLowerCase()=="rs s 8"){let user = message.author.id;message.guild.member(user).roles.add("722351414096953354");}
+if(message.content.toLowerCase()=="rs s 7"){let user = message.author.id;message.guild.member(user).roles.add("722351455666831410");}
 	
 });
 
