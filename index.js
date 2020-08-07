@@ -3,18 +3,18 @@ const Discord = require('discord.js'); // Подключаем discord.js для
 const config = require('./config.json'); // в конфиге прописан токен и префикс
 const client = new Discord.Client(); 
 
+/*
 // говорят, что это важный пункт, чтобы бот обрабатывал события только после этого пункта
 client.once('ready',()=>{console.log("Bot started!");});
+*/
 
-/*
 // добавим к верхнему коду строчку, чтобы бот при рестарте отправлял сообщение о рестарте в канал #admin
 client.once('ready',()=>{
 	console.log("Bot started!");
-	const channel = client.guild.channels.cache.find(ch => ch.name === 'admin');
+	const channel = guild(605822204856369162).channels.cache.find(ch => ch.name === 'admin');
 	if (!channel) return;
 	channel.send(`BrainBot restarted!`);
 });
-*/
 
 // реакция на приход нового юзера на сервер
 client.on('guildMemberAdd', member => {
