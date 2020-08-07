@@ -11,7 +11,7 @@ client.once('ready',()=>{console.log("Bot started!");});
 // добавим к верхнему коду строчку, чтобы бот при рестарте отправлял сообщение о рестарте в канал #admin
 client.once('ready',()=>{
 	console.log("Bot started!");
-	client.channels.fetch("706060221126017054");
+	let channel = client.channels.fetch("706060221126017054");
 	if (!channel) return;
 	channel.send("test");
 });
@@ -67,7 +67,7 @@ value: "Помощь по боту HadesBotty. Но последнее врем�
 	
 //Текущая версия
 	if(message.content.toLowerCase()==config.prefix + "ver")
-	{message.channel.send("Release v164");}
+	{message.channel.send("Release v167");}
 
 //Показ ценника
 if(message.content.toLowerCase()==config.prefix + "price")
