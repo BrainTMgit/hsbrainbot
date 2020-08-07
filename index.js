@@ -13,7 +13,7 @@ client.once('ready',()=>{
 	console.log("Bot started!");
 	let channel = client.channels.fetch('706060221126017054');
 	if (!channel) return;
-	client.channel.send('bla-bla');
+	client.channel.send("bla-bla");
 });
 
 // реакция на приход нового юзера на сервер
@@ -67,7 +67,7 @@ value: "Помощь по боту HadesBotty. Но последнее врем�
 	
 //Текущая версия
 	if(message.content.toLowerCase()==config.prefix + "ver")
-	{message.channel.send("Release v152");}
+	{message.channel.send("Release v160");}
 
 //Показ ценника
 if(message.content.toLowerCase()==config.prefix + "price")
