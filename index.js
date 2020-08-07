@@ -57,7 +57,7 @@ value: "Помощь по боту HadesBotty. Но последнее врем�
 	
 //Текущая версия
 	if(message.content.toLowerCase()==config.prefix + "ver")
-	{message.channel.send("Release v168");}
+	{message.channel.send("Release v169");}
 
 //Показ ценника
 if(message.content.toLowerCase()==config.prefix + "price")
@@ -78,12 +78,28 @@ if(message.content.toLowerCase()==config.prefix + "price")
 }
 
 // Выдача ролей
+if(message.content.toLowerCase()=="rs s 10")
+{
+	let user = message.author.id;
+	message.guild.member(user).roles.add("722351148463292436");
+}
 if(message.content.toLowerCase()=="rs s 9")
 {
 	let user = message.author.id;
 	message.guild.member(user).roles.add("722351369662627850");
 }
-
+if(message.content.toLowerCase()=="rs s 8")
+{
+	let user = message.author.id;
+	message.guild.member(user).roles.add("722351414096953354");
+}
+if(message.content.toLowerCase()=="rs s 7")
+{
+	let user = message.author.id;
+	message.guild.member(user).roles.add("722351455666831410");
+}
+//выдача ролей закончена	
+	
 });
 
 client.login(config.token); //Где token уже был взят из config.json
