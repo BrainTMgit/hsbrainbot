@@ -84,6 +84,7 @@ if(message.content.toLowerCase()==config.prefix+"test")
 console.log("x=",x);
 console.log("y=",y);
 console.log("z=y/x=",z);
+	console.log(typeof x);
 }
 	
 });
