@@ -75,6 +75,11 @@ if(message.content.toLowerCase()=="rs u 9"){let user = message.author.id;message
 if(message.content.toLowerCase()=="rs u 8"){let user = message.author.id;message.guild.member(user).roles.remove("722351414096953354");}
 if(message.content.toLowerCase()=="rs u 7"){let user = message.author.id;message.guild.member(user).roles.remove("722351455666831410");}
 	
+// калькулятор
+	var x = 2;
+	var y = 7;
+	var z = y % x;
+	console.log(z);
 	
 });
 
