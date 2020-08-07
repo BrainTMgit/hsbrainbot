@@ -11,7 +11,7 @@ client.once('ready',()=>{console.log("Bot started!");});
 // добавим к верхнему коду строчку, чтобы бот при рестарте отправлял сообщение о рестарте в канал #admin
 client.once('ready',()=>{
 	console.log("Bot started!");
-	client.channels.cache.fetch("706060221126017054");
+	client.channels.fetch("706060221126017054");
 	if (!channel) return;
 	channel.send("test");
 });
