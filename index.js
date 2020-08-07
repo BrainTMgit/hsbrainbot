@@ -43,7 +43,7 @@ if(message.content.toLowerCase()==config.prefix + "help")
 }
 	
 //Текущая версия
-	if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v170");}
+	if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v171");}
 
 //Показ ценника
 if(message.content.toLowerCase()==config.prefix + "price")
@@ -68,6 +68,13 @@ if(message.content.toLowerCase()=="rs s 10"){let user = message.author.id;messag
 if(message.content.toLowerCase()=="rs s 9"){let user = message.author.id;message.guild.member(user).roles.add("722351369662627850");}
 if(message.content.toLowerCase()=="rs s 8"){let user = message.author.id;message.guild.member(user).roles.add("722351414096953354");}
 if(message.content.toLowerCase()=="rs s 7"){let user = message.author.id;message.guild.member(user).roles.add("722351455666831410");}
+	
+// Удаление ролей
+if(message.content.toLowerCase()=="rs u 10"){let user = message.author.id;message.guild.member(user).roles.remove("722351148463292436");}
+if(message.content.toLowerCase()=="rs u 9"){let user = message.author.id;message.guild.member(user).roles.remove("722351369662627850");}
+if(message.content.toLowerCase()=="rs u 8"){let user = message.author.id;message.guild.member(user).roles.remove("722351414096953354");}
+if(message.content.toLowerCase()=="rs u 7"){let user = message.author.id;message.guild.member(user).roles.remove("722351455666831410");}
+	
 	
 });
 
