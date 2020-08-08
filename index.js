@@ -9,7 +9,7 @@ client.on('ready',()=>{console.log("Bot started!");});
 // реакция на приход нового юзера на сервер
 client.on('guildMemberAdd', member => {
 	// отправляется сообщение в основной канал
-	const channel = member.guild.channels.cache.find(ch => ch.name === 'основной');
+	var channel = member.guild.channels.cache.find(ch => ch.name === 'основной');
  	// ничего не делать если канал не найден
 	if (!channel) return;
  	// отправляем сообщение с упоминанием пользователя
