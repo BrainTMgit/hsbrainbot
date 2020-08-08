@@ -78,12 +78,9 @@ if(message.content.toLowerCase()=="rs u 7"){let user = message.author.id;message
 // калькулятор
 if(message.content.toLowerCase()==config.prefix+"test")
 {
-	var x = 2;
-	var y = 7;
-	var z = y / x;
-	console.log("x =",x);
-	console.log("y =",y);
-	console.log("z = y/x =",z);
+console.log("начало");
+	console.log(message);
+console.log("конец");
 }
 	
 });
