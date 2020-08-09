@@ -79,7 +79,8 @@ if(message.content.toLowerCase()==config.prefix+"test")
 {
 	console.log("начало, начало, начало, начало, начало, начало, начало, начало, начало, начало, ");
 	let user = message.author.id;
-	console.log(user);
+	let rol = message.guild.member(user).roles;
+	console.log(rol);
 	console.log("конец, конец, конец, конец, конец, конец, конец, конец, конец, конец, ");
 }
 	
