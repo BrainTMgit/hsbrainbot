@@ -77,10 +77,7 @@ if(message.content.toLowerCase()=="rs u 7"){let user = message.author.id;message
 // калькулятор
 if(message.content.toLowerCase()==config.prefix+"test")
 {
-var rs = message.member.roles.get("722351369662627850");
 console.log("начало");
-
-	console.log(rs);
 console.log("конец");
 }
 	
