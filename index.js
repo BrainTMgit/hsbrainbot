@@ -41,9 +41,6 @@ if(message.content.toLowerCase()==config.prefix + "help")
 });
 }
 	
-//Текущая версия
-	if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v201");}
-
 //Показ ценника
 if(message.content.toLowerCase()==config.prefix + "price")
 {
@@ -73,15 +70,18 @@ if(message.content.toLowerCase()=="rs u 10"){let user = message.author.id;messag
 if(message.content.toLowerCase()=="rs u 9"){let user = message.author.id;message.guild.member(user).roles.remove("722351369662627850");}
 if(message.content.toLowerCase()=="rs u 8"){let user = message.author.id;message.guild.member(user).roles.remove("722351414096953354");}
 if(message.content.toLowerCase()=="rs u 7"){let user = message.author.id;message.guild.member(user).roles.remove("722351455666831410");}
-	
+
+//Текущая версия
+	if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v209");}
+
 // тестируем проверку ролей
 if(message.content.toLowerCase()==config.prefix+"test")
 {
 	console.log("начало, начало, начало, начало, начало, начало, начало, начало, начало, начало, ");
-	let user = message.author.id;
+	/*let user = message.author.id;
 	let rol = message.guild.member(user)._roles;
-	let findroles = rol.find(rol == "722351369662627850");
-	console.log(findroles);
+	//let findroles = rol.find(rol == "722351369662627850");
+	//console.log(findroles);*/
 	console.log("конец, конец, конец, конец, конец, конец, конец, конец, конец, конец, ");
 }
 	
