@@ -42,7 +42,7 @@ if(message.content.toLowerCase()==config.prefix + "help")
 }
 	
 //Текущая версия
-	if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v195");}
+	if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v201");}
 
 //Показ ценника
 if(message.content.toLowerCase()==config.prefix + "price")
@@ -74,11 +74,12 @@ if(message.content.toLowerCase()=="rs u 9"){let user = message.author.id;message
 if(message.content.toLowerCase()=="rs u 8"){let user = message.author.id;message.guild.member(user).roles.remove("722351414096953354");}
 if(message.content.toLowerCase()=="rs u 7"){let user = message.author.id;message.guild.member(user).roles.remove("722351455666831410");}
 	
-// калькулятор
+// тестируем проверку ролей
 if(message.content.toLowerCase()==config.prefix+"test")
 {
-console.log("начало");
-console.log("конец");
+	console.log("начало, начало, начало, начало, начало, начало, начало, начало, начало, начало, ");
+	console.log(message);
+	console.log("конец, конец, конец, конец, конец, конец, конец, конец, конец, конец, ");
 }
 	
 });
