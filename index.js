@@ -80,7 +80,7 @@ if(message.content.toLowerCase()==config.prefix+"test")
 var rs = message.member.roles.get("722351369662627850");
 console.log("начало");
 
-	console.log(rs/*message.member.roles*/);
+	console.log(rs);
 console.log("конец");
 }
 	
