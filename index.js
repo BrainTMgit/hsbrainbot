@@ -35,15 +35,14 @@ if(message.content.toLowerCase()==config.prefix + "help")
 		 { name: ".ver", value: "Здесь вы можете узнать текущую версию бота." },
 		 { name: "Rs s X", value: "Присвоение роли @кз7-@кз10. Вместо Х вписать цифру от 7 до 10." },
 		 { name: "Rs u X", value: "Удаление роли @кз7-@кз10. Вместо Х вписать цифру от 7 до 10." },
-		 { name: "%help", value: "Помощь по боту от Hades Star Compendium" },
-		 { name: "!help", value: "Помощь по боту HadesBotty. Но последнее время бот часто не работает." }
+		 { name: "%help", value: "Помощь по боту от Hades Star Compendium" }
 	 ]
  }
 });
 }
 	
 //Текущая версия
-	if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v181");}
+	if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v195");}
 
 //Показ ценника
 if(message.content.toLowerCase()==config.prefix + "price")
