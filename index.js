@@ -80,7 +80,7 @@ if(message.content.toLowerCase()==config.prefix+"test")
 {
 //var member = message.mentions.users.first();
 console.log("начало");
-	console.log(message.mentions.users.first());
+	console.log(message.mentions.users);
 console.log("конец");
 }
 	
