@@ -99,7 +99,7 @@ if(message.content.toLowerCase()=="rs u 7"){let user = message.author.id;message
 if(message.content.toLowerCase()==config.prefix+"test")
 {
 	console.log("начало, начало, начало, начало, начало, начало, начало, начало, начало, начало, ");
-console.log(message);
+console.dir(message);
 
 	console.log("конец, конец, конец, конец, конец, конец, конец, конец, конец, конец, ");
 }
