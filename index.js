@@ -80,7 +80,8 @@ if(message.content.toLowerCase()==config.prefix+"test")
 	console.log("начало, начало, начало, начало, начало, начало, начало, начало, начало, начало, ");
 	channel = client.channels.cache.get("706060221126017054");
 console.log(channel);
-channel.send(”test");
+channel.send(`Привет. Добро пожаловать на наш скромный сервер. Вообще, я тут главный и всем заправляю. Узнать все, что я умею можно командой .help`);
+
 //if(message.content.toLowerCase()=="rs s 10"){let user = message.author.id;message.guild.member(user).roles.add("722351148463292436");}
 
 
