@@ -71,7 +71,16 @@ if(message.content.toLowerCase()=="rs s 8"){let user = message.author.id;message
 if(message.content.toLowerCase()=="rs s 7"){let user = message.author.id;message.guild.member(user).roles.add("722351455666831410");}
 	
 // Удаление ролей
-if(message.content.toLowerCase()=="rs u 10"){let user = message.author.id;message.guild.member(user).roles.remove("722351148463292436");}
+//if(message.content.toLowerCase()=="rs u 10"){let user = message.author.id;message.guild.member(user).roles.remove("722351148463292436");}
+if(message.content.toLowerCase()=="rs u 10")
+{
+let user = message.author.id;
+message.guild.member(user).roles.remove("722351148463292436");
+role = message.member.roles.cache.get('722351148463292436');
+if(!role){message.reply('У вас больше нет роли <@&722351148463292436>);};
+}
+
+
 if(message.content.toLowerCase()=="rs u 9"){let user = message.author.id;message.guild.member(user).roles.remove("722351369662627850");}
 if(message.content.toLowerCase()=="rs u 8"){let user = message.author.id;message.guild.member(user).roles.remove("722351414096953354");}
 if(message.content.toLowerCase()=="rs u 7"){let user = message.author.id;message.guild.member(user).roles.remove("722351455666831410");}
@@ -83,10 +92,10 @@ if(message.content.toLowerCase()=="rs u 7"){let user = message.author.id;message
 if(message.content.toLowerCase()==config.prefix+"test")
 {
 	console.log("начало, начало, начало, начало, начало, начало, начало, начало, начало, начало, ");
-role = message.member.roles.cache.get('722351148463292436');
+/*role = message.member.roles.cache.get('722351148463292436');
 	console.log(role);
 if(!role){message.reply('no role');};
-message.reply('role');
+message.reply('role');*/
 
 	console.log("конец, конец, конец, конец, конец, конец, конец, конец, конец, конец, ");
 }
