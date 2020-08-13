@@ -96,10 +96,11 @@ if(message.content.toLowerCase()=="rs u 7"){let user = message.author.id;message
 	if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v242");}
 
 // тестируем проверку ролей
-if(message.content.toLowerCase()==config.prefix+"test")
+if(message.content.startsWith()==config.prefix+"test")
 {
 	console.log("начало, начало, начало, начало, начало, начало, начало, начало, начало, начало, ");
 console.log(message);
+message.reply('true');
 
 	console.log("конец, конец, конец, конец, конец, конец, конец, конец, конец, конец, ");
 }
