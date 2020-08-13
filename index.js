@@ -85,8 +85,8 @@ if(message.content.toLowerCase()==config.prefix+"test")
 	console.log("начало, начало, начало, начало, начало, начало, начало, начало, начало, начало, ");
 role = message.member.roles.cache.get('722351148463292436');
 	console.log(role);
-//if(message.content.toLowerCase()=="rs s 10"){let user = message.author.id;message.guild.member(user).roles.add("722351148463292436");}
-
+if(!role){message.reply('no role');};
+message.reply('role');
 
 	console.log("конец, конец, конец, конец, конец, конец, конец, конец, конец, конец, ");
 }
