@@ -99,10 +99,7 @@ if(message.content.toLowerCase()=="rs u 7"){let user = message.author.id;message
 if(message.content.toLowerCase()==config.prefix+"test")
 {
 	console.log("начало, начало, начало, начало, начало, начало, начало, начало, начало, начало, ");
-/*role = message.member.roles.cache.get('722351148463292436');
-	console.log(role);
-if(!role){message.reply('no role');};
-message.reply('role');*/
+   console.log(message.id);
 
 	console.log("конец, конец, конец, конец, конец, конец, конец, конец, конец, конец, ");
 }
