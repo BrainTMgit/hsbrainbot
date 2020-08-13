@@ -2,7 +2,6 @@
 const Discord = require('discord.js'); // Подключаем discord.js для дальнейшего использования.
 const config = require('./config.json'); // в конфиге прописан токен и префикс
 const client = new Discord.Client(); 
-const GuildChannel = new Discord.GuildChannel();
 
 // говорят, что это важный пункт, чтобы бот обрабатывал события только после этого пункта
 client.on('ready',()=>{console.log("Bot started!");});
@@ -79,7 +78,7 @@ if(message.content.toLowerCase()=="rs u 7"){let user = message.author.id;message
 if(message.content.toLowerCase()==config.prefix+"test")
 {
 	console.log("начало, начало, начало, начало, начало, начало, начало, начало, начало, начало, ");
-	console.log(GuildChannel);
+	console.log(client.guild);
 //if(message.content.toLowerCase()=="rs s 10"){let user = message.author.id;message.guild.member(user).roles.add("722351148463292436");}
 
 
