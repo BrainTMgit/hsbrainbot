@@ -78,7 +78,7 @@ if(message.content.toLowerCase()=="rs u 7"){let user = message.author.id;message
 if(message.content.toLowerCase()==config.prefix+"test")
 {
 	console.log("начало, начало, начало, начало, начало, начало, начало, начало, начало, начало, ");
-	console.log(client);
+	console.log(client.channels);
 //if(message.content.toLowerCase()=="rs s 10"){let user = message.author.id;message.guild.member(user).roles.add("722351148463292436");}
 
 
