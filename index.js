@@ -77,7 +77,10 @@ if(message.content.toLowerCase()=="rs u 10")
 let user = message.author.id;
 message.guild.member(user).roles.remove("722351148463292436");
 role = message.member.roles.cache.get('722351148463292436');
-if(!role){message.reply('У вас больше нет роли <@&722351148463292436>');};
+if(!role){
+  console.log(role);
+  message.reply('У вас больше нет роли <@&722351148463292436>');
+  };
 }
 
 
