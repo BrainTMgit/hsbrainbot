@@ -4,7 +4,11 @@ const config = require('./config.json'); // в конфиге прописан �
 const client = new Discord.Client(); 
 
 // говорят, что это важный пункт, чтобы бот обрабатывал события только после этого пункта
-client.on('ready',()=>{console.log("Bot started!");});
+client.on('ready',()=>{
+console.log("Bot started!");
+channel = client.channels.cache.get("706060221126017054");
+channel.send(`BrainBot Restarted!`);
+});
 
 // реакция на приход нового юзера на сервер
 client.on('guildMemberAdd', member => {
@@ -72,16 +76,13 @@ if(message.content.toLowerCase()=="rs u 8"){let user = message.author.id;message
 if(message.content.toLowerCase()=="rs u 7"){let user = message.author.id;message.guild.member(user).roles.remove("722351455666831410");}
 
 //Текущая версия
-	if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v214");}
+	if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v231");}
 
 // тестируем проверку ролей
 if(message.content.toLowerCase()==config.prefix+"test")
 {
 	console.log("начало, начало, начало, начало, начало, начало, начало, начало, начало, начало, ");
-	channel = client.channels.cache.get("706060221126017054");
-console.log(channel);
-channel.send(`Привет. Добро пожаловать на наш скромный сервер. Вообще, я тут главный и всем заправляю. Узнать все, что я умею можно командой .help`);
-
+	
 //if(message.content.toLowerCase()=="rs s 10"){let user = message.author.id;message.guild.member(user).roles.add("722351148463292436");}
 
 
