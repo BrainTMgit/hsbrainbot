@@ -100,8 +100,9 @@ if(message.content.toLowerCase()==config.prefix+"test")
 {
 	console.log("начало, начало, начало, начало, начало, начало, начало, начало, начало, начало, ");
 let user = message.author.id;
-   var text = message.guild.member(user).roles.cache;
+   var text = message.guild.member(user).roles.cache.resolveID;
 message.reply(text);
+console.log(text);
 
 	console.log("конец, конец, конец, конец, конец, конец, конец, конец, конец, конец, ");
 }
