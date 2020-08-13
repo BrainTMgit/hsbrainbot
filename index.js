@@ -2,6 +2,7 @@
 const Discord = require('discord.js'); // Подключаем discord.js для дальнейшего использования.
 const config = require('./config.json'); // в конфиге прописан токен и префикс
 const client = new Discord.Client(); 
+const GuildChannel = new Discord.GuildChannel();
 
 // говорят, что это важный пункт, чтобы бот обрабатывал события только после этого пункта
 client.on('ready',()=>{console.log("Bot started!");});
