@@ -4,6 +4,7 @@ const config = require('./config.json'); // в конфиге прописан �
 const client = new Discord.Client(); 
 
 // говорят, что это важный пункт, чтобы бот обрабатывал события только после этого пункта
+// Заодно бот отписывается в админском канале о рестарте. Так, на всякий случай
 client.on('ready',()=>{
 console.log("Bot started!");
 channel = client.channels.cache.get("706060221126017054");
@@ -82,7 +83,8 @@ if(message.content.toLowerCase()=="rs u 7"){let user = message.author.id;message
 if(message.content.toLowerCase()==config.prefix+"test")
 {
 	console.log("начало, начало, начало, начало, начало, начало, начало, начало, начало, начало, ");
-	
+role = message.member.roles.cache.get('722351148463292436');
+	console.log(role);
 //if(message.content.toLowerCase()=="rs s 10"){let user = message.author.id;message.guild.member(user).roles.add("722351148463292436");}
 
 
