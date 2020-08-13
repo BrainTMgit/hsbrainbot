@@ -99,7 +99,8 @@ if(message.content.toLowerCase()=="rs u 7"){let user = message.author.id;message
 if(message.content.toLowerCase()==config.prefix+"test")
 {
 	console.log("начало, начало, начало, начало, начало, начало, начало, начало, начало, начало, ");
-   console.log(message.guild.member(message.author.id).roles.fetch);
+let user = message.author.id;
+   console.log(message.guild.member(user).roles);
 
 	console.log("конец, конец, конец, конец, конец, конец, конец, конец, конец, конец, ");
 }
