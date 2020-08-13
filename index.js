@@ -77,7 +77,7 @@ if(message.content.toLowerCase()=="rs u 8"){let user = message.author.id;message
 if(message.content.toLowerCase()=="rs u 7"){let user = message.author.id;message.guild.member(user).roles.remove("722351455666831410");}
 
 //Текущая версия
-	if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v232");}
+	if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v235");}
 
 // тестируем проверку ролей
 if(message.content.toLowerCase()==config.prefix+"test")
