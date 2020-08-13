@@ -96,7 +96,7 @@ if(message.content.toLowerCase()=="rs u 7"){let user = message.author.id;message
 	if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v242");}
 
 // тестируем
-if(message.content.startsWith()=='.test')
+if(message.content.startsWith('.test'))
 {
 	console.log("начало, начало, начало, начало, начало, начало, начало, начало, начало, начало, ");
 
