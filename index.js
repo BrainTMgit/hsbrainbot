@@ -100,7 +100,7 @@ if(message.content.startsWith(config.prefix+'test'))
 {
 	console.log("начало, начало, начало, начало, начало, начало, начало, начало, начало, начало, ");
 
-console.log(message.content);
+console.log(message.content.first());
 
 	console.log("конец, конец, конец, конец, конец, конец, конец, конец, конец, конец, ");
 }
