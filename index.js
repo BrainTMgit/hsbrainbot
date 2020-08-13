@@ -65,7 +65,16 @@ if(message.content.toLowerCase()==config.prefix + "price")
 }
 
 // Выдача ролей
-if(message.content.toLowerCase()=="rs s 10"){let user = message.author.id;message.guild.member(user).roles.add("722351148463292436");}
+//if(message.content.toLowerCase()=="rs s 10"){let user = message.author.id;message.guild.member(user).roles.add("722351148463292436");}
+if(message.content.toLowerCase()=="rs s 10")
+  {
+   let user = message.author.id;
+   message.guild.member(user).roles.add("722351148463292436");
+   message.reply('вам присвоена роль <@&722351148463292436>');
+  }
+
+
+
 if(message.content.toLowerCase()=="rs s 9"){let user = message.author.id;message.guild.member(user).roles.add("722351369662627850");}
 if(message.content.toLowerCase()=="rs s 8"){let user = message.author.id;message.guild.member(user).roles.add("722351414096953354");}
 if(message.content.toLowerCase()=="rs s 7"){let user = message.author.id;message.guild.member(user).roles.add("722351455666831410");}
@@ -76,11 +85,7 @@ if(message.content.toLowerCase()=="rs u 10")
 {
 let user = message.author.id;
 message.guild.member(user).roles.remove("722351148463292436");
-role = message.member.roles.cache.get('722351148463292436');
-if(!role){
-  console.log(role);
   message.reply('У вас больше нет роли <@&722351148463292436>');
-  };
 }
 
 
