@@ -24,6 +24,9 @@ client.on('guildMemberAdd', member => {
 // Пришло сообщение
 client.on("message", message => { 
 
+//Возврат, если сообщение отправил сами бот
+if (message.author.bot) return;
+
 // Хелпер
 //Если текст сообщения равен префиксу плюс help, то происходит код в {} Часть кода .toLowerCase() превращает текст в строчный. (Делает из заглавных букв обычные.) 
 if(message.content.toLowerCase()==config.prefix + "help")
@@ -100,7 +103,7 @@ if(message.content.startsWith(config.prefix+'test'))
 {
 	console.log("начало, начало, начало, начало, начало, начало, начало, начало, начало, начало, ");
 
-console.log(message.content.first);
+channel.send(message.content);
 
 	console.log("конец, конец, конец, конец, конец, конец, конец, конец, конец, конец, ");
 }
