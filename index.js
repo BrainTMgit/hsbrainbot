@@ -105,7 +105,7 @@ message.reply('итого ' + x + ' штук');
 }
 
 //Текущая версия
-	if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v339");}
+	if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v341");}
 
 //Тестирование ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -129,14 +129,15 @@ if(message.content.toLowerCase() == 'rs q 9')
 {
 if (quequ.length==0) {return message.reply(` жаль, но очередь на <@&722351369662627850> пуста`);}
 
-for (var i=0; i < 5; i++ )
+
+/*for (var i=0; i < 5; i++ )
    {
    let rsq;
    rsq = i + '. ' + quequ[i][0];
    channel.send(rsq);
 
    };
-
+*/
 /*
 var time = new Date() - quequ [0][1];
 let timeleft = 30 - time/60000;
