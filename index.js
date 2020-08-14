@@ -40,6 +40,8 @@ if(message.content.toLowerCase()==config.prefix + "help")
 	 [
 		 { name: ".help", value: "выводит список всех команд" },
 		 { name: ".price", value: "Показать курс обмена артефактов" },
+{ name: ".calc 8 7 6 5 4", value: "Рассчитать стоимость артов кз9." },
+
 		 { name: ".ver", value: "Здесь вы можете узнать текущую версию бота." },
 		 { name: "Rs s X", value: "Присвоение роли @кз7-@кз10. Вместо Х вписать цифру от 7 до 10." },
 		 { name: "Rs u X", value: "Удаление роли @кз7-@кз10. Вместо Х вписать цифру от 7 до 10." },
@@ -99,11 +101,12 @@ if(message.content.toLowerCase()=="rs u 7"){let user = message.author.id;message
 	if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v242");}
 
 // тестируем
-if(message.content.startsWith(config.prefix+'test'))
+if(message.content.startsWith(config.prefix+'calc'))
 {
 	console.log("начало, начало, начало, начало, начало, начало, начало, начало, начало, начало, ");
-
-channel.send(message.content);
+var args = message.content.slice(prefix.length).trim().split(' ');
+channel.send(args);
+console.log(args);
 
 	console.log("конец, конец, конец, конец, конец, конец, конец, конец, конец, конец, ");
 }
