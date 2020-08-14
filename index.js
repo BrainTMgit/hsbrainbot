@@ -125,7 +125,7 @@ var time = new Date() - quequ [1];
 let timeleft = 30 - time/60000;
 timeleft = timeleft.toFixed(1);
 channel.send(timeleft + 'min');
-//channel.send(new Date());
+channel.send('<@' + quequ[0] + '>, ' + timeleft + 'min');
 //channel.send(quequ[1]/60);
 }
 	
