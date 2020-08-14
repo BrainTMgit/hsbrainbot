@@ -118,7 +118,7 @@ console.log(i,'=',args[i]);
 
 var x = args[0]/2 + args[1]/2.5 + args[2]/3 + args[3]/4.5 + args[4]/5.5;
 console.log(args[0], args[1], args[2], args[3], args[4]);
-x.toFixed(2);
+x = x.toFixed(2);
 console.log(x);
 //message.reply('получается ${x} штук');
 
