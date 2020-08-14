@@ -108,7 +108,7 @@ message.reply('итого ' + x + ' штук');
 	if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v314");}
 
 //Тестирование
-if(message.content.startsWith(config.prefix+'test'))
+if(message.content.toLowerCase(config.prefix+'test'))
 {
 console.log("начало, начало, начало, начало, начало, начало, начало, начало, начало, начало, ");
 
@@ -119,12 +119,12 @@ channel.send('<@' + quequ[0] + '>, ' + quequ[1]);
 
 console.log("конец, конец, конец, конец, конец, конец, конец, конец, конец, конец, ");
 }
-if(message.content.startsWith(config.prefix+'time'))
+if(message.content.toLowerCase(config.prefix+'time'))
 {
 var time = new Date() - quequ [1];
-channel.send(time);
-channel.send(new Date());
-channel.send(quequ[1]);
+channel.send(time/1000 + 's');
+//channel.send(new Date());
+//channel.send(quequ[1]/60);
 }
 	
 });
