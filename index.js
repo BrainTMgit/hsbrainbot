@@ -119,10 +119,12 @@ channel.send('<@' + quequ[0] + '>, ' + quequ[1]);
 
 console.log("конец, конец, конец, конец, конец, конец, конец, конец, конец, конец, ");
 }
-if(message.content.startsWith(config.prefix+'test2'))
+if(message.content.startsWith(config.prefix+'time'))
 {
 var time = new Date() - quequ [1];
 channel.send(time);
+channel.send(new Date());
+channel.send(quequ[1]);
 }
 	
 });
