@@ -109,7 +109,7 @@ var args = message.content.slice(config.prefix.length).trim().split(' ');
 args.shift();
     if (!args.length) {return message.reply(`Вы не ввели дополнительную информацию. Для справки введите команду .help`);}
 var x = args[0]/2 + args[1]/2.5 + args[2]/3 + args[3]/4.5 + args[4]/5.5;
-console.log(args[0], args[1]);
+console.log(args[0], args[1], args[2], args[3], args[4]);
 console.log(x);
 
 	console.log("конец, конец, конец, конец, конец, конец, конец, конец, конец, конец, ");
