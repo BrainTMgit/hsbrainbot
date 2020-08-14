@@ -104,9 +104,9 @@ if(message.content.toLowerCase()=="rs u 7"){let user = message.author.id;message
 if(message.content.startsWith(config.prefix+'calc'))
 {
 	console.log("начало, начало, начало, начало, начало, начало, начало, начало, начало, начало, ");
-/*var args = message.content.slice(prefix.length).trim().split(' ');
-channel.send(args);*/
-console.log(config.prefix.length);
+var args = message.content.slice(config.prefix.length).trim().split(' ');
+//channel.send(args);
+console.log(args);
 
 	console.log("конец, конец, конец, конец, конец, конец, конец, конец, конец, конец, ");
 }
