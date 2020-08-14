@@ -105,10 +105,10 @@ message.reply('итого ' + x + ' штук');
 }
 
 //Текущая версия
-	if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v325");}
+	if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v326");}
 
 //Тестирование
-if(message.content.toLowerCase() == config.prefix+'test')
+if(message.content.toLowerCase() == '9+')
 {
 console.log("начало, начало, начало, начало, начало, начало, начало, начало, начало, начало, ");
 
@@ -119,7 +119,7 @@ channel.send('<@' + quequ[0][0] + '>, вы добавлены в очередь 
 
 console.log("конец, конец, конец, конец, конец, конец, конец, конец, конец, конец, ");
 }
-if(message.content.toLowerCase() == config.prefix+'time')
+if(message.content.toLowerCase() == 'Rs q 9')
 {
 var time = new Date() - quequ [0][1];
 let timeleft = 30 - time/60000;
