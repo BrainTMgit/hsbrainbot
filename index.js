@@ -40,7 +40,7 @@ if(message.content.toLowerCase()==config.prefix + "help")
 	 [
 		 { name: ".help", value: "выводит список всех команд" },
 		 { name: ".price", value: "Показать курс обмена артефактов" },
-{ name: ".calc 8 7 6 5 4", value: "Рассчитать стоимость артов кз9." },
+{ name: ".calc 8 7 6 5 4", value: "Рассчитать стоимость артов кз9. Вместо 8 7 6 5 4 ввести количество артов с кз8, кз7 и т.д. При продаже 3шт кз8 и 10шт кз6" вводить ".calc 3 0 10 0 0". Последние нули можно не вводить, т.е. ввести ".calc 3 0 10"},
 
 		 { name: ".ver", value: "Здесь вы можете узнать текущую версию бота." },
 		 { name: "Rs s X", value: "Присвоение роли @кз7-@кз10. Вместо Х вписать цифру от 7 до 10." },
@@ -75,55 +75,43 @@ if(message.content.toLowerCase()=="rs s 9"){let user = message.author.id;message
 if(message.content.toLowerCase()=="rs s 8"){let user = message.author.id;message.guild.member(user).roles.add("722351414096953354");message.reply('вам присвоена роль <@&722351414096953354>');}
 if(message.content.toLowerCase()=="rs s 7"){let user = message.author.id;message.guild.member(user).roles.add("722351455666831410");message.reply('вам присвоена роль <@&722351455666831410>');}
 
-
-
-/*
-if(message.content.toLowerCase()=="rs s 9"){let user = message.author.id;message.guild.member(user).roles.add("722351369662627850");}
-if(message.content.toLowerCase()=="rs s 8"){let user = message.author.id;message.guild.member(user).roles.add("722351414096953354");}
-if(message.content.toLowerCase()=="rs s 7"){let user = message.author.id;message.guild.member(user).roles.add("722351455666831410");}
-*/
-
-
 // Удаление ролей
 if(message.content.toLowerCase()=="rs u 10"){let user = message.author.id;message.guild.member(user).roles.remove("722351148463292436");message.reply('у вас больше нет роли <@&722351148463292436>');}
 if(message.content.toLowerCase()=="rs u 9"){let user = message.author.id;message.guild.member(user).roles.remove("722351369662627850");message.reply('у вас больше нет роли <@&722351369662627850>');}
 if(message.content.toLowerCase()=="rs u 8"){let user = message.author.id;message.guild.member(user).roles.remove("722351414096953354");message.reply('у вас больше нет роли <@&722351414096953354>');}
 if(message.content.toLowerCase()=="rs u 7"){let user = message.author.id;message.guild.member(user).roles.remove("722351455666831410");message.reply('у вас больше нет роли <@&722351455666831410>');}
 
-/*
-if(message.content.toLowerCase()=="rs u 9"){let user = message.author.id;message.guild.member(user).roles.remove("722351369662627850");}
-if(message.content.toLowerCase()=="rs u 8"){let user = message.author.id;message.guild.member(user).roles.remove("722351414096953354");}
-if(message.content.toLowerCase()=="rs u 7"){let user = message.author.id;message.guild.member(user).roles.remove("722351455666831410");}
-*/
-
-
-//Текущая версия
-	if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v242");}
-
-// тестируем
+//Калькулятор продажи т9
+//если сообщение начинается с ".calc"
 if(message.content.startsWith(config.prefix+'calc'))
 {
-	console.log("начало, начало, начало, начало, начало, начало, начало, начало, начало, начало, ");
-var args = message.content.slice(config.prefix.length).trim().split(' ');
-//channel.send(args);
+//Создаётся массив, slice отрезает префикс, trim удаляет лишние пробелы вначале и конце сообщения (на всякий случай), split разбивает строку на массив данных разделенный пробелами
+	var args = message.content.slice(config.prefix.length).trim().split(' ');
+//Удаляется первый элемент массива, т.е. "calc"
 args.shift();
+//Если массив окажется пустой, или больше необходимого - отмена цикла и сообщение в канал
     if (!args.length || args.length > 5) {return message.reply(`некорректно введена дополнительная информация. Для справки введите команду .help`);}
-
-for (var i=0; i < 5; i++ )
-{
-if(!args[i]){args[i]=0};
-console.log(i,'=',args[i]);
-};
-
-
+//Заменяем undefined значения массива на ноль
+for (var i=0; i < 5; i++ ){if(!args[i]){args[i]=0};};
+//Считаем
 var x = args[0]/2 + args[1]/2.5 + args[2]/3 + args[3]/4.5 + args[4]/5.5;
-console.log(args[0], args[1], args[2], args[3], args[4]);
+//Округляем до 2х знаков после запятой
 x = x.toFixed(2);
-console.log(x);
+//Выводим итоговую сумму
 message.reply('итого ' + x + ' штук');
+}
+
+//Текущая версия
+	if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v304");}
+
+//Тестирование
+if(message.content.startsWith(config.prefix+'test'))
+{
+console.log("начало, начало, начало, начало, начало, начало, начало, начало, начало, начало, ");
 
 
-	console.log("конец, конец, конец, конец, конец, конец, конец, конец, конец, конец, ");
+
+console.log("конец, конец, конец, конец, конец, конец, конец, конец, конец, конец, ");
 }
 	
 });
