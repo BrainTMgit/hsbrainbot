@@ -22,7 +22,7 @@ client.on('guildMemberAdd', member => {
 });
 
 //Инициализируем массив для очереди кз
-var quequ = [[],[],[],[]];
+var quequ = [];
 
 // Пришло сообщение
 client.on("message", message => { 
@@ -113,15 +113,15 @@ if(message.content.toLowerCase() == config.prefix+'test')
 console.log("начало, начало, начало, начало, начало, начало, начало, начало, начало, начало, ");
 
 var user1 = message.author.id;
-quequ [0] = user1, new Date();
-//quequ [1] = new Date();
+quequ [0] = [user1, new Date()];
+console.log(user1);
 channel.send('<@' + quequ[0][0] + '>, вы добавлены в очередь на кз');
 
 console.log("конец, конец, конец, конец, конец, конец, конец, конец, конец, конец, ");
 }
 if(message.content.toLowerCase() == config.prefix+'time')
 {
-var time = new Date() - quequ [1];
+var time = new Date() - quequ [0][1];
 let timeleft = 30 - time/60000;
 timeleft = timeleft.toFixed(1);
 channel.send(quequ.length + '. <@' + quequ[0][0] + '>, ' + timeleft + 'min');
