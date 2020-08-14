@@ -107,9 +107,9 @@ if(message.content.startsWith(config.prefix+'calc'))
 var args = message.content.slice(config.prefix.length).trim().split(' ');
 //channel.send(args);
 args.shift();
-    if (!args.length) {return message.reply(`Вы не ввели дополнительную информацию. Для справки введите команду .help`);}
+    if (!args.length || args.length > 5) {return message.reply(`некорректно введена дополнительная информация. Для справки введите команду .help`);}
 
-for (var i=0; i < args.length; i++ )
+for (var i=0; i < 5; i++ )
 {
 if(!args[i]){args[i]=0};
 console.log(i,'=',args[i]);
