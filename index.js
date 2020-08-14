@@ -105,7 +105,7 @@ message.reply('итого ' + x + ' штук');
 }
 
 //Текущая версия
-	if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v304");}
+	if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v314");}
 
 //Тестирование
 if(message.content.startsWith(config.prefix+'test'))
