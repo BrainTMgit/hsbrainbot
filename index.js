@@ -107,6 +107,7 @@ if(message.content.startsWith(config.prefix+'calc'))
 var args = message.content.slice(config.prefix.length).trim().split(' ');
 //channel.send(args);
 args.shift();
+    if (!args.length) {return message.reply(`Вы не ввели дополнительную информацию. Для справки введите команду .help`);}
 console.log(args);
 
 	console.log("конец, конец, конец, конец, конец, конец, конец, конец, конец, конец, ");
