@@ -108,7 +108,8 @@ message.reply('итого ' + x + ' штук');
 if(message.content.startsWith(config.prefix+'test'))
 {
 console.log("начало, начало, начало, начало, начало, начало, начало, начало, начало, начало, ");
-
+var user1 = message.author;
+channel.send(user1);
 
 
 console.log("конец, конец, конец, конец, конец, конец, конец, конец, конец, конец, ");
