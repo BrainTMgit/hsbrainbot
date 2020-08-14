@@ -112,7 +112,7 @@ message.reply('итого ' + x + ' штук');
 if(message.content.toLowerCase() == '9+')
 {
 // Смотрим сколько человек уже в очереди
-var readyuser = queque.length();
+var readyuser = quequ.length;
 var user1 = message.author.id;
 quequ [0] = [message.author.id, new Date()];
 console.log(user1);
