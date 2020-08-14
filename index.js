@@ -21,6 +21,9 @@ client.on('guildMemberAdd', member => {
 	channel.send(`Привет, ${member}. Добро пожаловать на наш скромный сервер. Вообще, я тут главный и всем заправляю. Узнать все, что я умею можно командой .help`);
 });
 
+//Необходимо для .test
+var quequ = []
+
 // Пришло сообщение
 client.on("message", message => { 
 
@@ -109,7 +112,8 @@ if(message.content.startsWith(config.prefix+'test'))
 {
 console.log("начало, начало, начало, начало, начало, начало, начало, начало, начало, начало, ");
 var user1 = message.author.id;
-channel.send('<@' + user1 + '>');
+quequ [0] = user1;
+channel.send('<@' + quequ[0] + '>');
 
 
 console.log("конец, конец, конец, конец, конец, конец, конец, конец, конец, конец, ");
