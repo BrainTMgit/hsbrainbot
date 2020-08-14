@@ -132,7 +132,7 @@ if (quequ.length==0) {return message.reply(` жаль, но очередь на 
 for (var i=0; i < 5; i++ )
    {
    let rsq;
-   rsq = rsq + (i+1);
+   rsq = i + '. ' + quequ[i][0];
    channel.send(rsq);
 
    };
