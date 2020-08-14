@@ -113,12 +113,11 @@ if(message.content.toLowerCase() == '9+')
 {
 // Смотрим сколько человек уже в очереди
 var readyuser = quequ.length;
-var user1 = message.author.id;
+
+console.log(readyuser);
 quequ [0] = [message.author.id, new Date()];
-console.log(user1);
 channel.send('<@' + quequ[0][0] + '>, вы добавлены в очередь на кз');
 
-console.log("конец, конец, конец, конец, конец, конец, конец, конец, конец, конец, ");
 }
 if(message.content.toLowerCase() == 'rs q 9')
 {
