@@ -122,7 +122,9 @@ console.log("конец, конец, конец, конец, конец, кон�
 if(message.content.toLowerCase() == config.prefix+'time')
 {
 var time = new Date() - quequ [1];
-channel.send(1800 - time/1000 + 's');
+let timeleft = 1800 - time/1000;
+timeleft = timeleft.toFixed(1);
+channel.send(timeleft + 's');
 //channel.send(new Date());
 //channel.send(quequ[1]/60);
 }
