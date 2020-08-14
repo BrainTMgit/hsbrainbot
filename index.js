@@ -113,7 +113,8 @@ if(message.content.startsWith(config.prefix+'test'))
 console.log("начало, начало, начало, начало, начало, начало, начало, начало, начало, начало, ");
 var user1 = message.author.id;
 quequ [0] = user1;
-channel.send('<@' + quequ[0] + '>');
+quequ [1] = new Date();
+channel.send('<@' + quequ[0] + '>, ' + quequ[1]);
 
 
 console.log("конец, конец, конец, конец, конец, конец, конец, конец, конец, конец, ");
