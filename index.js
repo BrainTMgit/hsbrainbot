@@ -119,7 +119,7 @@ channel.send('<@' + quequ[0][0] + '>, вы добавлены в очередь 
 
 console.log("конец, конец, конец, конец, конец, конец, конец, конец, конец, конец, ");
 }
-if(message.content.toLowerCase() == 'Rs q 9')
+if(message.content.toLowerCase() == 'rs q 9')
 {
 var time = new Date() - quequ [0][1];
 let timeleft = 30 - time/60000;
