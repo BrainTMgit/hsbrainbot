@@ -120,8 +120,7 @@ channel.send('<@' + quequ[0][0] + '>, вы добавлены в очередь 
 console.log(quequ.length);
 if(quequ.length==4)
    {
-    channel.send('очередь кз');
-    channel.send('<@' + quequ[0][0] + '>, <@' + quequ[1][0] + '>, <@' + quequ[2][0] + '>, <@' + quequ[3][0] + '>');
+    channel.send('<@&722351369662627850> in game:\n<@' + quequ[0][0] + '>, <@' + quequ[1][0] + '>, <@' + quequ[2][0] + '>, <@' + quequ[3][0] + '>');
     }
 
 }
