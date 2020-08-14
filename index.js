@@ -21,8 +21,8 @@ client.on('guildMemberAdd', member => {
 	channel.send(`Привет, ${member}. Добро пожаловать на наш скромный сервер. Вообще, я тут главный и всем заправляю. Узнать все, что я умею можно командой .help`);
 });
 
-//Необходимо для .test
-var quequ = []
+//Инициализируем массив для очереди кз
+var quequ = [[],[],[],[]];
 
 // Пришло сообщение
 client.on("message", message => { 
@@ -113,9 +113,9 @@ if(message.content.toLowerCase() == config.prefix+'test')
 console.log("начало, начало, начало, начало, начало, начало, начало, начало, начало, начало, ");
 
 var user1 = message.author.id;
-quequ [0] = user1;
-quequ [1] = new Date();
-channel.send('<@' + quequ[0] + '>, ' + quequ[1]);
+quequ [0] = user1, new Date();
+//quequ [1] = new Date();
+channel.send('<@' + quequ[0][0] + '>, вы добавлены в очередь на кз');
 
 console.log("конец, конец, конец, конец, конец, конец, конец, конец, конец, конец, ");
 }
@@ -124,7 +124,7 @@ if(message.content.toLowerCase() == config.prefix+'time')
 var time = new Date() - quequ [1];
 let timeleft = 30 - time/60000;
 timeleft = timeleft.toFixed(1);
-channel.send(quequ.length + '. <@' + quequ[0] + '>, ' + timeleft + 'min');
+channel.send(quequ.length + '. <@' + quequ[0][0] + '>, ' + timeleft + 'min');
 }
 	
 });
