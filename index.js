@@ -106,6 +106,7 @@ if(message.content.startsWith(config.prefix+'calc'))
 	console.log("начало, начало, начало, начало, начало, начало, начало, начало, начало, начало, ");
 var args = message.content.slice(config.prefix.length).trim().split(' ');
 //channel.send(args);
+args.shift();
 console.log(args);
 
 	console.log("конец, конец, конец, конец, конец, конец, конец, конец, конец, конец, ");
