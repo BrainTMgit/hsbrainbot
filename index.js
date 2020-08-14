@@ -118,6 +118,11 @@ console.log(readyuser);
 quequ [readyuser] = [message.author.id, new Date()];
 channel.send('<@' + quequ[0][0] + '>, вы добавлены в очередь на кз');
 console.log(quequ.length);
+if(quequ.length==4)
+   {
+    channel.send('очередь кз');
+    channel.send('<@' + quequ[0][0] + '>, <@' + quequ[1][0] + '>, <@' + quequ[2][0] + '>, <@' + quequ[3][0] + '>');
+    }
 
 }
 if(message.content.toLowerCase() == 'rs q 9')
