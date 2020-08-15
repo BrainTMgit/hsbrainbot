@@ -23,6 +23,7 @@ client.on('guildMemberAdd', member => {
 
 //Инициализируем массив для очереди кз
 var quequ = [];
+var q = [];
 
 // Пришло сообщение
 client.on("message", message => { 
@@ -130,6 +131,9 @@ if(message.content.toLowerCase() == '.rs q 9'){
 		channel.send(rsq + '. <@' + quequ[i][0] + '>, ' + timeleft + 'min');
 		};
 	}
+
+// Тестируем другой метод хранения массива очереди, ради упрощённого поиска и исключения из нее
+
 
 
 }); // это остатки от client.on("message", message => { 
