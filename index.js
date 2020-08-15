@@ -130,7 +130,7 @@ if(message.content.toLowerCase() == 'rs q 9')
 if (quequ.length==0) {return message.reply(` жаль, но очередь на <@&722351369662627850> пуста`);}
 
 
-/*for (var i=0; i < quequ.length; i++ )
+for (var i=0; i < quequ.length; i++ )
  {
 let rsq = i +1;
    var time = new Date() - quequ [i][1];
