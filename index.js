@@ -46,8 +46,8 @@ if(message.content.toLowerCase()==config.prefix + "help")
 { name: ".calc 8 7 6 5 4", value: 'Рассчитать стоимость артов кз9. Вместо 8 7 6 5 4 ввести количество артов с кз8, кз7 и т.д. При продаже 3шт кз8 и 10шт кз6 вводить ".calc 3 0 10 0 0". Последние нули можно не вводить, т.е. ввести ".calc 3 0 10"'},
 
 		 { name: ".ver", value: "Здесь вы можете узнать текущую версию бота." },
-		 { name: "Rs s X", value: "Присвоение роли @кз7-@кз10. Вместо Х вписать цифру от 7 до 10." },
-		 { name: "Rs u X", value: "Удаление роли @кз7-@кз10. Вместо Х вписать цифру от 7 до 10." },
+		 { name: ".Rs s X", value: "Присвоение роли @кз7-@кз10. Вместо Х вписать цифру от 7 до 10." },
+		 { name: ".Rs u X", value: "Удаление роли @кз7-@кз10. Вместо Х вписать цифру от 7 до 10." },
 		 { name: "%help", value: "Помощь по боту от Hades Star Compendium" }
 	 ]
  }
@@ -73,16 +73,16 @@ if(message.content.toLowerCase()==config.prefix + "price")
 }
 
 // Выдача ролей
-if(message.content.toLowerCase()=="rs s 10"){let user = message.author.id;message.guild.member(user).roles.add("722351148463292436");message.reply('вам присвоена роль <@&722351148463292436>');}
-if(message.content.toLowerCase()=="rs s 9"){let user = message.author.id;message.guild.member(user).roles.add("722351369662627850");message.reply('вам присвоена роль <@&722351369662627850>');}
-if(message.content.toLowerCase()=="rs s 8"){let user = message.author.id;message.guild.member(user).roles.add("722351414096953354");message.reply('вам присвоена роль <@&722351414096953354>');}
-if(message.content.toLowerCase()=="rs s 7"){let user = message.author.id;message.guild.member(user).roles.add("722351455666831410");message.reply('вам присвоена роль <@&722351455666831410>');}
+if(message.content.toLowerCase()==".rs s 10"){let user = message.author.id;message.guild.member(user).roles.add("722351148463292436");message.reply('вам присвоена роль <@&722351148463292436>');}
+if(message.content.toLowerCase()==".rs s 9"){let user = message.author.id;message.guild.member(user).roles.add("722351369662627850");message.reply('вам присвоена роль <@&722351369662627850>');}
+if(message.content.toLowerCase()==".rs s 8"){let user = message.author.id;message.guild.member(user).roles.add("722351414096953354");message.reply('вам присвоена роль <@&722351414096953354>');}
+if(message.content.toLowerCase()==".rs s 7"){let user = message.author.id;message.guild.member(user).roles.add("722351455666831410");message.reply('вам присвоена роль <@&722351455666831410>');}
 
 // Удаление ролей
-if(message.content.toLowerCase()=="rs u 10"){let user = message.author.id;message.guild.member(user).roles.remove("722351148463292436");message.reply('у вас больше нет роли <@&722351148463292436>');}
-if(message.content.toLowerCase()=="rs u 9"){let user = message.author.id;message.guild.member(user).roles.remove("722351369662627850");message.reply('у вас больше нет роли <@&722351369662627850>');}
-if(message.content.toLowerCase()=="rs u 8"){let user = message.author.id;message.guild.member(user).roles.remove("722351414096953354");message.reply('у вас больше нет роли <@&722351414096953354>');}
-if(message.content.toLowerCase()=="rs u 7"){let user = message.author.id;message.guild.member(user).roles.remove("722351455666831410");message.reply('у вас больше нет роли <@&722351455666831410>');}
+if(message.content.toLowerCase()==".rs u 10"){let user = message.author.id;message.guild.member(user).roles.remove("722351148463292436");message.reply('у вас больше нет роли <@&722351148463292436>');}
+if(message.content.toLowerCase()==".rs u 9"){let user = message.author.id;message.guild.member(user).roles.remove("722351369662627850");message.reply('у вас больше нет роли <@&722351369662627850>');}
+if(message.content.toLowerCase()==".rs u 8"){let user = message.author.id;message.guild.member(user).roles.remove("722351414096953354");message.reply('у вас больше нет роли <@&722351414096953354>');}
+if(message.content.toLowerCase()==".rs u 7"){let user = message.author.id;message.guild.member(user).roles.remove("722351455666831410");message.reply('у вас больше нет роли <@&722351455666831410>');}
 
 //Калькулятор продажи т9
 //если сообщение начинается с ".calc"
@@ -105,11 +105,11 @@ message.reply('итого ' + x + ' штук');
 }
 
 //Текущая версия
-	if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v341");}
+	if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v344");}
 
 //Тестирование ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-if(message.content.toLowerCase() == '9+')
+if(message.content.toLowerCase() == '.9+')
 {
 // Смотрим сколько человек уже в очереди
 var readyuser = quequ.length;
@@ -125,7 +125,7 @@ if(quequ.length==4)
     }
 
 }
-if(message.content.toLowerCase() == 'rs q 9')
+if(message.content.toLowerCase() == '.rs q 9')
 {
 if (quequ.length==0) {return message.reply(` жаль, но очередь на <@&722351369662627850> пуста`);}
 
@@ -137,11 +137,7 @@ let rsq = i +1;
 let timeleft = 30 - time/60000;
 timeleft = timeleft.toFixed(1);
 channel.send(rsq + '. <@' + quequ[i][0] + '>, ' + timeleft + 'min');
-
-
    };
-
-
 
 
 }
