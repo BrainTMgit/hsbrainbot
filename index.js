@@ -130,20 +130,20 @@ if(message.content.toLowerCase() == 'rs q 9')
 if (quequ.length==0) {return message.reply(` жаль, но очередь на <@&722351369662627850> пуста`);}
 
 
-/*for (var i=0; i < 5; i++ )
-   {
-   let rsq;
-   rsq = i + '. ' + quequ[i][0];
-   channel.send(rsq);
-
-   };
-*/
-/*
-var time = new Date() - quequ [0][1];
+/*for (var i=0; i < quequ.length; i++ )
+ {
+let rsq = i +1;
+   var time = new Date() - quequ [i][1];
 let timeleft = 30 - time/60000;
 timeleft = timeleft.toFixed(1);
-channel.send(quequ.length + '. <@' + quequ[0][0] + '>, ' + timeleft + 'min');
-*/
+channel.send(rsq + '. <@' + quequ[i][0] + '>, ' + timeleft + 'min');
+
+
+   };
+
+
+
+
 }
 	
 });
