@@ -152,7 +152,7 @@ let rsq = new String();
 for (var i=1; i <= q.length; i++ ){
    rsq = rsq + i + '. ' + q[i-1].name +'\n';
 }
-console.log(rsq);
+channel.send(rsq);
 }
 
 
