@@ -94,43 +94,9 @@ if(message.content.startsWith(config.prefix+'calc')){
 }
 
 //Текущая версия
-if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v376");}
+if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v380");}
 
 //Запись в очередь на кз
-if(message.content.toLowerCase() == '.9+'){
-	// Смотрим сколько человек уже в очереди
-	var readyuser = quequ.length;
-	// записываем id и время в массив quequ следующим в очереди
-	quequ [readyuser] = [message.author.id, new Date()];
-	// уведомление в канал
-	channel.send('<@' + quequ[0][0] + '>, вы добавлены в очередь на кз');
-	// проверяем, наполнена ли очередь
-	if(quequ.length==4){
-		// отправляем в канал сообщение о готовой очереди
-		channel.send('<@&722351369662627850> in game:\n<@' + quequ[0][0] + '>, <@' + quequ[1][0] + '>, <@' + quequ[2][0] + '>, <@' + quequ[3][0] + '>');
-		// очищаем очередь
-		quequ.length=0;
-	}
-}
-	
-// проверка очереди на кз	
-if(message.content.toLowerCase() == '.rs q 9'){
-	//если очередь пуста выходим из цикла и уведомляем в канал
-	if (quequ.length==0) {return message.reply(` жаль, но очередь на <@&722351369662627850> пуста`);}
-	// для каждой строки очереди
-	for (var i=0; i < quequ.length; i++ ){
-		// порядковый номер, приходится пересчитывать из-за особенностей нумерации в массивах JS
-		let rsq = i +1;
-		// разница во времени текущего и записанного в массиве
-		var time = new Date() - quequ[i][1];
-		// преобразуем в минуты
-		let timeleft = 30 - time/60000;
-		// округляем до 0.1
-		timeleft = timeleft.toFixed(1);
-		// печатаем сообщение с порядковым номером, именем и остатком времени
-		channel.send(rsq + '. <@' + quequ[i][0] + '>, ' + timeleft + 'min');
-		};
-	}
 
 // Тестируем другой метод хранения массива очереди, ради упрощённого поиска и исключения из нее
 if(message.content.toLowerCase().startsWith(config.prefix + "test 9+"))
@@ -150,9 +116,6 @@ if(q.length==4){
 		q.length=0;
 	}
 
-
-
-
 }
 
 // Тест
@@ -160,21 +123,6 @@ if(message.content.toLowerCase()==config.prefix + "test rs q")
 {
 if (q.length==0) {return message.reply(` жаль, но очередь на кз9 пуста`);}
 let rsq = new String();
-
-// разница во времени текущего и записанного в массиве
-
-		// преобразуем в минуты
-		
-		// округляем до 0.1
-		
-		// печатаем сообщение с порядковым номером, именем и остатком времени
-		//channel.send(rsq + '. <@' + quequ[i][0] + '>, ' + timeleft + 'min');
-
-//var i = 1;
-//console.log(q[i-1].id);
-
-
-
 
 for (var i=1; i <= q.length; i++ ){
    let time1 = new Date() - q[i-1].time;
@@ -184,14 +132,6 @@ for (var i=1; i <= q.length; i++ ){
 }
 channel.send(rsq);
 }
-
-
-
-
-
-
-
-
 
 
 }); // это остатки от client.on("message", message => { 
