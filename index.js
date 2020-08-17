@@ -135,9 +135,9 @@ if(message.content.toLowerCase() == '.rs q 9'){
 // Тестируем другой метод хранения массива очереди, ради упрощённого поиска и исключения из нее
 if(message.content.toLowerCase().startsWith(config.prefix + "test 9+"))
 {
-var cooldown = message.content.slice(8).trim();
+var cooldown = Number().message.content.slice(8).trim();
 console.log('длина очереди ' + q.length);
-console.log(Number(cooldown)+1);
+console.log(cooldown+1);
 q[q.length] = {
    id: message.author.id,
    name: message.author.username,
