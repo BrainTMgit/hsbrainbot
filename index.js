@@ -141,7 +141,7 @@ console.log(cooldown+1);
 q[q.length] = {
    id: message.author.id,
    name: message.author.username,
-   time: new Date() + cooldown};
+   time: new Date() + Date(cooldown)};
 message.reply('готово');
 console.log(q);
 }
