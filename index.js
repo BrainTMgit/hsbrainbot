@@ -101,6 +101,13 @@ if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("
 // Тестируем другой метод хранения массива очереди, ради упрощённого поиска и исключения из нее
 if(message.content.toLowerCase().startsWith(config.prefix + "test 9+"))
 {
+
+
+let place = q.find(item=>item.id==message.author.id);
+console.log(place);
+
+
+
 var cooldown = Number(message.content.slice(8).trim()); // в минутах
 if(!cooldown){cooldown=30};
 q[q.length] = {
