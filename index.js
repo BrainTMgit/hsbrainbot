@@ -122,7 +122,7 @@ if(message.content.toLowerCase() == '.rs q 9'){
 		// порядковый номер, приходится пересчитывать из-за особенностей нумерации в массивах JS
 		let rsq = i +1;
 		// разница во времени текущего и записанного в массиве
-		var time = new Date() - quequ [i][1];
+		var time = new Date() - quequ[i][1];
 		// преобразуем в минуты
 		let timeleft = 30 - time/60000;
 		// округляем до 0.1
@@ -152,8 +152,26 @@ if(message.content.toLowerCase()==config.prefix + "test rs q")
 {
 if (q.length==0) {return message.reply(` жаль, но очередь на кз9 пуста`);}
 let rsq = new String();
+
+// разница во времени текущего и записанного в массиве
+
+		// преобразуем в минуты
+		
+		// округляем до 0.1
+		
+		// печатаем сообщение с порядковым номером, именем и остатком времени
+		//channel.send(rsq + '. <@' + quequ[i][0] + '>, ' + timeleft + 'min');
+
+
+
+
+
+
 for (var i=1; i <= q.length; i++ ){
-   rsq = rsq + i + '. ' + q[i-1].name +'\n';
+   let time = new Date() - quequ[i-1].time;
+   let timeleft = 30 - time/60000;
+   timeleft = timeleft.toFixed(1);
+   rsq = rsq + i + '. ' + q[i-1].name + ' - ' + timeleft +'min\n';
 }
 channel.send(rsq);
 }
