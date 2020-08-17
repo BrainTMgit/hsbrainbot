@@ -143,7 +143,16 @@ q[q.length] = {
    time: new Date(),
    cooldown: cooldown};
 message.reply('готово');
-console.log(q);
+if(q.length==4){
+		// отправляем в канал сообщение о готовой очереди
+		channel.send('<@&722351369662627850> in game:\n<@' + q[0].id + '>, <@' + q[1].id + '>, <@' + q[2].id + '>, <@' + q[3].id + '>');
+		// очищаем очередь
+		quequ.length=0;
+	}
+
+
+
+
 }
 
 // Тест
