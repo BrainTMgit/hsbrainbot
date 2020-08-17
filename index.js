@@ -107,7 +107,7 @@ let place = q.find(item=>item.id==message.author.id);
 
 place = q.indexOf(place);
 console.log(place);
-if(!place){console.log('жулик')};
+if(place < 1){console.log('жулик')};
 
 
 var cooldown = Number(message.content.slice(8).trim()); // в минутах
