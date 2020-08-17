@@ -109,6 +109,16 @@ q[q.length] = {
    time: new Date(),
    cooldown: cooldown};
 message.reply('готово');
+let rsq = new String();
+
+for (var i=1; i <= q.length; i++ ){
+   let time1 = new Date() - q[i-1].time;
+   let timeleft = q[i-1].cooldown - time1/60000;
+   timeleft = timeleft.toFixed(1);
+   rsq = rsq + i + '. ' + q[i-1].name + ' - ' + timeleft +'min\n';
+}
+channel.send(rsq);
+
 if(q.length==4){
 		// отправляем в канал сообщение о готовой очереди
 		channel.send('<@&722351369662627850> in game:\n<@' + q[0].id + '>, <@' + q[1].id + '>, <@' + q[2].id + '>, <@' + q[3].id + '>');
