@@ -148,7 +148,10 @@ console.log(q);
 if(message.content.toLowerCase()==config.prefix + "test rs q")
 {
 if (q.length==0) {return message.reply(` жаль, но очередь на кз9 пуста`);}
-channel.send(q.length+1);
+let rsq;
+for (var i=1; i <= q.length; i++ ){
+   rsq = rsq + i + '. ' + q[i-1].name +'\n';
+}
 }
 
 
