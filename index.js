@@ -133,7 +133,7 @@ if(message.content.toLowerCase() == '.rs q 9'){
 	}
 
 // Тестируем другой метод хранения массива очереди, ради упрощённого поиска и исключения из нее
-if(message.content.toLowerCase()==config.prefix + "test")
+if(message.content.toLowerCase()==config.prefix + "test 9+")
 {
 console.log('длина очереди ' + q.length);
 q[q.length] = {
@@ -143,6 +143,21 @@ q[q.length] = {
 message.reply('готово');
 console.log(q);
 }
+
+// Тест
+if(message.content.toLowerCase()==config.prefix + "test rs q")
+{
+if (q.length==0) {return message.reply(` жаль, но очередь на кз9 пуста`);}
+}
+
+
+
+
+
+
+
+
+
 
 }); // это остатки от client.on("message", message => { 
 
