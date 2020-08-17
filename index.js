@@ -139,7 +139,7 @@ q[q.length] = {
    id: message.author.id,
    name: message.author.username,
    time: new Date()};
-channel.reply(готово);
+message.reply('готово');
 console.log(q);
 }
 
