@@ -168,8 +168,8 @@ let rsq = new String();
 
 
 for (var i=1; i <= q.length; i++ ){
-   let time = new Date() - quequ[i-1].time;
-   let timeleft = 30 - time/60000;
+   let time1 = new Date() - quequ[i-1].time;
+   let timeleft = 30 - time1/60000;
    timeleft = timeleft.toFixed(1);
    rsq = rsq + i + '. ' + q[i-1].name + ' - ' + timeleft +'min\n';
 }
