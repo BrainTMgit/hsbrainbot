@@ -94,7 +94,7 @@ if(message.content.startsWith(config.prefix+'calc')){
 }
 
 //Текущая версия
-if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v345");}
+if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v376");}
 
 //Запись в очередь на кз
 if(message.content.toLowerCase() == '.9+'){
@@ -135,9 +135,7 @@ if(message.content.toLowerCase() == '.rs q 9'){
 // Тестируем другой метод хранения массива очереди, ради упрощённого поиска и исключения из нее
 if(message.content.toLowerCase().startsWith(config.prefix + "test 9+"))
 {
-var cooldown = Number(message.content.slice(8).trim()) * 60000;
-console.log('длина очереди ' + q.length);
-console.log(cooldown+1);
+var cooldown = Number(message.content.slice(8).trim()); // в минутах
 q[q.length] = {
    id: message.author.id,
    name: message.author.username,
@@ -162,15 +160,15 @@ let rsq = new String();
 		// печатаем сообщение с порядковым номером, именем и остатком времени
 		//channel.send(rsq + '. <@' + quequ[i][0] + '>, ' + timeleft + 'min');
 
-var i = 1;
-console.log(q[i-1].id);
+//var i = 1;
+//console.log(q[i-1].id);
 
 
 
 
 for (var i=1; i <= q.length; i++ ){
    let time1 = new Date() - q[i-1].time;
-   let timeleft = 30 - time1/60000;
+   let timeleft = q[i-1].cooldown - time1/60000;
    timeleft = timeleft.toFixed(1);
    rsq = rsq + i + '. ' + q[i-1].name + ' - ' + timeleft +'min\n';
 }
