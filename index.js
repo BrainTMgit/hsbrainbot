@@ -136,6 +136,7 @@ if(message.content.toLowerCase() == '.rs q 9'){
 if(message.content.toLowerCase().startsWith(config.prefix + "test 9+"))
 {
 var cooldown = Number(message.content.slice(8).trim()); // в минутах
+if(!cooldown){cooldown=30};
 q[q.length] = {
    id: message.author.id,
    name: message.author.username,
