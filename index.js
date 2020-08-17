@@ -23,7 +23,7 @@ client.on('guildMemberAdd', member => {
 
 //Инициализируем массив для очереди кз
 var quequ = [];
-var q = [{id, name, time}];
+var q = [{},{},{},{}];
 
 // Пришло сообщение
 client.on("message", message => { 
