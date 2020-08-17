@@ -152,6 +152,12 @@ for (var i=1; i <= q.length; i++ ){
 channel.send(rsq);
 }
 
+// Для удаления из очереди использовать q.splice
+
+if(message.content.toLowerCase()==config.prefix + "test 9-"){
+//q.splice(place, 1);
+}
+
 
 }); // это остатки от client.on("message", message => { 
 
