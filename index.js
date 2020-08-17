@@ -104,8 +104,9 @@ if(message.content.toLowerCase().startsWith(config.prefix + "test 9+"))
 
 
 let place = q.find(item=>item.id==message.author.id);
-console.log(place);
 
+place = q.indexOf(place);
+console.log(place);
 
 
 var cooldown = Number(message.content.slice(8).trim()); // в минутах
