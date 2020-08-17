@@ -135,9 +135,10 @@ if(message.content.toLowerCase() == '.rs q 9'){
 // Тестируем другой метод хранения массива очереди, ради упрощённого поиска и исключения из нее
 if(message.content.toLowerCase()==config.prefix + "test")
 {
-id.q[0] = message.author.id;
-name.q[0] = message.author.username;
-time.q[0] = new Date();
+q[0] = {
+   id: 'message.author.id',
+   name: 'message.author.username',
+   time: 'new Date()'}
 console.log(q);
 }
 
