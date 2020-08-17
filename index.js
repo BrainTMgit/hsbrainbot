@@ -163,7 +163,7 @@ let rsq = new String();
 		//channel.send(rsq + '. <@' + quequ[i][0] + '>, ' + timeleft + 'min');
 
 var i = 1;
-console.log(quequ[i-1].time);
+console.log(quequ[i-1].id);
 
 
 
