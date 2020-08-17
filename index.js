@@ -136,9 +136,9 @@ if(message.content.toLowerCase() == '.rs q 9'){
 if(message.content.toLowerCase()==config.prefix + "test")
 {
 q[0] = {
-   id: 'message.author.id',
-   name: 'message.author.username',
-   time: 'new Date()'}
+   id: message.author.id,
+   name: message.author.username,
+   time: new Date()}
 console.log(q);
 }
 
