@@ -133,7 +133,7 @@ if(message.content.toLowerCase() == '.rs q 9'){
 	}
 
 // Тестируем другой метод хранения массива очереди, ради упрощённого поиска и исключения из нее
-if(message.content.toLowerCase()==config.prefix + "test 9+")
+if(message.content.toLowerCase().startsWith(config.prefix + "test 9+"))
 {
 var cooldown = message.content.slice(8).trim();
 console.log('длина очереди ' + q.length);
