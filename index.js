@@ -30,7 +30,7 @@ var q = [];
 //channel = client.channels.cache.get("706060221126017054");
 
 function clearq(){
-for (var i=0; i <= q.length-1; i++ ){/*
+for (var i=0; i < q.length; i++ ){/*
    var time1 = new Date() - q[i].time;
    var timeleft = q[i].cooldown - time1/60000;
    timeleft = timeleft.toFixed(1);
