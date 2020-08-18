@@ -97,7 +97,7 @@ if(message.content.startsWith(config.prefix+'calc')){
 if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v393");}
 
 //Запись в очередь на кз
-
+/*
 // Сюда засунем функцию удаления из очереди кз для таймера
 //channel = client.channels.cache.get("706060221126017054");
 
@@ -112,7 +112,7 @@ for (var i=0; i <= q.length -1; i++ ){
    }
 
 }
-
+*/
 
 
 
@@ -137,9 +137,10 @@ q[q.length] = {
    cooldown: cooldown};
 message.reply('готово');
 
+/*
 // Здесь вызывается отдельная функция clearq спустя время cooldown'a
 setTimeout(clearq,cooldown*60000);
-
+*/
 
 var rsq = new String();
 
