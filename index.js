@@ -98,6 +98,23 @@ if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("
 
 //Запись в очередь на кз
 
+// Сюда засунем функцию удаления из очереди кз для таймера
+
+function clearq(){
+for (var i=0; i <= q.length -1; i++ ){
+   var time1 = new Date() - q[i].time;
+   var timeleft = q[i].cooldown - time1/60000;
+   timeleft = timeleft.toFixed(1);
+   if(timeleft<0){
+   channel.send('≤@’ + q[i] + '>, время ожидания закончилось, вы удалены из очереди на кз9');
+   q.splice(i, 1)
+   }
+
+}
+
+
+
+
 // Тестируем другой метод хранения массива очереди, ради упрощённого поиска и исключения из нее
 if(message.content.toLowerCase().startsWith(config.prefix + "test 9+"))
 {
@@ -118,6 +135,11 @@ q[q.length] = {
    time: new Date(),
    cooldown: cooldown};
 message.reply('готово');
+
+// Здесь вызывается отдельная функция clearq спустя время cooldown'a
+setTimeout(clearq,cooldown*60000);
+
+
 var rsq = new String();
 
 for (var i=1; i <= q.length; i++ ){
