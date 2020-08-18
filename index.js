@@ -155,7 +155,7 @@ channel.send(rsq);
 // Для удаления из очереди использовать q.splice
 
 if(message.content.toLowerCase()==config.prefix + "test 9-"){
-//q.splice(place, 1);
+q.splice(place, 1);
 }
 
 
