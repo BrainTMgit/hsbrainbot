@@ -25,14 +25,10 @@ client.on('guildMemberAdd', member => {
 var quequ = [];
 var q = [];
 
-
-
-
-
 // Пришло сообщение
 client.on("message", message => { 
 
-//Возврат, если сообщение отправил сами бот
+//Возврат, если сообщение отправил бот
 if (message.author.bot) return;
 
 // Хелпер
@@ -100,21 +96,15 @@ if(message.content.startsWith(config.prefix+'calc')){
 //Текущая версия
 if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v393");}
 
-//Запись в очередь на кз
+//Запись в очередь на кз////////////////////////////////////////
 
-
-
-
-// Тестируем другой метод хранения массива очереди, ради упрощённого поиска и исключения из нее
-if(message.content.toLowerCase().startsWith(config.prefix + "test 9+"))
-{
-
-
-var place = q.find(item=>item.id==message.author.id);
-
-place = q.indexOf(place);
-console.log(place);
-if(place >= 0){console.log('жулик')};
+// Начинаем обрабатывать сообщение начинающееся с ".9+"
+if(message.content.toLowerCase().startsWith(config.prefix + "9+")){
+   // Ищем в массиве, есть ли уже юзер в очереди, если есть - то функция возвращает положение, если нет - то возвращает "-1"
+   var place = q.find(item=>item.id==message.author.id);
+   place = q.indexOf(place);
+   //
+   if(place >= 0){console.log('жулик')};
 
 
 var cooldown = Number(message.content.slice(8).trim()); // в минутах
