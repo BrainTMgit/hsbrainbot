@@ -94,7 +94,7 @@ if(message.content.startsWith(config.prefix+'calc')){
 }
 
 //Текущая версия
-if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v380");}
+if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v393");}
 
 //Запись в очередь на кз
 
@@ -156,7 +156,6 @@ channel.send(rsq);
 
 if(message.content.toLowerCase()==config.prefix + "test 9-"){
 q.splice(place, 1);
-console.log(q);
 }
 
 
