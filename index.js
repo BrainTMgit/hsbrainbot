@@ -94,44 +94,51 @@ if(message.content.startsWith(config.prefix+'calc')){
 }
 
 //Текущая версия
-if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v393");}
+if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v415");}
 
 //Запись в очередь на кз////////////////////////////////////////
 
 // Начинаем обрабатывать сообщение начинающееся с ".9+"
 if(message.content.toLowerCase().startsWith(config.prefix + "9+")){
-   // Ищем в массиве, есть ли уже юзер в очереди, если есть - то функция возвращает положение, если нет - то возвращает "-1"
+   // Ищем в массиве id юзера, есть ли уже юзер в очереди, если есть - то функция возвращает положение, если нет - то возвращает "-1"
    var place = q.find(item=>item.id==message.author.id);
    place = q.indexOf(place);
-   //
-   if(place >= 0){console.log('жулик')};
-
-
-var cooldown = Number(message.content.slice(8).trim()); // в минутах
-if(!cooldown){cooldown=30};
-q[q.length] = {
-   id: message.author.id,
-   name: message.author.username,
-   time: new Date(),
-   cooldown: cooldown};
-message.reply('готово');
-
-// Здесь вызывается отдельная функция clearq спустя время cooldown'a
-console.log('проверка через ' + cooldown * 60000);
-setTimeout(clearq,cooldown*60000);
-
-var rsq = new String();
-
-for (var i=1; i <= q.length; i++ ){
-   var time1 = new Date() - q[i-1].time;
-   var timeleft = q[i-1].cooldown - time1/60000;
-   timeleft = timeleft.toFixed(1);
-   rsq = rsq + i + '. ' + q[i-1].name + ' - ' + timeleft +'min\n';
-}
+   // Если функция вернула местоположение в массиве - значит юзер уже в очереди
+   if(place >= 0){return message.reply(' вы уже в очереди')};
+   //Отрезаем из сообщения ".9+"(три знака) и лишние пробелы вначале и в конце
+   var cooldown = Number(message.content.slice(3).trim()); // в минутах
+   //Если не задано, по умолчанию - 30 минут
+   if(!cooldown){cooldown=30};
+   //Записываем данные в конец массива
+   q[q.length] = {
+      id: message.author.id, //id юзера
+      name: message.author.username, // просто имя для отображения
+      time: new Date(), //текущее время
+      cooldown: cooldown //время ожидания (в минутах)
+   }; 
+   // Можно включить дополнительное сообщение о входе в очередь, но так то потом ещё список очереди ещё будет
+   // message.reply('готово');
+   // Здесь вызывается отдельная функция clearq спустя время cooldown'a
+   setTimeout(clearq,cooldown*60000);
+   // Инициализируем строку для вывода простого списка очереди
+   var rsq = new String();
+   // Перебираем весь массив очереди
+   for (var i=1; i <= q.length; i++ ){
+      //Сколько прошло времени
+      var time1 = new Date() - q[i-1].time;
+      // Сколько времени осталось
+      var timeleft = q[i-1].cooldown - time1/60000;
+      //Округляем до 0.1мин
+      timeleft = timeleft.toFixed(1);
+      //И собираем всё в одну строку
+      rsq = rsq + i + '. ' + q[i-1].name + ' - ' + timeleft +'min\n';
+   }
+// И печатаем эту строку (список)
 channel.send(rsq);
 
+// Если очередь полна
 if(q.length==4){
-		// отправляем в канал сообщение о готовой очереди
+   // отправляем в канал сообщение о готовой очереди
 		channel.send('<@&722351369662627850> in game:\n<@' + q[0].id + '>, <@' + q[1].id + '>, <@' + q[2].id + '>, <@' + q[3].id + '>');
 		// очищаем очередь
 q.length=0;
@@ -140,24 +147,30 @@ q.length=0;
 }
 
 // Тест
-if(message.content.toLowerCase()==config.prefix + "test rs q")
+if(message.content.toLowerCase()==config.prefix + ".rs q")
 {
+//Если длина массива очереди равна нулю, значит очередь пуста
 if (q.length==0) {return message.reply(` жаль, но очередь на кз9 пуста`);}
+//Инициализируем строку для списка очереди на кз
 var rsq = new String();
-
+//Опять перебираем
 for (var i=1; i <= q.length; i++ ){
    var time1 = new Date() - q[i-1].time;
    var timeleft = q[i-1].cooldown - time1/60000;
    timeleft = timeleft.toFixed(1);
    rsq = rsq + i + '. ' + q[i-1].name + ' - ' + timeleft +'min\n';
 }
-channel.send(rsq);
+channel.send(rsq); //и отправляем в канал
 }
 
 // Для удаления из очереди использовать q.splice
 
-if(message.content.toLowerCase()==config.prefix + "test 9-"){
+if(message.content.toLowerCase()==config.prefix + ".9-"){
+var place = q.find(item=>item.id==message.author.id);
+   place = q.indexOf(place);
+if(place<0){return message.reply(' вас нет очереди на кз9')};
 q.splice(place, 1);
+message.reply(' вы удалены с очереди на кз9');
 }
 
 
@@ -173,8 +186,6 @@ for (var i=0; i < q.length; i++ ){
    if(timeleft<0){
    channel.send('<@' + q[i].id + '>, время ожидания закончилось, вы удалены из очереди на кз9');
    q.splice(i, 1);}
-console.log(timeleft);
-console.log(i + ' удален из очереди');
    };
 };
 
