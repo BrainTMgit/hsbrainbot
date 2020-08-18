@@ -178,13 +178,13 @@ q.splice(place, 1);
 
 function clearq(){
 for (var i=0; i < q.length; i++ ){
-   var time1 = new Date() - q[i].time;/*
-   var timeleft = q[i].cooldown - time1/60000;
+   var time1 = new Date() - q[i].time;
+   var timeleft = q[i].cooldown - time1/60000;/*
    if(timeleft<0){
    channel.send('≤@' + q[i].id + '>, время ожидания закончилось, вы удалены из очереди на кз9');
    q.splice(i, 1);*/
-console.log(time1);
-console.log(i + 'удален из очереди');
+console.log(timeleft);
+console.log(i + ' удален из очереди');
    };
 };
 
