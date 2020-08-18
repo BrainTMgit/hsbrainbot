@@ -25,6 +25,23 @@ client.on('guildMemberAdd', member => {
 var quequ = [];
 var q = [];
 
+
+// Сюда засунем функцию удаления из очереди кз для таймера
+//channel = client.channels.cache.get("706060221126017054");
+
+function clearq(){
+for (var i=0; i <= q.length -1; i++ ){
+   var time1 = new Date() - q[i].time;
+   var timeleft = q[i].cooldown - time1/60000;
+   timeleft = timeleft.toFixed(1);
+   if(timeleft<0){
+   channel.send('≤@' + q[i] + '>, время ожидания закончилось, вы удалены из очереди на кз9');
+   q.splice(i, 1)
+   }
+
+}
+
+
 // Пришло сообщение
 client.on("message", message => { 
 
@@ -97,22 +114,7 @@ if(message.content.startsWith(config.prefix+'calc')){
 if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v393");}
 
 //Запись в очередь на кз
-/*
-// Сюда засунем функцию удаления из очереди кз для таймера
-//channel = client.channels.cache.get("706060221126017054");
 
-function clearq(){
-for (var i=0; i <= q.length -1; i++ ){
-   var time1 = new Date() - q[i].time;
-   var timeleft = q[i].cooldown - time1/60000;
-   timeleft = timeleft.toFixed(1);
-   if(timeleft<0){
-   channel.send('≤@' + q[i] + '>, время ожидания закончилось, вы удалены из очереди на кз9');
-   q.splice(i, 1)
-   }
-
-}
-*/
 
 
 
