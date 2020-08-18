@@ -99,6 +99,7 @@ if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("
 //Запись в очередь на кз
 
 // Сюда засунем функцию удаления из очереди кз для таймера
+channel = client.channels.cache.get("706060221126017054");
 
 function clearq(){
 for (var i=0; i <= q.length -1; i++ ){
