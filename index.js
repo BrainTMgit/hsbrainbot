@@ -103,7 +103,7 @@ if(message.content.toLowerCase().startsWith(config.prefix + "test 9+"))
 {
 
 
-let place = q.find(item=>item.id==message.author.id);
+var place = q.find(item=>item.id==message.author.id);
 
 place = q.indexOf(place);
 console.log(place);
@@ -118,11 +118,11 @@ q[q.length] = {
    time: new Date(),
    cooldown: cooldown};
 message.reply('готово');
-let rsq = new String();
+var rsq = new String();
 
 for (var i=1; i <= q.length; i++ ){
-   let time1 = new Date() - q[i-1].time;
-   let timeleft = q[i-1].cooldown - time1/60000;
+   var time1 = new Date() - q[i-1].time;
+   var timeleft = q[i-1].cooldown - time1/60000;
    timeleft = timeleft.toFixed(1);
    rsq = rsq + i + '. ' + q[i-1].name + ' - ' + timeleft +'min\n';
 }
@@ -141,11 +141,11 @@ q.length=0;
 if(message.content.toLowerCase()==config.prefix + "test rs q")
 {
 if (q.length==0) {return message.reply(` жаль, но очередь на кз9 пуста`);}
-let rsq = new String();
+var rsq = new String();
 
 for (var i=1; i <= q.length; i++ ){
-   let time1 = new Date() - q[i-1].time;
-   let timeleft = q[i-1].cooldown - time1/60000;
+   var time1 = new Date() - q[i-1].time;
+   var timeleft = q[i-1].cooldown - time1/60000;
    timeleft = timeleft.toFixed(1);
    rsq = rsq + i + '. ' + q[i-1].name + ' - ' + timeleft +'min\n';
 }
@@ -156,6 +156,7 @@ channel.send(rsq);
 
 if(message.content.toLowerCase()==config.prefix + "test 9-"){
 q.splice(place, 1);
+console.log(q);
 }
 
 
