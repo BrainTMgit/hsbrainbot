@@ -127,6 +127,7 @@ q[q.length] = {
 message.reply('готово');
 
 // Здесь вызывается отдельная функция clearq спустя время cooldown'a
+console.log('проверка через ' + cooldown * 60000);
 setTimeout(clearq,cooldown*60000);
 
 var rsq = new String();
