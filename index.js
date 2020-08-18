@@ -99,7 +99,7 @@ if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("
 //Запись в очередь на кз
 
 // Сюда засунем функцию удаления из очереди кз для таймера
-channel = client.channels.cache.get("706060221126017054");
+//channel = client.channels.cache.get("706060221126017054");
 
 function clearq(){
 for (var i=0; i <= q.length -1; i++ ){
@@ -107,7 +107,7 @@ for (var i=0; i <= q.length -1; i++ ){
    var timeleft = q[i].cooldown - time1/60000;
    timeleft = timeleft.toFixed(1);
    if(timeleft<0){
-   channel.send('≤@’ + q[i] + '>, время ожидания закончилось, вы удалены из очереди на кз9');
+   channel.send('≤@' + q[i] + '>, время ожидания закончилось, вы удалены из очереди на кз9');
    q.splice(i, 1)
    }
 
