@@ -36,10 +36,9 @@ for (var i=0; i <= q.length -1; i++ ){
    timeleft = timeleft.toFixed(1);
    if(timeleft<0){
    channel.send('≤@' + q[i] + '>, время ожидания закончилось, вы удалены из очереди на кз9');
-   q.splice(i, 1)
-   }
-
-}
+   q.splice(i, 1);
+   };
+};
 
 
 // Пришло сообщение
