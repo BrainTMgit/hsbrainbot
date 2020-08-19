@@ -147,7 +147,7 @@ q.length=0;
 }
 
 // Тест
-if(message.content.toLowerCase()==config.prefix + ".rs q")
+if(message.content.toLowerCase()==config.prefix + "rs q")
 {
 //Если длина массива очереди равна нулю, значит очередь пуста
 if (q.length==0) {return message.reply(` жаль, но очередь на кз9 пуста`);}
@@ -165,7 +165,7 @@ message.channel.send(rsq); //и отправляем в канал
 
 // Для удаления из очереди использовать q.splice
 
-if(message.content.toLowerCase()==config.prefix + ".9-"){
+if(message.content.toLowerCase()==config.prefix + "9-"){
 var place = q.find(item=>item.id==message.author.id);
    place = q.indexOf(place);
 if(place<0){return message.reply(' вас нет очереди на кз9')};
