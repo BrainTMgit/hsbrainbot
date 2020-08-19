@@ -14,7 +14,7 @@ channel.send(`BrainBot Restarted!`);
 // реакция на приход нового юзера на сервер
 client.on('guildMemberAdd', member => {
 	// отправляется сообщение в основной канал
-	var channel = member.guild.channels.cache.find(ch => ch.name === 'основной');
+	let channel = member.guild.channels.cache.find(ch => ch.name === 'основной');
  	// ничего не делать если канал не найден
 	if (!channel) return;
  	// отправляем сообщение с упоминанием пользователя
@@ -134,12 +134,12 @@ if(message.content.toLowerCase().startsWith(config.prefix + "9+")){
       rsq = rsq + i + '. ' + q[i-1].name + ' - ' + timeleft +'min\n';
    }
 // И печатаем эту строку (список)
-channel.send(rsq);
+message.channel.send(rsq);
 
 // Если очередь полна
 if(q.length==4){
    // отправляем в канал сообщение о готовой очереди
-		channel.send('<@&722351369662627850> in game:\n<@' + q[0].id + '>, <@' + q[1].id + '>, <@' + q[2].id + '>, <@' + q[3].id + '>');
+		message.channel.send('<@&722351369662627850> in game:\n<@' + q[0].id + '>, <@' + q[1].id + '>, <@' + q[2].id + '>, <@' + q[3].id + '>');
 		// очищаем очередь
 q.length=0;
 	}
@@ -160,7 +160,7 @@ for (var i=1; i <= q.length; i++ ){
    timeleft = timeleft.toFixed(1);
    rsq = rsq + i + '. ' + q[i-1].name + ' - ' + timeleft +'min\n';
 }
-channel.send(rsq); //и отправляем в канал
+message.channel.send(rsq); //и отправляем в канал
 }
 
 // Для удаления из очереди использовать q.splice
@@ -177,15 +177,16 @@ message.reply(' вы удалены с очереди на кз9');
 }); // это остатки от client.on("message", message => { 
 
 // Сюда засунем функцию удаления из очереди кз для таймера
-//channel = client.channels.cache.get("706060221126017054");
-
+//
 function clearq(){
+channel = client.channels.cache.get("706109108348125205");
 for (var i=0; i < q.length; i++ ){
    var time1 = new Date() - q[i].time;
    var timeleft = q[i].cooldown - time1/60000;
    if(timeleft<0){
-   channel.send('<@' + q[i].id + '>, время ожидания закончилось, вы удалены из очереди на кз9');
-   q.splice(i, 1);}
+      channel.send('<@' + q[i].id + '>, время ожидания закончилось, вы удалены из очереди на кз9');
+      q.splice(i, 1);
+      }
    };
 };
 
