@@ -3,13 +3,14 @@ const Discord = require('discord.js'); // Подключаем discord.js для
 const config = require('./config.json'); // в конфиге прописан токен и префикс
 const client = new Discord.Client(); 
 
-// возвращает массив ключей - ID серверов, подключенных к боту
-const allservers = Array.from(client.guilds.cache.keys());
-  
+
 // говорят, что это важный пункт, чтобы бот обрабатывал события только после этого пункта
 // Заодно бот отписывается в админском канале о рестарте. Так, на всякий случай
 client.on('ready',()=>{
   console.log("Bot started!");
+  
+// возвращает массив ключей - ID серверов, подключенных к боту
+const allservers = Array.from(client.guilds.cache.keys());
   console.log(allservers);
 
 allservers.forEach(function(i){
@@ -110,7 +111,7 @@ if(message.content.startsWith(config.prefix+'calc')){
 }
 
 //Текущая версия
-if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v420");}
+if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v423");}
 
 //Запись в очередь на кз////////////////////////////////////////
 
