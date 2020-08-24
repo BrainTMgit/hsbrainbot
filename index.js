@@ -3,12 +3,17 @@ const Discord = require('discord.js'); // Подключаем discord.js для
 const config = require('./config.json'); // в конфиге прописан токен и префикс
 const client = new Discord.Client(); 
 
+// возвращает массив ключей - ID серверов, подключенных к боту
+const allservers = Array.from(client.guilds.cache.keys());
+  
 // говорят, что это важный пункт, чтобы бот обрабатывал события только после этого пункта
 // Заодно бот отписывается в админском канале о рестарте. Так, на всякий случай
 client.on('ready',()=>{
 console.log("Bot started!");
-channel = client.channels.cache.get("706060221126017054");
-channel.send(`BrainBot Restarted!`);
+allservers.forEach(function(i){
+    channel = client.guilds.cache.get(i).systemChannel;
+    channel.send('BrainBot Restarted!');
+  });
 });
 
 // реакция на приход нового юзера на сервер
@@ -37,7 +42,7 @@ if(message.content.toLowerCase()==config.prefix + "help"){
 	message.channel.send({embed:{
 		color: 3447003,
 		title: "Список поддерживаемых комманд:",
-		description: "Дополняется по мере обновления бота",
+		description: "Дополняется по мере обновления бота. В связи с особенностями хостинга бот перезапускается ~ раз в сутки. Боту стыдно.",
 		fields:[
 			{ name: ".help", value: "выводит список всех команд" },
 			{ name: ".botlink", value: "ссылка добавление бота на свой сервер" },
@@ -100,7 +105,7 @@ if(message.content.startsWith(config.prefix+'calc')){
 }
 
 //Текущая версия
-if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v415");}
+if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v420");}
 
 //Запись в очередь на кз////////////////////////////////////////
 
