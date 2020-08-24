@@ -13,6 +13,9 @@ console.log("Bot started!");
 allservers.forEach(function(i){
     channel = client.guilds.cache.get(i).systemChannel;
     channel.send('BrainBot Restarted!');
+    console.log(i);
+    console.log(channel);
+console.log(allservers);
   });
 });
 
