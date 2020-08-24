@@ -9,7 +9,9 @@ const allservers = Array.from(client.guilds.cache.keys());
 // говорят, что это важный пункт, чтобы бот обрабатывал события только после этого пункта
 // Заодно бот отписывается в админском канале о рестарте. Так, на всякий случай
 client.on('ready',()=>{
-console.log("Bot started!");
+  console.log("Bot started!");
+  console.log(allservers);
+
 allservers.forEach(function(i){
     channel = client.guilds.cache.get(i).systemChannel;
     channel.send('BrainBot Restarted!');
