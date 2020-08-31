@@ -30,6 +30,16 @@ client.on('guildMemberAdd', member => {
 	channel.send(`Привет, ${member}. Добро пожаловать на наш скромный сервер. Вообще, я тут главный и всем заправляю. Узнать все, что я умею можно командой .help`);
 });
 
+// реакция на уход юзера
+client.on('guildMemberRemove', member => {
+	// отправляется сообщение в основной канал
+	let channel = member.guild.systemChannel;
+ 	// ничего не делать если канал не найден
+	if (!channel) return;
+ 	// отправляем сообщение с упоминанием пользователя
+	channel.send(`К великому сожалению, ${member.user.username}#${member.user.discriminator} покинул наш скромный сервер. Пусть дискорд ему судья...`);
+});
+
 
 
 
