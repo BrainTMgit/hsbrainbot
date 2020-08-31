@@ -13,6 +13,7 @@ client.on('ready', () => {
 	// возвращает массив ключей - ID серверов, подключенных к боту
 	const allservers = Array.from(client.guilds.cache.keys());
 	// в каждый канал (берется из массива) отправляется сообщение о рестарте бота
+	if (!allservers){return console.log('empty systemchannel list');};
 	allservers.forEach(function(i){
 		channel = client.guilds.cache.get(i).systemChannel;
 		channel.send('BrainBot Restarted!');
