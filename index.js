@@ -1,11 +1,10 @@
-// Болтовня бота вырезана. Лежит в https://github.com/BrainTMgit/hsbrainbot/blob/master/bots flud
-const Discord = require('discord.js'); // Подключаем discord.js для дальнейшего использования.
+// Болтовня бота вырезана. Лежит в https://github.com/BrainTMgit/hsbrainbot/blob/master/bots flud.
+const Discord = require('discord.js'); // подключаем discord.js для дальнейшего использования
 const config = require('./config.json'); // в конфиге прописан токен и префикс
 const client = new Discord.Client(); 
 
-
 // говорят, что это важный пункт, чтобы бот обрабатывал события только после этого пункта
-// Заодно бот отписывается в админском канале о рестарте. Так, на всякий случай
+// Заодно бот отписывается в админском канале о рестарте. Так, на всякий случай.
 client.on('ready', () => {
 	console.log('BrainBot started!');
 	// отправляем в админский канал Рикардии уведомление о рестарте бота
@@ -14,13 +13,25 @@ client.on('ready', () => {
 	const allservers = Array.from(client.guilds.cache.keys());
 	// в каждый канал (берется из массива) отправляется сообщение о рестарте бота
 	allservers.forEach(function(i){
+		// для каждого сервера выбирается основной канал системных сообщений
 		channel = client.guilds.cache.get(i).systemChannel;
-		console.log(channel);
-		if(channel){
-			channel.send('BrainBot Restarted!');			
-		};
+		// если канал выбран - туда отправляется сообщение о рестарте бота
+		if(channel){channel.send('BrainBot restarted!');};
 	});
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // реакция на приход нового юзера на сервер
 client.on('guildMemberAdd', member => {
