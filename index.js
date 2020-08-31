@@ -6,20 +6,17 @@ const client = new Discord.Client();
 
 // говорят, что это важный пункт, чтобы бот обрабатывал события только после этого пункта
 // Заодно бот отписывается в админском канале о рестарте. Так, на всякий случай
-client.on('ready',()=>{
-  console.log("Bot started!");
-  
-// возвращает массив ключей - ID серверов, подключенных к боту
-const allservers = Array.from(client.guilds.cache.keys());
-  console.log(allservers);
-
-allservers.forEach(function(i){
-    channel = client.guilds.cache.get(i).systemChannel;
-    channel.send('BrainBot Restarted!');
-    console.log(i);
-    console.log(channel);
-console.log(allservers);
-  });
+client.on('ready', () => {
+	console.log('BrainBot started!');
+	// отправляем в админский канал Рикардии уведомление о рестарте бота
+	client.channels.cache.get('706060221126017054').send('BrainBot restarted');
+	// возвращает массив ключей - ID серверов, подключенных к боту
+	const allservers = Array.from(client.guilds.cache.keys());
+	// в каждый канал (берется из массива) отправляется сообщение о рестарте бота
+	allservers.forEach(function(i){
+		channel = client.guilds.cache.get(i).systemChannel;
+		channel.send('BrainBot Restarted!');
+	});
 });
 
 // реакция на приход нового юзера на сервер
