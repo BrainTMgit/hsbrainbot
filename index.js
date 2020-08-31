@@ -13,11 +13,13 @@ client.on('ready', () => {
 	// возвращает массив ключей - ID серверов, подключенных к боту
 	const allservers = Array.from(client.guilds.cache.keys());
 	// в каждый канал (берется из массива) отправляется сообщение о рестарте бота
-	console.log(allservers);
-	/*allservers.forEach(function(i){
+	allservers.forEach(function(i){
 		channel = client.guilds.cache.get(i).systemChannel;
-		channel.send('BrainBot Restarted!');
-	});*/
+		console.log(channel);
+		if(channel){
+			channel.send('BrainBot Restarted!');			
+		};
+	});
 });
 
 // реакция на приход нового юзера на сервер
