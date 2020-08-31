@@ -2,6 +2,7 @@
 const Discord = require('discord.js'); // подключаем discord.js для дальнейшего использования
 const config = require('./config.json'); // в конфиге прописан токен и префикс
 const client = new Discord.Client(); 
+const allservers = Array.from(client.guilds.cache.keys()); // возвращает массив ключей - ID серверов, подключенных к боту
 
 // говорят, что это важный пункт, чтобы бот обрабатывал события только после этого пункта
 // Заодно бот отписывается в админском канале о рестарте. Так, на всякий случай.
@@ -9,8 +10,6 @@ client.on('ready', () => {
 	console.log('BrainBot started!');
 	// отправляем в админский канал Рикардии уведомление о рестарте бота
 	client.channels.cache.get('706060221126017054').send('BrainBot restarted');
-	// возвращает массив ключей - ID серверов, подключенных к боту
-	const allservers = Array.from(client.guilds.cache.keys());
 	// в каждый канал (берется из массива) отправляется сообщение о рестарте бота
 	allservers.forEach(function(i){
 		// для каждого сервера выбирается основной канал системных сообщений
@@ -19,15 +18,6 @@ client.on('ready', () => {
 		if(channel){channel.send('BrainBot restarted!');};
 	});
 });
-
-
-
-
-
-
-
-
-
 
 
 
@@ -66,12 +56,23 @@ if(message.content.toLowerCase()==config.prefix + "help"){
 			{ name: ".price", value: "Показать курс обмена артефактов" },
 			{ name: ".calc 8 7 6 5 4", value: 'Рассчитать стоимость артов кз9. Вместо 8 7 6 5 4 ввести количество артов с кз8, кз7 и т.д. При продаже 3шт кз8 и 10шт кз6 вводить ".calc 3 0 10 0 0". Последние нули можно не вводить, т.е. ввести ".calc 3 0 10"'},
 			{ name: ".ver", value: "Здесь вы можете узнать текущую версию бота." },
+			{ name: ".botstat", value: "Список серверов Discord, подключенных к боту." },
 			{ name: ".Rs s X", value: "Присвоение роли @кз7-@кз10. Вместо Х вписать цифру от 7 до 10." },
 			{ name: ".Rs u X", value: "Удаление роли @кз7-@кз10. Вместо Х вписать цифру от 7 до 10." },
 			{ name: "%help", value: "Помощь по боту от Hades Star Compendium" }
 		]
 	}});
 }
+	
+// список серверов бота
+if(message.content.toLowerCase()=='.botstat'){
+    var listserver = 'Бот подключен к ' + allservers.length + ' серверам:';
+    allservers.forEach(function(i){
+      server = client.guilds.cache.get(i).name;
+      listserver = listserver + '\n' + server;
+    });
+    message.channel.send(listserver);
+  };
 
 // Показать ссылку на бота
 if(message.content.toLowerCase()==config.prefix + "botlink"){
