@@ -2,7 +2,6 @@
 const Discord = require('discord.js'); // подключаем discord.js для дальнейшего использования
 const config = require('./config.json'); // в конфиге прописан токен и префикс
 const client = new Discord.Client(); 
-const allservers = Array.from(client.guilds.cache.keys()); // возвращает массив ключей - ID серверов, подключенных к боту
 
 // говорят, что это важный пункт, чтобы бот обрабатывал события только после этого пункта
 // Заодно бот отписывается в админском канале о рестарте. Так, на всякий случай.
@@ -10,6 +9,8 @@ client.on('ready', () => {
 	console.log('BrainBot started!');
 	// отправляем в админский канал Рикардии уведомление о рестарте бота
 	client.channels.cache.get('706060221126017054').send('BrainBot restarted');
+	// возвращает массив ключей - ID серверов, подключенных к боту
+	const allservers = Array.from(client.guilds.cache.keys());
 	// в каждый канал (берется из массива) отправляется сообщение о рестарте бота
 	allservers.forEach(function(i){
 		// для каждого сервера выбирается основной канал системных сообщений
@@ -123,7 +124,7 @@ if(message.content.startsWith(config.prefix+'calc')){
 }
 
 //Текущая версия
-if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v429");}
+if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v430");}
 
 //Запись в очередь на кз////////////////////////////////////////
 
