@@ -67,6 +67,9 @@ if(message.content.toLowerCase()==config.prefix + "help"){
 	
 // список серверов бота
 if(message.content.toLowerCase()=='.botstat'){
+	// возвращает массив ключей - ID серверов, подключенных к боту
+	const allservers = Array.from(client.guilds.cache.keys());
+	
     var listserver = 'Бот подключен к ' + allservers.length + ' серверам:';
     allservers.forEach(function(i){
       server = client.guilds.cache.get(i).name;
