@@ -111,7 +111,7 @@ if(message.content.startsWith(config.prefix+'calc')){
 }
 
 //Текущая версия
-if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v423");}
+if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v429");}
 
 //Запись в очередь на кз////////////////////////////////////////
 
