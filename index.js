@@ -14,7 +14,7 @@ client.on('ready', () => {
 	// в каждый канал (берется из массива) отправляется сообщение о рестарте бота
 	allservers.forEach(function(i){
 		// для каждого сервера выбирается основной канал системных сообщений
-		channel = client.guilds.cache.get(i).systemChannel;
+		let channel = client.guilds.cache.get(i).systemChannel;
 		// если канал выбран - туда отправляется сообщение о рестарте бота
 		if(channel){channel.send('BrainBot restarted!');};
 	});
@@ -44,9 +44,11 @@ client.on('guildMemberRemove', member => {
 
 
 
-//Инициализируем массив для очереди кз
+//Инициализируем массивы для очередей кз
 var quequ = [];
 var q = [];
+var quequ9 = [];
+var q9 = [];
 
 // Пришло сообщение
 client.on("message", message => { 
@@ -68,8 +70,8 @@ if(message.content.toLowerCase()==config.prefix + "help"){
 			{ name: ".calc 8 7 6 5 4", value: 'Рассчитать стоимость артов кз9. Вместо 8 7 6 5 4 ввести количество артов с кз8, кз7 и т.д. При продаже 3шт кз8 и 10шт кз6 вводить ".calc 3 0 10 0 0". Последние нули можно не вводить, т.е. ввести ".calc 3 0 10"'},
 			{ name: ".ver", value: "Здесь вы можете узнать текущую версию бота." },
 			{ name: ".botstat", value: "Список серверов Discord, подключенных к боту." },
-			{ name: ".Rs s X", value: "Присвоение роли @кз7-@кз10. Вместо Х вписать цифру от 7 до 10." },
-			{ name: ".Rs u X", value: "Удаление роли @кз7-@кз10. Вместо Х вписать цифру от 7 до 10." },
+			{ name: ".Rs s X", value: "Присвоение роли @кз7-@кз11. Вместо Х вписать цифру от 7 до 11." },
+			{ name: ".Rs u X", value: "Удаление роли @кз7-@кз11. Вместо Х вписать цифру от 7 до 11." },
 			{ name: "%help", value: "Помощь по боту от Hades Star Compendium" }
 		]
 	}});
@@ -106,12 +108,14 @@ if(message.content.toLowerCase()==config.prefix + "price"){
 }
 
 // Выдача ролей
+if(message.content.toLowerCase()==".rs s 11"){let user = message.author.id;message.guild.member(user).roles.add("750255969665024100");message.reply('вам присвоена роль <@&750255969665024100>');}
 if(message.content.toLowerCase()==".rs s 10"){let user = message.author.id;message.guild.member(user).roles.add("722351148463292436");message.reply('вам присвоена роль <@&722351148463292436>');}
 if(message.content.toLowerCase()==".rs s 9"){let user = message.author.id;message.guild.member(user).roles.add("722351369662627850");message.reply('вам присвоена роль <@&722351369662627850>');}
 if(message.content.toLowerCase()==".rs s 8"){let user = message.author.id;message.guild.member(user).roles.add("722351414096953354");message.reply('вам присвоена роль <@&722351414096953354>');}
 if(message.content.toLowerCase()==".rs s 7"){let user = message.author.id;message.guild.member(user).roles.add("722351455666831410");message.reply('вам присвоена роль <@&722351455666831410>');}
 
 // Удаление ролей
+if(message.content.toLowerCase()==".rs u 11"){let user = message.author.id;message.guild.member(user).roles.remove("750255969665024100");message.reply('у вас больше нет роли <@&750255969665024100>');}
 if(message.content.toLowerCase()==".rs u 10"){let user = message.author.id;message.guild.member(user).roles.remove("722351148463292436");message.reply('у вас больше нет роли <@&722351148463292436>');}
 if(message.content.toLowerCase()==".rs u 9"){let user = message.author.id;message.guild.member(user).roles.remove("722351369662627850");message.reply('у вас больше нет роли <@&722351369662627850>');}
 if(message.content.toLowerCase()==".rs u 8"){let user = message.author.id;message.guild.member(user).roles.remove("722351414096953354");message.reply('у вас больше нет роли <@&722351414096953354>');}
@@ -144,8 +148,8 @@ if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("
 // Начинаем обрабатывать сообщение начинающееся с ".9+"
 if(message.content.toLowerCase().startsWith(config.prefix + "9+")){
    // Ищем в массиве id юзера, есть ли уже юзер в очереди, если есть - то функция возвращает положение, если нет - то возвращает "-1"
-   var place = q.find(item=>item.id==message.author.id);
-   place = q.indexOf(place);
+   var place = q9.find(item=>item.id==message.author.id);
+   place = q9.indexOf(place);
    // Если функция вернула местоположение в массиве - значит юзер уже в очереди
    if(place >= 0){return message.reply(' вы уже в очереди')};
    //Отрезаем из сообщения ".9+"(три знака) и лишние пробелы вначале и в конце
@@ -153,7 +157,7 @@ if(message.content.toLowerCase().startsWith(config.prefix + "9+")){
    //Если не задано, по умолчанию - 30 минут
    if(!cooldown){cooldown=30};
    //Записываем данные в конец массива
-   q[q.length] = {
+   q9[q9.length] = {
       id: message.author.id, //id юзера
       name: message.author.username, // просто имя для отображения
       time: new Date(), //текущее время
@@ -162,57 +166,57 @@ if(message.content.toLowerCase().startsWith(config.prefix + "9+")){
    // Можно включить дополнительное сообщение о входе в очередь, но так то потом ещё список очереди ещё будет
    // message.reply('готово');
    // Здесь вызывается отдельная функция clearq спустя время cooldown'a
-   setTimeout(clearq,cooldown*60000);
+   setTimeout(clearq9,cooldown*60000);
    // Инициализируем строку для вывода простого списка очереди
-   var rsq = new String();
+   var rsq9 = new String();
    // Перебираем весь массив очереди
-   for (var i=1; i <= q.length; i++ ){
+   for (var i=1; i <= q9.length; i++ ){
       //Сколько прошло времени
-      var time1 = new Date() - q[i-1].time;
+      var time1 = new Date() - q9[i-1].time;
       // Сколько времени осталось
-      var timeleft = q[i-1].cooldown - time1/60000;
+      var timeleft = q9[i-1].cooldown - time1/60000;
       //Округляем до 0.1мин
       timeleft = timeleft.toFixed(1);
       //И собираем всё в одну строку
-      rsq = rsq + i + '. ' + q[i-1].name + ' - ' + timeleft +'min\n';
+      rsq9 = rsq9 + i + '. ' + q9[i-1].name + ' - ' + timeleft +'min\n';
    }
 // И печатаем эту строку (список)
-message.channel.send(rsq);
+message.channel.send(rsq9);
 
 // Если очередь полна
-if(q.length==4){
+if(q9.length==4){
    // отправляем в канал сообщение о готовой очереди
-		message.channel.send('<@&722351369662627850> in game:\n<@' + q[0].id + '>, <@' + q[1].id + '>, <@' + q[2].id + '>, <@' + q[3].id + '>');
+		message.channel.send('<@&722351369662627850> in game:\n<@' + q9[0].id + '>, <@' + q9[1].id + '>, <@' + q9[2].id + '>, <@' + q9[3].id + '>');
 		// очищаем очередь
-q.length=0;
+q9.length=0;
 	}
 
 }
 
-// Тест
-if(message.content.toLowerCase()==config.prefix + "rs q")
+// Проверка очереди кз9
+if(message.content.toLowerCase()==config.prefix + "rs q 9")
 {
 //Если длина массива очереди равна нулю, значит очередь пуста
-if (q.length==0) {return message.reply(` жаль, но очередь на кз9 пуста`);}
+if (q9.length==0) {return message.reply(` жаль, но очередь на кз9 пуста`);}
 //Инициализируем строку для списка очереди на кз
-var rsq = new String();
+var rsq9 = new String();
 //Опять перебираем
-for (var i=1; i <= q.length; i++ ){
-   var time1 = new Date() - q[i-1].time;
-   var timeleft = q[i-1].cooldown - time1/60000;
+for (var i=1; i <= q9.length; i++ ){
+   var time1 = new Date() - q9[i-1].time;
+   var timeleft = q9[i-1].cooldown - time1/60000;
    timeleft = timeleft.toFixed(1);
-   rsq = rsq + i + '. ' + q[i-1].name + ' - ' + timeleft +'min\n';
+   rsq9 = rsq9 + i + '. ' + q9[i-1].name + ' - ' + timeleft +'min\n';
 }
-message.channel.send(rsq); //и отправляем в канал
+message.channel.send(rsq9); //и отправляем в канал
 }
 
 // Для удаления из очереди использовать q.splice
 
 if(message.content.toLowerCase()==config.prefix + "9-"){
-var place = q.find(item=>item.id==message.author.id);
-   place = q.indexOf(place);
+var place = q9.find(item=>item.id==message.author.id);
+   place = q9.indexOf(place);
 if(place<0){return message.reply(' вас нет очереди на кз9')};
-q.splice(place, 1);
+q9.splice(place, 1);
 message.reply(' вы удалены с очереди на кз9');
 }
 
@@ -221,14 +225,14 @@ message.reply(' вы удалены с очереди на кз9');
 
 // Сюда засунем функцию удаления из очереди кз для таймера
 // Кстати, вне зависимости от того, в каком канале подписались на кз, уведомление об удалении будет отправлено в канал кз
-function clearq(){
+function clearq9(){
 channel = client.channels.cache.get("706109108348125205");
-for (var i=0; i < q.length; i++ ){
-   var time1 = new Date() - q[i].time;
-   var timeleft = q[i].cooldown - time1/60000;
+for (var i=0; i < q9.length; i++ ){
+   var time1 = new Date() - q9[i].time;
+   var timeleft = q9[i].cooldown - time1/60000;
    if(timeleft<0){
-      channel.send('<@' + q[i].id + '>, время ожидания закончилось, вы удалены из очереди на кз9');
-      q.splice(i, 1);
+      channel.send('<@' + q9[i].id + '>, время ожидания закончилось, вы удалены из очереди на кз9');
+      q9.splice(i, 1);
       }
    };
 };
