@@ -45,10 +45,12 @@ client.on('guildMemberRemove', member => {
 
 
 //Инициализируем массивы для очередей кз
-var quequ = [];
-var q = [];
-var quequ9 = [];
+
+var q11 = [];
+var q10 = [];
 var q9 = [];
+var q9 = [];
+var q7 = [];
 
 // Пришло сообщение
 client.on("message", message => { 
@@ -65,30 +67,30 @@ if(message.content.toLowerCase()==config.prefix + "help"){
 		description: "Дополняется по мере обновления бота. В связи с особенностями хостинга бот перезапускается ~ раз в сутки. Боту стыдно.",
 		fields:[
 			{ name: ".help", value: "выводит список всех команд" },
-			{ name: ".botlink", value: "ссылка добавление бота на свой сервер" },
+			{ name: ".botlink", value: "ссылка для добавления бота на свой сервер" },
 			{ name: ".price", value: "Показать курс обмена артефактов" },
 			{ name: ".calc 8 7 6 5 4", value: 'Рассчитать стоимость артов кз9. Вместо 8 7 6 5 4 ввести количество артов с кз8, кз7 и т.д. При продаже 3шт кз8 и 10шт кз6 вводить ".calc 3 0 10 0 0". Последние нули можно не вводить, т.е. ввести ".calc 3 0 10"'},
 			{ name: ".ver", value: "Здесь вы можете узнать текущую версию бота." },
 			{ name: ".botstat", value: "Список серверов Discord, подключенных к боту." },
 			{ name: ".Rs s X", value: "Присвоение роли @кз7-@кз11. Вместо Х вписать цифру от 7 до 11." },
 			{ name: ".Rs u X", value: "Удаление роли @кз7-@кз11. Вместо Х вписать цифру от 7 до 11." },
-			{ name: "%help", value: "Помощь по боту от Hades Star Compendium" }
+			{ name: ".Rs q X", value: "Проверка очереди на кз7-кз11. Вместо Х вписать цифру от 7 до 11." },
+			/*{ name: "%help", value: "Помощь по боту от Hades Star Compendium" }*/
 		]
 	}});
 }
 	
 // список серверов бота
 if(message.content.toLowerCase()=='.botstat'){
-	// возвращает массив ключей - ID серверов, подключенных к боту
-	const allservers = Array.from(client.guilds.cache.keys());
-	
-    var listserver = 'BrainBot подключен к ' + allservers.length + ' серверам:';
-    allservers.forEach(function(i){
-      server = client.guilds.cache.get(i).name;
-      listserver = listserver + '\n' + server;
-    });
-    message.channel.send(listserver);
-  };
+  // возвращает массив ключей - ID серверов, подключенных к боту
+  const allservers = Array.from(client.guilds.cache.keys());
+  var listserver = 'BrainBot подключен к ' + allservers.length + ' серверам:';
+  allservers.forEach(function(i){
+    server = client.guilds.cache.get(i).name;
+    listserver = listserver + '\n' + server;
+  });
+  message.channel.send(listserver);
+};
 
 // Показать ссылку на бота
 if(message.content.toLowerCase()==config.prefix + "botlink"){
@@ -144,7 +146,6 @@ if(message.content.startsWith(config.prefix+'calc')){
 if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v432");}
 
 //Запись в очередь на кз////////////////////////////////////////
-
 // Начинаем обрабатывать сообщение начинающееся с ".9+"
 if(message.content.toLowerCase().startsWith(config.prefix + "9+")){
    // Ищем в массиве id юзера, есть ли уже юзер в очереди, если есть - то функция возвращает положение, если нет - то возвращает "-1"
@@ -182,7 +183,6 @@ if(message.content.toLowerCase().startsWith(config.prefix + "9+")){
    }
 // И печатаем эту строку (список)
 message.channel.send(rsq9);
-
 // Если очередь полна
 if(q9.length==4){
    // отправляем в канал сообщение о готовой очереди
@@ -190,9 +190,7 @@ if(q9.length==4){
 		// очищаем очередь
 q9.length=0;
 	}
-
 }
-
 // Проверка очереди кз9
 if(message.content.toLowerCase()==config.prefix + "rs q 9")
 {
@@ -209,9 +207,7 @@ for (var i=1; i <= q9.length; i++ ){
 }
 message.channel.send(rsq9); //и отправляем в канал
 }
-
 // Для удаления из очереди использовать q.splice
-
 if(message.content.toLowerCase()==config.prefix + "9-"){
 var place = q9.find(item=>item.id==message.author.id);
    place = q9.indexOf(place);
