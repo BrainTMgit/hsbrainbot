@@ -18,7 +18,7 @@ client.on('ready', () => {
 		// если канал выбран - туда отправляется сообщение о рестарте бота
 		if(channel){channel.send('BrainBot restarted!');};
 	});
-});
+}); // остаток от client.on('ready', () => {
 
 // реакция на приход нового юзера на сервер
 client.on('guildMemberAdd', member => {
@@ -28,7 +28,7 @@ client.on('guildMemberAdd', member => {
 	if (!channel) return;
  	// отправляем сообщение с упоминанием пользователя
 	channel.send(`Привет, ${member}. Добро пожаловать на наш скромный сервер. Вообще, я тут главный и всем заправляю. Узнать все, что я умею можно командой .help`);
-});
+}); // Закрыли client.on('guildMemberAdd'
 
 // реакция на уход юзера
 client.on('guildMemberRemove', member => {
@@ -38,14 +38,9 @@ client.on('guildMemberRemove', member => {
 	if (!channel) return;
  	// отправляем сообщение с упоминанием пользователя
 	channel.send(`К великому сожалению, ${member.user.username}#${member.user.discriminator} покинул наш скромный сервер. Пусть дискорд ему судья...`);
-});
-
-
-
-
+}); // Остатки от guildMemberRemove
 
 //Инициализируем массивы для очередей кз
-
 var q11 = [];
 var q10 = [];
 var q9 = [];
@@ -85,11 +80,14 @@ if(message.content.toLowerCase()=='.botstat'){
   // возвращает массив ключей - ID серверов, подключенных к боту
   const allservers = Array.from(client.guilds.cache.keys());
   var listserver = 'BrainBot подключен к ' + allservers.length + ' серверам:';
+  var count = 0;
   allservers.forEach(function(i){
     server = client.guilds.cache.get(i).name;
     listserver = listserver + '\n' + server;
+    count = count + client.guilds.cache.get(i).memberCount;
   });
   message.channel.send(listserver);
+  console.log(count);
 };
 
 // Показать ссылку на бота
