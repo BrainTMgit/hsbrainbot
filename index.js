@@ -37,7 +37,7 @@ client.on('guildMemberAdd', member => {
  	// ничего не делать если канал не найден
 	if (!channel) return;
  	// отправляем сообщение с упоминанием пользователя
-	channel.send('```Привет, ${member}. Добро пожаловать на сервер ${member.guild.name}. Узнать все, что я умею можно командой .help```');
+	channel.send(`Привет, ${member}. Добро пожаловать на сервер ${member.guild.name}. Узнать все, что я умею можно командой .help`);
 }); // Закрыли client.on('guildMemberAdd'
 
 // реакция на уход юзера
@@ -47,7 +47,7 @@ client.on('guildMemberRemove', member => {
  	// ничего не делать если канал не найден
 	if (!channel) return;
  	// отправляем сообщение с упоминанием пользователя
-	channel.send('```${member.user.username}#${member.user.discriminator} покинул наш сервер. Жаль, самое интересное только начиналось...```');
+	channel.send(`${member.user.username}#${member.user.discriminator} покинул наш сервер. Жаль, самое интересное только начиналось...`);
 }); // Остатки от guildMemberRemove
 
 //Инициализируем массивы для очередей кз
@@ -71,52 +71,51 @@ if(message.content.toLowerCase()==config.prefix + "help"){
 		title: "Список поддерживаемых комманд:",
 		description: "Дополняется по мере обновления бота. В связи с особенностями хостинга бот перезапускается ~ раз в сутки. Боту стыдно.",
 		fields:[
-			{ name: ".help", value: "выводит список всех команд" },
-			{ name: ".botlink", value: "ссылка для добавления бота на свой сервер" },
-			{ name: ".price", value: "Показать курс обмена артефактов" },
-			{ name: ".calc 8 7 6 5 4", value: 'Рассчитать стоимость артов кз9. Вместо 8 7 6 5 4 ввести количество артов с кз8, кз7 и т.д. При продаже 3шт кз8 и 10шт кз6 вводить ".calc 3 0 10 0 0". Последние нули можно не вводить, т.е. ввести ".calc 3 0 10"'},
-			{ name: ".ver", value: "Здесь вы можете узнать текущую версию бота." },
-			{ name: ".botstat", value: "Список серверов Discord, подключенных к боту." },
-			{ name: ".Rs s X", value: "Присвоение роли @rs7-@rs11. Вместо Х вписать цифру от 7 до 11." },
-			{ name: ".Rs u X", value: "Удаление роли @rs7-@rs11. Вместо Х вписать цифру от 7 до 11." },
-			{ name: ".Rs q X", value: "Проверка очереди на кз7-кз11. Вместо Х вписать цифру от 7 до 11." },
-			/*{ name: "%help", value: "Помощь по боту от Hades Star Compendium" }*/
+			{ name: ".help", value: "Выводит список всех команд." }, // +
+			{ name: ".botstat", value: "Список серверов Discord, подключенных к боту." }, //+
+            { name: ".botlink", value: "ссылка для добавления бота на свой сервер." }, //+
+			{ name: ".price", value: "Показать курс обмена артефактов." }, //-
+			{ name: ".calc 8 7 6 5 4", value: 'Рассчитать стоимость артов кз9. Вместо 8 7 6 5 4 ввести количество артов с кз8, кз7 и т.д. При продаже 3шт кз8 и 10шт кз6 вводить ".calc 3 0 10 0 0". Последние нули можно не вводить, т.е. ввести ".calc 3 0 10"'}, //-
+			{ name: ".require", value: "Список обязательных требований к организации сервера для корректной работы очереди КЗ." }, //-
+			{ name: ".Rs s X", value: "Присвоение роли @rs7-@rs11. Вместо Х вписать цифру от 7 до 11." }, //+
+			{ name: ".Rs u X", value: "Удаление роли @rs7-@rs11. Вместо Х вписать цифру от 7 до 11." }, //+
+            { name: ".X+Time", value: "Встать в очередь на КЗ уровня Х. Вмсето Time указывается количество минут ожидания. Если параметр не указан - ставится время по умолчанию 30 мин. В любое время можно продлить вписав команду заново. По истечение этого времени вы будете автоматом удалены из очереди." }, //-
+			{ name: ".X-", value: "Удалить себя из очереди на КЗ уровня Х." }, //-
+			{ name: ".Rs q X", value: "Проверка очереди на КЗ уровня Х. Вместо Х вписать цифру от 7 до 11." }, //-
+            // { name: ".ver", value: "Здесь вы можете узнать текущую версию бота." },
+			// { name: ".test", value: "Тестовая команда. Зарезеовирована для miniBot",
 		]
 	}});
 }
 
 // лишняя болтовня
 if(message.content.toLowerCase()=="тупой бот") //реакция на тупого бота
-{
-	message.reply("кожаный ублюдок");
-}
+{ message.reply("кожаный ублюдок"); }
 if(message.content.toLowerCase()=="бот, извинись") //реакция на тупого бота
-{
-	message.reply('простите, пожалуйста.');
-}
+{ message.reply('простите, пожалуйста.'); }
 
-	
 // список серверов бота
 if(message.content.toLowerCase()=='.botstat'){
   // возвращает массив ключей - ID серверов, подключенных к боту
   const allservers = Array.from(client.guilds.cache.keys());
+  // создаем строку сообщения
   var listserver = 'BrainBot подключен к ' + allservers.length + ' серверам:';
-  var count = 0;
+  var count = 0; // будущий счетчик участников
   allservers.forEach(function(i){
-    server = client.guilds.cache.get(i).name;
-    listserver = listserver + '\n' + server;
-    count = count + client.guilds.cache.get(i).memberCount;
+    server = client.guilds.cache.get(i).name; // получаем имя сервера
+    listserver = listserver + '\n' + server; // дописываем его в строку
+    count = count + client.guilds.cache.get(i).memberCount; // прибавляем количество участников к счетчику
   });
   message.channel.send(listserver);
   message.channel.send('На этих серверах ' + count + ' участников.');
 };
 
-// Показать ссылку на бота
+// показать ссылку на бота
 if(message.content.toLowerCase()==config.prefix + "botlink"){
 	message.channel.send('https://discordapp.com/oauth2/authorize?&client_id=710207840056508536&scope=bot&permissions=8');
 }
-	
-//Показ ценника
+
+// показать ценник
 if(message.content.toLowerCase()==config.prefix + "price"){
 	message.channel.send({embed:{
 		color: 3447003,
@@ -129,18 +128,102 @@ if(message.content.toLowerCase()==config.prefix + "price"){
 }
 
 // Выдача ролей
-if(message.content.toLowerCase()==".rs s 11"){let user = message.author.id;message.guild.member(user).roles.add("750255969665024100");message.reply('вам присвоена роль <@&750255969665024100>');}
-if(message.content.toLowerCase()==".rs s 10"){let user = message.author.id;message.guild.member(user).roles.add("722351148463292436");message.reply('вам присвоена роль <@&722351148463292436>');}
-if(message.content.toLowerCase()==".rs s 9"){let user = message.author.id;message.guild.member(user).roles.add("722351369662627850");message.reply('вам присвоена роль <@&722351369662627850>');}
-if(message.content.toLowerCase()==".rs s 8"){let user = message.author.id;message.guild.member(user).roles.add("722351414096953354");message.reply('вам присвоена роль <@&722351414096953354>');}
-if(message.content.toLowerCase()==".rs s 7"){let user = message.author.id;message.guild.member(user).roles.add("722351455666831410");message.reply('вам присвоена роль <@&722351455666831410>');}
+if(message.content.toLowerCase()=='.rs s 11'){
+        role = message.guild.roles.cache.find(role => role.name == 'rs11');
+        if(!role){
+            message.channel.send('Правильная роль не найдена. Обратитесь к администраторы сервера.');
+        } else {
+            message.guild.member(message.author.id).roles.add(role);
+            message.reply('Вам присвоена роль @rs11')
+        }
+}
+if(message.content.toLowerCase()=='.rs s 10'){
+        role = message.guild.roles.cache.find(role => role.name == 'rs10');
+        if(!role){
+            message.channel.send('Правильная роль не найдена. Обратитесь к администраторы сервера.');
+        } else {
+            message.guild.member(message.author.id).roles.add(role);
+            message.reply('Вам присвоена роль @rs10')
+        }
+}
+if(message.content.toLowerCase()=='.rs s 9'){
+        role = message.guild.roles.cache.find(role => role.name == 'rs9');
+        if(!role){
+            message.channel.send('Правильная роль не найдена. Обратитесь к администраторы сервера.');
+        } else {
+            message.guild.member(message.author.id).roles.add(role);
+            message.reply('Вам присвоена роль @rs9')
+        }
+}
+if(message.content.toLowerCase()=='.rs s 8'){
+        role = message.guild.roles.cache.find(role => role.name == 'rs8');
+        if(!role){
+            message.channel.send('Правильная роль не найдена. Обратитесь к администраторы сервера.');
+        } else {
+            message.guild.member(message.author.id).roles.add(role);
+            message.reply('Вам присвоена роль @rs8')
+        }
+}
+if(message.content.toLowerCase()=='.rs s 7'){
+        role = message.guild.roles.cache.find(role => role.name == 'rs7');
+        if(!role){
+            message.channel.send('Правильная роль не найдена. Обратитесь к администраторы сервера.');
+        } else {
+            message.guild.member(message.author.id).roles.add(role);
+            message.reply('Вам присвоена роль @rs7')
+        }
+}
 
 // Удаление ролей
-if(message.content.toLowerCase()==".rs u 11"){let user = message.author.id;message.guild.member(user).roles.remove("750255969665024100");message.reply('у вас больше нет роли <@&750255969665024100>');}
-if(message.content.toLowerCase()==".rs u 10"){let user = message.author.id;message.guild.member(user).roles.remove("722351148463292436");message.reply('у вас больше нет роли <@&722351148463292436>');}
-if(message.content.toLowerCase()==".rs u 9"){let user = message.author.id;message.guild.member(user).roles.remove("722351369662627850");message.reply('у вас больше нет роли <@&722351369662627850>');}
-if(message.content.toLowerCase()==".rs u 8"){let user = message.author.id;message.guild.member(user).roles.remove("722351414096953354");message.reply('у вас больше нет роли <@&722351414096953354>');}
-if(message.content.toLowerCase()==".rs u 7"){let user = message.author.id;message.guild.member(user).roles.remove("722351455666831410");message.reply('у вас больше нет роли <@&722351455666831410>');}
+if(message.content.toLowerCase()=='.rs u 11'){
+        role = message.guild.roles.cache.find(role => role.name == 'rs11');
+        if(!role){
+            message.channel.send('Правильная роль не найдена. Обратитесь к администраторы сервера.');
+        } else {
+            message.guild.member(message.author.id).roles.remove(role);
+            message.reply(', у вас больше нет роли @rs11')
+        }
+}
+if(message.content.toLowerCase()=='.rs u 10'){
+        role = message.guild.roles.cache.find(role => role.name == 'rs10);
+        if(!role){
+            message.channel.send('Правильная роль не найдена. Обратитесь к администраторы сервера.');
+        } else {
+            message.guild.member(message.author.id).roles.remove(role);
+            message.reply(', у вас больше нет роли @rs10')
+        }
+}
+if(message.content.toLowerCase()=='.rs u 9'){
+        role = message.guild.roles.cache.find(role => role.name == 'rs9')
+        if(!role){
+            message.channel.send('Правильная роль не найдена. Обратитесь к администраторы сервера.');
+        } else {
+            message.guild.member(message.author.id).roles.remove(role);
+            message.reply(', у вас больше нет роли @rs9')
+        }
+}
+if(message.content.toLowerCase()=='.rs u 8'){
+        role = message.guild.roles.cache.find(role => role.name == 'rs8');
+        if(!role){
+            message.channel.send('Правильная роль не найдена. Обратитесь к администраторы сервера.');
+        } else {
+            message.guild.member(message.author.id).roles.remove(role);
+            message.reply(', у вас больше нет роли @rs8')
+        }
+}
+if(message.content.toLowerCase()=='.rs u 7'){
+        role = message.guild.roles.cache.find(role => role.name == 'rs7');
+        if(!role){
+            message.channel.send('Правильная роль не найдена. Обратитесь к администраторы сервера.');
+        } else {
+            message.guild.member(message.author.id).roles.remove(role);
+            message.reply(', у вас больше нет роли @rs7')
+        }
+}
+
+
+
+
 
 //Калькулятор продажи т9
 //если сообщение начинается с ".calc"
@@ -150,7 +233,7 @@ if(message.content.startsWith(config.prefix+'calc')){
 	//Удаляется первый элемент массива, т.е. "calc"
 	args.shift();
 	//Если массив окажется пустой, или больше необходимого - отмена цикла и сообщение в канал
-	if (!args.length || args.length > 5) {return message.reply(`некорректно введена дополнительная информация. Для справки введите команду .help`);}
+	if (!args.length || args.length > 5) {return message.reply(`Некорректно введена дополнительная информация. Для справки введите команду .help`);}
 	//Заменяем undefined значения массива на ноль
 	for (var i=0; i < 5; i++ ){if(!args[i]){args[i]=0};};
 	//Считаем
