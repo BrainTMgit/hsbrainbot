@@ -173,7 +173,7 @@ if(message.content.toLowerCase()=='.rs s 7'){
             message.reply('Вам присвоена роль @rs7')
         }
 }
-
+/*
 // Удаление ролей
 if(message.content.toLowerCase()=='.rs u 11'){
         role = message.guild.roles.cache.find(role => role.name == 'rs11');
@@ -220,7 +220,7 @@ if(message.content.toLowerCase()=='.rs u 7'){
             message.reply(', у вас больше нет роли @rs7')
         }
 }
-
+*/
 
 
 
