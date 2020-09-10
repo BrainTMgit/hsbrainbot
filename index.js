@@ -1,20 +1,19 @@
-// Болтовня бота вырезана. Лежит в https://github.com/BrainTMgit/hsbrainbot/blob/master/bots flud.
 
 // подключаем конфиг с паролями , токеном и префиксом
 const config = require('./config.json'); // в конфиге прописан токен и префикс
 
 // подключаем discord.js для дальнейшего использования
-// discord.js.org
+// справка discord.js.org
 const Discord = require('discord.js');
 const client = new Discord.Client();
 client.login(config.token); // коннектимся к дискорду (хотя эту строчку обычно в конце пишут)
 
 // подключаем Яндекс.Диск
-// https://www.npmjs.com/package/yandex-disk
+// смотри хелп тут npmjs.com/package/yandex-disk
 var YandexDisk = require('yandex-disk').YandexDisk;
 var disk = new YandexDisk(config.yalogin, config.yapass); // доступ по логину и паролю
 
-// говорят, что это важный пункт, чтобы бот обрабатывал события только после этого пункта
+// Говорят, что это важный пункт, чтобы бот обрабатывал события только после этого пункта.
 // Заодно бот отписывается в админском канале о рестарте. Так, на всякий случай.
 client.on('ready', () => {
 	console.log('BrainBot started!');
@@ -38,7 +37,7 @@ client.on('guildMemberAdd', member => {
  	// ничего не делать если канал не найден
 	if (!channel) return;
  	// отправляем сообщение с упоминанием пользователя
-	channel.send(`Привет, ${member}. Добро пожаловать на сервер ${member.guild.name}. Вообще, я тут главный и всем заправляю. Узнать все, что я умею можно командой .help`);
+	channel.send('```Привет, ${member}. Добро пожаловать на сервер ${member.guild.name}. Узнать все, что я умею можно командой .help```');
 }); // Закрыли client.on('guildMemberAdd'
 
 // реакция на уход юзера
@@ -48,7 +47,7 @@ client.on('guildMemberRemove', member => {
  	// ничего не делать если канал не найден
 	if (!channel) return;
  	// отправляем сообщение с упоминанием пользователя
-	channel.send(`К великому сожалению, ${member.user.username}#${member.user.discriminator} покинул наш скромный сервер. Пусть дискорд ему судья...`);
+	channel.send('```${member.user.username}#${member.user.discriminator} покинул наш сервер. Жаль, самое интересное только начиналось...```');
 }); // Остатки от guildMemberRemove
 
 //Инициализируем массивы для очередей кз
@@ -61,11 +60,11 @@ var q7 = [];
 // Пришло сообщение
 client.on("message", message => { 
 
-//Возврат, если сообщение отправил бот
+// возврат, если сообщение отправил бот
 if (message.author.bot) return;
 
 // Хелпер
-//Если текст сообщения равен префиксу плюс help, то происходит код в {} Часть кода .toLowerCase() превращает текст в строчный. (Делает из заглавных букв обычные.) 
+// Если текст сообщения равен префиксу плюс help, то происходит код в {} Часть кода .toLowerCase() превращает текст в строчный.
 if(message.content.toLowerCase()==config.prefix + "help"){
 	message.channel.send({embed:{
 		color: 3447003,
@@ -78,8 +77,8 @@ if(message.content.toLowerCase()==config.prefix + "help"){
 			{ name: ".calc 8 7 6 5 4", value: 'Рассчитать стоимость артов кз9. Вместо 8 7 6 5 4 ввести количество артов с кз8, кз7 и т.д. При продаже 3шт кз8 и 10шт кз6 вводить ".calc 3 0 10 0 0". Последние нули можно не вводить, т.е. ввести ".calc 3 0 10"'},
 			{ name: ".ver", value: "Здесь вы можете узнать текущую версию бота." },
 			{ name: ".botstat", value: "Список серверов Discord, подключенных к боту." },
-			{ name: ".Rs s X", value: "Присвоение роли @кз7-@кз11. Вместо Х вписать цифру от 7 до 11." },
-			{ name: ".Rs u X", value: "Удаление роли @кз7-@кз11. Вместо Х вписать цифру от 7 до 11." },
+			{ name: ".Rs s X", value: "Присвоение роли @rs7-@rs11. Вместо Х вписать цифру от 7 до 11." },
+			{ name: ".Rs u X", value: "Удаление роли @rs7-@rs11. Вместо Х вписать цифру от 7 до 11." },
 			{ name: ".Rs q X", value: "Проверка очереди на кз7-кз11. Вместо Х вписать цифру от 7 до 11." },
 			/*{ name: "%help", value: "Помощь по боту от Hades Star Compendium" }*/
 		]
@@ -163,7 +162,7 @@ if(message.content.startsWith(config.prefix+'calc')){
 }
 
 //Текущая версия
-if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v432");}
+if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v445");}
 
 //Запись в очередь на кз////////////////////////////////////////
 // Начинаем обрабатывать сообщение начинающееся с ".9+"
