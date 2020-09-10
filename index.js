@@ -1,7 +1,18 @@
 // Болтовня бота вырезана. Лежит в https://github.com/BrainTMgit/hsbrainbot/blob/master/bots flud.
-const Discord = require('discord.js'); // подключаем discord.js для дальнейшего использования
+
+// подключаем конфиг с паролями , токеном и префиксом
 const config = require('./config.json'); // в конфиге прописан токен и префикс
-const client = new Discord.Client(); 
+
+// подключаем discord.js для дальнейшего использования
+// discord.js.org
+const Discord = require('discord.js');
+const client = new Discord.Client();
+client.login(config.token); // коннектимся к дискорду (хотя эту строчку обычно в конце пишут)
+
+// подключаем Яндекс.Диск
+// https://www.npmjs.com/package/yandex-disk
+var YandexDisk = require('yandex-disk').YandexDisk;
+var disk = new YandexDisk(config.yalogin, config.yapass); // доступ по логину и паролю
 
 // говорят, что это важный пункт, чтобы бот обрабатывал события только после этого пункта
 // Заодно бот отписывается в админском канале о рестарте. Так, на всякий случай.
@@ -27,7 +38,7 @@ client.on('guildMemberAdd', member => {
  	// ничего не делать если канал не найден
 	if (!channel) return;
  	// отправляем сообщение с упоминанием пользователя
-	channel.send(`Привет, ${member}. Добро пожаловать на наш скромный сервер. Вообще, я тут главный и всем заправляю. Узнать все, что я умею можно командой .help`);
+	channel.send(`Привет, ${member}. Добро пожаловать на сервер ${member.guild.name}. Вообще, я тут главный и всем заправляю. Узнать все, что я умею можно командой .help`);
 }); // Закрыли client.on('guildMemberAdd'
 
 // реакция на уход юзера
@@ -74,6 +85,17 @@ if(message.content.toLowerCase()==config.prefix + "help"){
 		]
 	}});
 }
+
+// лишняя болтовня
+if(message.content.toLowerCase()=="тупой бот") //реакция на тупого бота
+{
+	message.reply("кожаный ублюдок");
+}
+if(message.content.toLowerCase()=="бот, извинись") //реакция на тупого бота
+{
+	message.reply('простите, пожалуйста.');
+}
+
 	
 // список серверов бота
 if(message.content.toLowerCase()=='.botstat'){
@@ -233,6 +255,5 @@ for (var i=0; i < q9.length; i++ ){
 
 
 
-client.login(config.token); //Где token уже был взят из config.json
 
 
