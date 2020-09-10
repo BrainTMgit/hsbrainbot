@@ -264,6 +264,10 @@ if(message.content.toLowerCase().startsWith(config.prefix + "11+")){
         q11[place].cooldown = cooldown;
         return message.reply('время ожидания в очереди на кз11 обновлено');
     };
+    // проверяем наличие роли
+        role = message.guild.roles.cache.find(role => role.name == 'rs11')
+        if (!role) role = 0;
+        
     // записываем данные в конец массива
     q11.push({
         id: message.author.id, //id юзера
@@ -272,7 +276,7 @@ if(message.content.toLowerCase().startsWith(config.prefix + "11+")){
         tag: message.author.tag,
         time: new Date(), //текущее время
         channel: message.channel.id,
-        roleid: message.guild.roles.cache.find(role => role.name == 'rs11').id,
+        roleid: role.id,
         cooldown: cooldown //время ожидания (в минутах)
     });
     // Здесь вызывается отдельная функция clearq11 спустя время cooldown'a
@@ -366,6 +370,10 @@ if(message.content.toLowerCase().startsWith(config.prefix + "10+")){
         q10[place].cooldown = cooldown;
         return message.reply('время ожидания в очереди на кз10 обновлено');
     };
+    // проверяем наличие роли
+        role = message.guild.roles.cache.find(role => role.name == 'rs10')
+        if (!role) role = 0;
+        
     // записываем данные в конец массива
     q10.push({
         id: message.author.id, //id юзера
@@ -374,7 +382,7 @@ if(message.content.toLowerCase().startsWith(config.prefix + "10+")){
         tag: message.author.tag,
         time: new Date(), //текущее время
         channel: message.channel.id,
-        roleid: message.guild.roles.cache.find(role => role.name == 'rs10').id,
+        roleid: role.id,
         cooldown: cooldown //время ожидания (в минутах)
     });
     // Здесь вызывается отдельная функция clearq10 спустя время cooldown'a
@@ -468,6 +476,10 @@ if(message.content.toLowerCase().startsWith(config.prefix + "9+")){
         q9[place].cooldown = cooldown;
         return message.reply('время ожидания в очереди на кз9 обновлено');
     };
+    // проверяем наличие роли
+        role = message.guild.roles.cache.find(role => role.name == 'rs9')
+        if (!role) role = 0;
+        
     // записываем данные в конец массива
     q9.push({
         id: message.author.id, //id юзера
@@ -476,7 +488,7 @@ if(message.content.toLowerCase().startsWith(config.prefix + "9+")){
         tag: message.author.tag,
         time: new Date(), //текущее время
         channel: message.channel.id,
-        roleid: message.guild.roles.cache.find(role => role.name == 'rs9').id,
+        roleid: role.id,
         cooldown: cooldown //время ожидания (в минутах)
     });
     // Здесь вызывается отдельная функция clearq9 спустя время cooldown'a
@@ -570,6 +582,10 @@ if(message.content.toLowerCase().startsWith(config.prefix + "8+")){
         q8[place].cooldown = cooldown;
         return message.reply('время ожидания в очереди на кз8 обновлено');
     };
+    // проверяем наличие роли
+        role = message.guild.roles.cache.find(role => role.name == 'rs8')
+        if (!role) role = 0;
+        
     // записываем данные в конец массива
     q8.push({
         id: message.author.id, //id юзера
@@ -578,7 +594,7 @@ if(message.content.toLowerCase().startsWith(config.prefix + "8+")){
         tag: message.author.tag,
         time: new Date(), //текущее время
         channel: message.channel.id,
-        roleid: message.guild.roles.cache.find(role => role.name == 'rs8').id,
+        roleid: role.id,
         cooldown: cooldown //время ожидания (в минутах)
     });
     // Здесь вызывается отдельная функция clearq8 спустя время cooldown'a
@@ -672,6 +688,10 @@ if(message.content.toLowerCase().startsWith(config.prefix + "7+")){
         q7[place].cooldown = cooldown;
         return message.reply('время ожидания в очереди на кз7 обновлено');
     };
+    // проверяем наличие роли
+        role = message.guild.roles.cache.find(role => role.name == 'rs7')
+        if (!role) role = 0;
+        
     // записываем данные в конец массива
     q7.push({
         id: message.author.id, //id юзера
@@ -680,7 +700,7 @@ if(message.content.toLowerCase().startsWith(config.prefix + "7+")){
         tag: message.author.tag,
         time: new Date(), //текущее время
         channel: message.channel.id,
-        roleid: message.guild.roles.cache.find(role => role.name == 'rs7').id,
+        roleid: role.id,
         cooldown: cooldown //время ожидания (в минутах)
     });
     // Здесь вызывается отдельная функция clearq7 спустя время cooldown'a
@@ -760,7 +780,7 @@ function clearq7(){
 //№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№
 
 //Текущая версия
-if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("build 451");}
+if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("build 454");}
 
 }); // это остатки от client.on("message", message => { 
 
