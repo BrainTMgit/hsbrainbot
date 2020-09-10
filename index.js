@@ -181,7 +181,7 @@ if(message.content.toLowerCase()=='.rs u 11'){
             message.reply('правильная роль не найдена. Обратитесь к администраторам сервера.');
         } else {
             message.guild.member(message.author.id).roles.remove(role);
-            message.reply(' у вас больше нет роли @rs11')
+            message.reply('у вас больше нет роли @rs11')
         }
 }
 if(message.content.toLowerCase()=='.rs u 10'){
@@ -190,7 +190,7 @@ if(message.content.toLowerCase()=='.rs u 10'){
             message.reply('правильная роль не найдена. Обратитесь к администраторам сервера.');
         } else {
             message.guild.member(message.author.id).roles.remove(role);
-            message.reply(', у вас больше нет роли @rs10')
+            message.reply('у вас больше нет роли @rs10')
         }
 }
 if(message.content.toLowerCase()=='.rs u 9'){
@@ -199,7 +199,7 @@ if(message.content.toLowerCase()=='.rs u 9'){
             message.reply('правильная роль не найдена. Обратитесь к администраторам сервера.');
         } else {
             message.guild.member(message.author.id).roles.remove(role);
-            message.reply(', у вас больше нет роли @rs9')
+            message.reply('у вас больше нет роли @rs9')
         }
 }
 if(message.content.toLowerCase()=='.rs u 8'){
@@ -208,7 +208,7 @@ if(message.content.toLowerCase()=='.rs u 8'){
             message.reply('правильная роль не найдена. Обратитесь к администраторам сервера.');
         } else {
             message.guild.member(message.author.id).roles.remove(role);
-            message.reply(', у вас больше нет роли @rs8')
+            message.reply('у вас больше нет роли @rs8')
         }
 }
 if(message.content.toLowerCase()=='.rs u 7'){
@@ -217,9 +217,11 @@ if(message.content.toLowerCase()=='.rs u 7'){
             message.reply('правильная роль не найдена. Обратитесь к администраторам сервера.');
         } else {
             message.guild.member(message.author.id).roles.remove(role);
-            message.reply(', у вас больше нет роли @rs7')
+            message.reply('у вас больше нет роли @rs7')
         }
 }
+
+
 
 
 
@@ -245,7 +247,7 @@ if(message.content.startsWith(config.prefix+'calc')){
 }
 
 //Текущая версия
-if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v445");}
+if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("Release v449");}
 
 //Запись в очередь на кз////////////////////////////////////////
 // Начинаем обрабатывать сообщение начинающееся с ".9+"
