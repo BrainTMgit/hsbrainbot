@@ -248,7 +248,7 @@ if(message.content.startsWith(config.prefix+'calc')){
 }
 
 //Текущая версия
-if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("build 449");}
+if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("build 451");}
 
 
 
@@ -256,7 +256,7 @@ if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("
 
 
 
-
+/*
 //Запись в очередь на кз////////////////////////////////////////
 // Начинаем обрабатывать сообщение начинающееся с ".9+"
 if(message.content.toLowerCase().startsWith(config.prefix + "9+")){
@@ -327,7 +327,7 @@ if(place<0){return message.reply(' вас нет очереди на кз9')};
 q9.splice(place, 1);
 message.reply(' вы удалены с очереди на кз9');
 }
-
+*/
 }); // это остатки от client.on("message", message => { 
 
 
