@@ -283,6 +283,7 @@ if(message.content.toLowerCase().startsWith(config.prefix + "11+")){
     setTimeout(clearq11,cooldown*60000);
     // Инициализируем строку для вывода простого списка очереди
     var rsq11 = new String();
+    rsq11 = 'RS11 queue: \n';
     // Перебираем весь массив очереди
     for (var i=1; i <= q11.length; i++ ){
         //Сколько прошло времени
@@ -317,6 +318,7 @@ if(message.content.toLowerCase()==config.prefix + "rs q 11"){
     };
     //Инициализируем строку для списка очереди на кз
     var rsq11 = new String();
+    rsq11 = 'RS11 queue: \n';
     //Опять перебираем
     for (var i=1; i <= q11.length; i++ ){
         var time1 = new Date() - q11[i-1].time;
@@ -374,6 +376,7 @@ if(message.content.toLowerCase().startsWith(config.prefix + "10+")){
     setTimeout(clearq10,cooldown*60000);
     // Инициализируем строку для вывода простого списка очереди
     var rsq10 = new String();
+    rsq10 = 'RS10 queue: \n';
     // Перебираем весь массив очереди
     for (var i=1; i <= q10.length; i++ ){
         //Сколько прошло времени
@@ -408,6 +411,7 @@ if(message.content.toLowerCase()==config.prefix + "rs q 10"){
     };
     //Инициализируем строку для списка очереди на кз
     var rsq10 = new String();
+    rsq10 = 'RS10 queue: \n';
     //Опять перебираем
     for (var i=1; i <= q10.length; i++ ){
         var time1 = new Date() - q10[i-1].time;
@@ -466,6 +470,7 @@ if(message.content.toLowerCase().startsWith(config.prefix + "9+")){
     setTimeout(clearq9,cooldown*60000);
     // Инициализируем строку для вывода простого списка очереди
     var rsq9 = new String();
+    rsq9 = 'RS9 queue: \n';
     // Перебираем весь массив очереди
     for (var i=1; i <= q9.length; i++ ){
         //Сколько прошло времени
@@ -500,6 +505,7 @@ if(message.content.toLowerCase()==config.prefix + "rs q 9"){
     };
     //Инициализируем строку для списка очереди на кз
     var rsq9 = new String();
+    rsq9 = 'RS9 queue: \n';
     //Опять перебираем
     for (var i=1; i <= q9.length; i++ ){
         var time1 = new Date() - q9[i-1].time;
@@ -557,6 +563,7 @@ if(message.content.toLowerCase().startsWith(config.prefix + "8+")){
     setTimeout(clearq8,cooldown*60000);
     // Инициализируем строку для вывода простого списка очереди
     var rsq8 = new String();
+    rsq8 = 'RS8 queue: \n';
     // Перебираем весь массив очереди
     for (var i=1; i <= q8.length; i++ ){
         //Сколько прошло времени
@@ -591,6 +598,7 @@ if(message.content.toLowerCase()==config.prefix + "rs q 8"){
     };
     //Инициализируем строку для списка очереди на кз
     var rsq8 = new String();
+    rsq8 = 'RS8 queue: \n';
     //Опять перебираем
     for (var i=1; i <= q8.length; i++ ){
         var time1 = new Date() - q8[i-1].time;
@@ -649,6 +657,7 @@ if(message.content.toLowerCase().startsWith(config.prefix + "7+")){
     setTimeout(clearq7,cooldown*60000);
     // Инициализируем строку для вывода простого списка очереди
     var rsq7 = new String();
+    rsq7 = 'RS7 queue: \n';
     // Перебираем весь массив очереди
     for (var i=1; i <= q7.length; i++ ){
         //Сколько прошло времени
@@ -683,6 +692,7 @@ if(message.content.toLowerCase()==config.prefix + "rs q 7"){
     };
     //Инициализируем строку для списка очереди на кз
     var rsq7 = new String();
+    rsq7 = 'RS7 queue: \n';
     //Опять перебираем
     for (var i=1; i <= q7.length; i++ ){
         var time1 = new Date() - q7[i-1].time;
