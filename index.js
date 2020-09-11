@@ -301,9 +301,9 @@ if(message.content.toLowerCase().startsWith(config.prefix + "11+")){
     if(q11.length==4){
         // это будет строка для текста сообщения
         var rsq11 = new String();
-        rsq11 = ' in game:\n<@' + q11[0].id + '>, <@' + q11[1].id + '>, <@' + q11[2].id + '>, <@' + q11[3].id + '>';
+        rsq11 = 'RS11 ready:\n<@' + q11[0].id + '>, <@' + q11[1].id + '>, <@' + q11[2].id + '>, <@' + q11[3].id + '>';
         q11.forEach(function(ch, i){
-            client.channels.cache.get(q11[i].channel).send('<@&'+q11[i].roleid+'>'+rsq11);
+            client.channels.cache.get(q11[i].channel).send(rsq11);
         });
         // очищаем очередь
         q11.length=0;
@@ -394,9 +394,9 @@ if(message.content.toLowerCase().startsWith(config.prefix + "10+")){
     if(q10.length==4){
         // это будет строка для текста сообщения
         var rsq10 = new String();
-        rsq10 = ' in game:\n<@' + q10[0].id + '>, <@' + q10[1].id + '>, <@' + q10[2].id + '>, <@' + q10[3].id + '>';
+        rsq10 = 'RS10 ready:\n<@' + q10[0].id + '>, <@' + q10[1].id + '>, <@' + q10[2].id + '>, <@' + q10[3].id + '>';
         q10.forEach(function(ch, i){
-            client.channels.cache.get(q10[i].channel).send('<@&'+q10[i].roleid+'>'+rsq10);
+            client.channels.cache.get(q10[i].channel).send(rsq10);
         });
         // очищаем очередь
         q10.length=0;
@@ -488,9 +488,9 @@ if(message.content.toLowerCase().startsWith(config.prefix + "9+")){
     if(q9.length==4){
         // это будет строка для текста сообщения
         var rsq9 = new String();
-        rsq9 = ' in game:\n<@' + q9[0].id + '>, <@' + q9[1].id + '>, <@' + q9[2].id + '>, <@' + q9[3].id + '>';
+        rsq9 = 'RS9 ready:\n<@' + q9[0].id + '>, <@' + q9[1].id + '>, <@' + q9[2].id + '>, <@' + q9[3].id + '>';
         q9.forEach(function(ch, i){
-            client.channels.cache.get(q9[i].channel).send('<@&'+q9[i].roleid+'>'+rsq9);
+            client.channels.cache.get(q9[i].channel).send(rsq9);
         });
         // очищаем очередь
         q9.length=0;
@@ -581,9 +581,9 @@ if(message.content.toLowerCase().startsWith(config.prefix + "8+")){
     if(q8.length==4){
         // это будет строка для текста сообщения
         var rsq8 = new String();
-        rsq8 = ' in game:\n<@' + q8[0].id + '>, <@' + q8[1].id + '>, <@' + q8[2].id + '>, <@' + q8[3].id + '>';
+        rsq8 = 'RS8 ready:\n<@' + q8[0].id + '>, <@' + q8[1].id + '>, <@' + q8[2].id + '>, <@' + q8[3].id + '>';
         q8.forEach(function(ch, i){
-            client.channels.cache.get(q8[i].channel).send('<@&'+q8[i].roleid+'>'+rsq8);
+            client.channels.cache.get(q8[i].channel).send(rsq8);
         });
         // очищаем очередь
         q8.length=0;
@@ -675,9 +675,9 @@ if(message.content.toLowerCase().startsWith(config.prefix + "7+")){
     if(q7.length==4){
         // это будет строка для текста сообщения
         var rsq7 = new String();
-        rsq7 = ' in game:\n<@' + q7[0].id + '>, <@' + q7[1].id + '>, <@' + q7[2].id + '>, <@' + q7[3].id + '>';
+        rsq7 = 'RS7 ready:\n<@' + q7[0].id + '>, <@' + q7[1].id + '>, <@' + q7[2].id + '>, <@' + q7[3].id + '>';
         q7.forEach(function(ch, i){
-            client.channels.cache.get(q7[i].channel).send('<@&'+q7[i].roleid+'>'+rsq7);
+            client.channels.cache.get(q7[i].channel).send(rsq7);
         });
         // очищаем очередь
         q7.length=0;
