@@ -61,7 +61,7 @@ var q7 = [];
 client.on("message", message => { 
 
 // проверка сообщения    
-if(message.author.id==client.user.id){ // ингорируем свои собственные сообщения
+if(message.author.bot){ // ингорируем сообщения ботов
         return;
     } else {
         if(message.channel.type=='dm'){ // игнорируем сообщения из DM-канала
