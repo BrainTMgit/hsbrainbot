@@ -254,7 +254,7 @@ if(message.content.toLowerCase().startsWith(config.prefix + "11+")){
     // Ищем в массиве id юзера, есть ли уже юзер в очереди, если есть - то функция возвращает положение, если нет - то возвращает "-1"
     var place = q11.findIndex(item=>item.id==message.author.id);
     //Отрезаем из сообщения ".11+"(три знака) и лишние пробелы вначале и в конце
-    var cooldown = Number(message.content.slice(3).trim()); // в минутах
+    var cooldown = Number(message.content.slice(4).trim()); // в минутах
     //Если не задано, по умолчанию - 30 минут
     if(!cooldown){
         cooldown=30;
@@ -339,28 +339,13 @@ if(message.content.toLowerCase()==config.prefix + "11-"){
     message.reply('вы удалены с очереди на кз11');
 }
 
-// Сюда засунем функцию удаления из очереди кз для таймера
-// Кстати, вне зависимости от того, в каком канале подписались на кз, уведомление об удалении будет отправлено в канал кз
-function clearq11(){
-    for (var i=0; i < q11.length; i++ ){
-        var time1 = new Date() - q11[i].time; // сколько времени прошло
-        var timeleft = q11[i].cooldown - time1/60000; // сколько времени осталось от cooldown
-        // получаем канал, в который необходимо отправить сообщение
-        channel = client.channels.cache.get(q11[i].channel);
-        if(timeleft<0){
-            channel.send('<@' + q11[i].id + '>, время ожидания закончилось, вы удалены из очереди на кз11');
-            q11.splice(i, 1);
-        };  
-   };
-};
-
 // №№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№          
 // запись в очередь если сообщение начинается с 10+ 
 if(message.content.toLowerCase().startsWith(config.prefix + "10+")){ 
     // Ищем в массиве id юзера, есть ли уже юзер в очереди, если есть - то функция возвращает положение, если нет - то возвращает "-1"
     var place = q10.findIndex(item=>item.id==message.author.id);
     //Отрезаем из сообщения ".10+"(три знака) и лишние пробелы вначале и в конце
-    var cooldown = Number(message.content.slice(3).trim()); // в минутах
+    var cooldown = Number(message.content.slice(4).trim()); // в минутах
     //Если не задано, по умолчанию - 30 минут
     if(!cooldown){
         cooldown=30;
@@ -445,20 +430,6 @@ if(message.content.toLowerCase()==config.prefix + "10-"){
     message.reply('вы удалены с очереди на кз10');
 }
 
-// Сюда засунем функцию удаления из очереди кз для таймера
-// Кстати, вне зависимости от того, в каком канале подписались на кз, уведомление об удалении будет отправлено в канал кз
-function clearq10(){
-    for (var i=0; i < q10.length; i++ ){
-        var time1 = new Date() - q10[i].time; // сколько времени прошло
-        var timeleft = q10[i].cooldown - time1/60000; // сколько времени осталось от cooldown
-        // получаем канал, в который необходимо отправить сообщение
-        channel = client.channels.cache.get(q10[i].channel);
-        if(timeleft<0){
-            channel.send('<@' + q10[i].id + '>, время ожидания закончилось, вы удалены из очереди на кз10');
-            q10.splice(i, 1);
-        };  
-   };
-};
 
 //№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№
 // запись в очередь если сообщение начинается с 9+
@@ -521,23 +492,6 @@ if(message.content.toLowerCase().startsWith(config.prefix + "9+")){
     }
 }
 
-// Проверка очереди кз9 rs q 9
-if(message.content.toLowerCase()==config.prefix + "rs q 9"){
-    //Если длина массива очереди равна нулю, значит очередь пуста
-    if (q9.length==0){
-        return message.reply(` жаль, но очередь на кз9 пуста`);
-    };
-    //Инициализируем строку для списка очереди на кз
-    var rsq9 = new String();
-    //Опять перебираем
-    for (var i=1; i <= q9.length; i++ ){
-        var time1 = new Date() - q9[i-1].time;
-        var timeleft = q9[i-1].cooldown - time1/60000;
-        timeleft = timeleft.toFixed(1);
-        rsq9 = rsq9 + i + '. ' + q9[i-1].name + ' - ' + timeleft +'min\n';
-    };
-    message.channel.send('```' + rsq9 + '```'); //и отправляем в канал
-};
 
 // удаление из очереди по запросу 9-
 if(message.content.toLowerCase()==config.prefix + "9-"){
@@ -657,20 +611,6 @@ if(message.content.toLowerCase()==config.prefix + "8-"){
     message.reply('вы удалены с очереди на кз8');
 }
 
-// Сюда засунем функцию удаления из очереди кз для таймера
-// Кстати, вне зависимости от того, в каком канале подписались на кз, уведомление об удалении будет отправлено в канал кз
-function clearq8(){
-    for (var i=0; i < q8.length; i++ ){
-        var time1 = new Date() - q8[i].time; // сколько времени прошло
-        var timeleft = q8[i].cooldown - time1/60000; // сколько времени осталось от cooldown
-        // получаем канал, в который необходимо отправить сообщение
-        channel = client.channels.cache.get(q8[i].channel);
-        if(timeleft<0){
-            channel.send('<@' + q8[i].id + '>, время ожидания закончилось, вы удалены из очереди на кз8');
-            q8.splice(i, 1);
-        };  
-   };
-};
 
 // №№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№          
 // запись в очередь если сообщение начинается с 7+ 
@@ -763,6 +703,74 @@ if(message.content.toLowerCase()==config.prefix + "7-"){
     message.reply('вы удалены с очереди на кз7');
 }
 
+//№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№
+
+//Текущая версия
+if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("build 454");}
+
+}); // это остатки от client.on("message", message => { 
+
+//№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№
+
+// Сюда засунем функцию удаления из очереди кз для таймера
+// Кстати, вне зависимости от того, в каком канале подписались на кз, уведомление об удалении будет отправлено в канал кз
+function clearq11(){
+    for (var i=0; i < q11.length; i++ ){
+        var time1 = new Date() - q11[i].time; // сколько времени прошло
+        var timeleft = q11[i].cooldown - time1/60000; // сколько времени осталось от cooldown
+        // получаем канал, в который необходимо отправить сообщение
+        channel = client.channels.cache.get(q11[i].channel);
+        if(timeleft<0){
+            channel.send('<@' + q11[i].id + '>, время ожидания закончилось, вы удалены из очереди на кз11');
+            q11.splice(i, 1);
+        };  
+   };
+};
+// Сюда засунем функцию удаления из очереди кз для таймера
+// Кстати, вне зависимости от того, в каком канале подписались на кз, уведомление об удалении будет отправлено в канал кз
+function clearq10(){
+    for (var i=0; i < q10.length; i++ ){
+        var time1 = new Date() - q10[i].time; // сколько времени прошло
+        var timeleft = q10[i].cooldown - time1/60000; // сколько времени осталось от cooldown
+        // получаем канал, в который необходимо отправить сообщение
+        channel = client.channels.cache.get(q10[i].channel);
+        if(timeleft<0){
+            channel.send('<@' + q10[i].id + '>, время ожидания закончилось, вы удалены из очереди на кз10');
+            q10.splice(i, 1);
+        };  
+   };
+};
+// Проверка очереди кз9 rs q 9
+if(message.content.toLowerCase()==config.prefix + "rs q 9"){
+    //Если длина массива очереди равна нулю, значит очередь пуста
+    if (q9.length==0){
+        return message.reply(` жаль, но очередь на кз9 пуста`);
+    };
+    //Инициализируем строку для списка очереди на кз
+    var rsq9 = new String();
+    //Опять перебираем
+    for (var i=1; i <= q9.length; i++ ){
+        var time1 = new Date() - q9[i-1].time;
+        var timeleft = q9[i-1].cooldown - time1/60000;
+        timeleft = timeleft.toFixed(1);
+        rsq9 = rsq9 + i + '. ' + q9[i-1].name + ' - ' + timeleft +'min\n';
+    };
+    message.channel.send('```' + rsq9 + '```'); //и отправляем в канал
+};
+// Сюда засунем функцию удаления из очереди кз для таймера
+// Кстати, вне зависимости от того, в каком канале подписались на кз, уведомление об удалении будет отправлено в канал кз
+function clearq8(){
+    for (var i=0; i < q8.length; i++ ){
+        var time1 = new Date() - q8[i].time; // сколько времени прошло
+        var timeleft = q8[i].cooldown - time1/60000; // сколько времени осталось от cooldown
+        // получаем канал, в который необходимо отправить сообщение
+        channel = client.channels.cache.get(q8[i].channel);
+        if(timeleft<0){
+            channel.send('<@' + q8[i].id + '>, время ожидания закончилось, вы удалены из очереди на кз8');
+            q8.splice(i, 1);
+        };  
+   };
+};
 // Сюда засунем функцию удаления из очереди кз для таймера
 // Кстати, вне зависимости от того, в каком канале подписались на кз, уведомление об удалении будет отправлено в канал кз
 function clearq7(){
@@ -779,10 +787,6 @@ function clearq7(){
 };
 //№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№
 
-//Текущая версия
-if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("build 454");}
-
-}); // это остатки от client.on("message", message => { 
 
 
 
