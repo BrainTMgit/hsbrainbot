@@ -11,7 +11,7 @@ client.login(process.env.DISCORD_TOKEN); // коннектимся к диско
 // подключаем Яндекс.Диск
 // смотри хелп тут npmjs.com/package/yandex-disk
 var YandexDisk = require('yandex-disk').YandexDisk;
-var disk = new YandexDisk(config.yalogin, config.yapass); // доступ по логину и паролю
+var disk = new YandexDisk(process.env.YANDEX_LOGIN, process.env.YANDEX_PASSWORD); // доступ по логину и паролю
 
 // Говорят, что это важный пункт, чтобы бот обрабатывал события только после этого пункта.
 // Заодно бот отписывается в админском канале о рестарте. Так, на всякий случай.
