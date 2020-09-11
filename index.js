@@ -6,7 +6,7 @@ const config = require('./config.json'); // в конфиге прописан �
 // справка discord.js.org
 const Discord = require('discord.js');
 const client = new Discord.Client();
-client.login(config.token); // коннектимся к дискорду (хотя эту строчку обычно в конце пишут)
+client.login(process.env.DISCORD_TOKEN); // коннектимся к дискорду (хотя эту строчку обычно в конце пишут)
 
 // подключаем Яндекс.Диск
 // смотри хелп тут npmjs.com/package/yandex-disk
