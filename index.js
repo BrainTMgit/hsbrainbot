@@ -18,7 +18,8 @@ var disk = new YandexDisk(process.env.YANDEX_LOGIN, process.env.YANDEX_PASSWORD)
 client.on('ready', () => {
     console.log('BrainBot started!');
     // отправляем в админский канал Рикардии уведомление о рестарте бота
-    client.channels.cache.get('706060221126017054').send('BrainBot restarted');
+    client.channels.cache.get('749988555459395776').send('BrainBot restarted');
+    /*
     // возвращает массив ключей - ID серверов, подключенных к боту
     const allservers = Array.from(client.guilds.cache.keys());
     // в каждый канал (берется из массива) отправляется сообщение о рестарте бота
@@ -28,6 +29,7 @@ client.on('ready', () => {
 		// если канал выбран - туда отправляется сообщение о рестарте бота
 		if(channel){channel.send('BrainBot restarted!');};
 	});
+     */
 }); // остаток от client.on('ready', () => {
 
 // реакция на приход нового юзера на сервер
