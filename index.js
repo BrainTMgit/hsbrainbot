@@ -48,6 +48,7 @@ client.on('guildMemberRemove', member => {
 	if (!channel) return;
  	// отправляем сообщение с упоминанием пользователя
 	channel.send(`${member.user.username}#${member.user.discriminator} покинул наш сервер. Жаль, самое интересное только начиналось...`);
+    channel.send(`${member.user.tag} покинул нас`);
 }); // Остатки от guildMemberRemove
 
 //Инициализируем массивы для очередей кз
