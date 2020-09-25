@@ -266,6 +266,8 @@ if(message.content.toLowerCase().startsWith(config.prefix + "11+")){
     //Если не задано, по умолчанию - 30 минут
     if(!cooldown){
         cooldown=30;
+    } else if(cooldown<=0){
+        cooldown=30;
     };
     // Если функция вернула местоположение в массиве - значит юзер уже в очереди
     if(place >= 0){
@@ -358,6 +360,8 @@ if(message.content.toLowerCase().startsWith(config.prefix + "10+")){
     var cooldown = Number(message.content.slice(4).trim()); // в минутах
     //Если не задано, по умолчанию - 30 минут
     if(!cooldown){
+        cooldown=30;
+    }else if(cooldown<=0){
         cooldown=30;
     };
     // Если функция вернула местоположение в массиве - значит юзер уже в очереди
@@ -453,6 +457,8 @@ if(message.content.toLowerCase().startsWith(config.prefix + "9+")){
     //Если не задано, по умолчанию - 30 минут
     if(!cooldown){
         cooldown=30;
+    }else if(cooldown<=0){
+        cooldown=30;
     };
     // Если функция вернула местоположение в массиве - значит юзер уже в очереди
     if(place >= 0){
@@ -545,6 +551,8 @@ if(message.content.toLowerCase().startsWith(config.prefix + "8+")){
     var cooldown = Number(message.content.slice(3).trim()); // в минутах
     //Если не задано, по умолчанию - 30 минут
     if(!cooldown){
+        cooldown=30;
+    }else if(cooldown<=0){
         cooldown=30;
     };
     // Если функция вернула местоположение в массиве - значит юзер уже в очереди
@@ -639,6 +647,8 @@ if(message.content.toLowerCase().startsWith(config.prefix + "7+")){
     var cooldown = Number(message.content.slice(3).trim()); // в минутах
     //Если не задано, по умолчанию - 30 минут
     if(!cooldown){
+        cooldown=30;
+    }else if(cooldown<=0){
         cooldown=30;
     };
     // Если функция вернула местоположение в массиве - значит юзер уже в очереди
