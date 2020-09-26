@@ -17,8 +17,9 @@ var disk = new YandexDisk(process.env.YANDEX_LOGIN, process.env.YANDEX_PASSWORD)
 // Заодно бот отписывается в админском канале о рестарте. Так, на всякий случай.
 client.on('ready', () => {
     console.log('BrainBot started!');
-    // отправляем в админский канал Рикардии уведомление о рестарте бота
+    // отправляем в админский канал уведомление о рестарте бота
     client.channels.cache.get('749988555459395776').send('BrainBot restarted');
+    
     /*
     // возвращает массив ключей - ID серверов, подключенных к боту
     const allservers = Array.from(client.guilds.cache.keys());
@@ -29,7 +30,9 @@ client.on('ready', () => {
 		// если канал выбран - туда отправляется сообщение о рестарте бота
 		if(channel){channel.send('BrainBot restarted!');};
 	});
-     */
+    */
+
+    
 }); // остаток от client.on('ready', () => {
 
 // реакция на приход нового юзера на сервер
@@ -91,7 +94,7 @@ if(message.content.toLowerCase()==config.prefix + "help"){
 			{ name: ".X-", value: "Удалить себя из очереди на КЗ уровня Х." }, //-
 			{ name: ".Rs q X", value: "Проверка очереди на КЗ уровня Х. Вместо Х вписать цифру от 7 до 11." }, //-
             // { name: ".ver", value: "Здесь вы можете узнать текущую версию бота." },
-			// { name: ".test", value: "Тестовая команда. Зарезеовирована для miniBot",
+			// { name: ".test", value: "Тестовая команда. Зарезервирована для miniBot",
 		]
 	}});
 }
@@ -256,14 +259,14 @@ if(message.content.startsWith(config.prefix+'calc')){
 	message.reply('итого ' + x + ' штук');
 }
      
-// №№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№          
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          
 // запись в очередь если сообщение начинается с 11+ 
 if(message.content.toLowerCase().startsWith(config.prefix + "11+")){ 
     // Ищем в массиве id юзера, есть ли уже юзер в очереди, если есть - то функция возвращает положение, если нет - то возвращает "-1"
     var place = q11.findIndex(item=>item.id==message.author.id);
     //Отрезаем из сообщения ".11+"(три знака) и лишние пробелы вначале и в конце
     var cooldown = Number(message.content.slice(4).trim()); // в минутах
-    //Если не задано, по умолчанию - 30 минут
+    //Если не задано или отрицательно, по умолчанию - 30 минут
     if(!cooldown){
         cooldown=30;
     } else if(cooldown<=0){
@@ -285,7 +288,7 @@ if(message.content.toLowerCase().startsWith(config.prefix + "11+")){
         discriminator: message.author.discriminator,
         tag: message.author.tag,
         time: new Date(), //текущее время
-        channel: message.channel.id,
+        channel: message.channel.id //канал, в котором записались в очередь
         roleid: role.id,
         cooldown: cooldown //время ожидания (в минутах)
     });
@@ -351,14 +354,14 @@ if(message.content.toLowerCase()==config.prefix + "11-"){
     message.reply('вы удалены с очереди на кз11');
 }
 
-// №№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№          
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          
 // запись в очередь если сообщение начинается с 10+ 
 if(message.content.toLowerCase().startsWith(config.prefix + "10+")){ 
     // Ищем в массиве id юзера, есть ли уже юзер в очереди, если есть - то функция возвращает положение, если нет - то возвращает "-1"
     var place = q10.findIndex(item=>item.id==message.author.id);
     //Отрезаем из сообщения ".10+"(три знака) и лишние пробелы вначале и в конце
     var cooldown = Number(message.content.slice(4).trim()); // в минутах
-    //Если не задано, по умолчанию - 30 минут
+    //Если не задано или отрицательно, по умолчанию - 30 минут
     if(!cooldown){
         cooldown=30;
     }else if(cooldown<=0){
@@ -380,7 +383,7 @@ if(message.content.toLowerCase().startsWith(config.prefix + "10+")){
         discriminator: message.author.discriminator,
         tag: message.author.tag,
         time: new Date(), //текущее время
-        channel: message.channel.id,
+        channel: message.channel.id //канал, в котором записались в очередь,
         roleid: role.id,
         cooldown: cooldown //время ожидания (в минутах)
     });
@@ -447,14 +450,14 @@ if(message.content.toLowerCase()==config.prefix + "10-"){
 }
 
 
-//№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 // запись в очередь если сообщение начинается с 9+
 if(message.content.toLowerCase().startsWith(config.prefix + "9+")){
     // Ищем в массиве id юзера, есть ли уже юзер в очереди, если есть - то функция возвращает положение, если нет - то возвращает "-1"
     var place = q9.findIndex(item=>item.id==message.author.id);
     //Отрезаем из сообщения ".9+"(три знака) и лишние пробелы вначале и в конце
     var cooldown = Number(message.content.slice(3).trim()); // в минутах
-    //Если не задано, по умолчанию - 30 минут
+    //Если не задано или отрицательно, по умолчанию - 30 минут
     if(!cooldown){
         cooldown=30;
     }else if(cooldown<=0){
@@ -476,7 +479,7 @@ if(message.content.toLowerCase().startsWith(config.prefix + "9+")){
         discriminator: message.author.discriminator,
         tag: message.author.tag,
         time: new Date(), //текущее время
-        channel: message.channel.id,
+        channel: message.channel.id //канал, в котором записались в очередь,
         roleid: role.id,
         cooldown: cooldown //время ожидания (в минутах)
     });
@@ -542,14 +545,14 @@ if(message.content.toLowerCase()==config.prefix + "9-"){
 }
 
 
-// №№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№          
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          
 // запись в очередь если сообщение начинается с 8+ 
 if(message.content.toLowerCase().startsWith(config.prefix + "8+")){ 
     // Ищем в массиве id юзера, есть ли уже юзер в очереди, если есть - то функция возвращает положение, если нет - то возвращает "-1"
     var place = q8.findIndex(item=>item.id==message.author.id);
     //Отрезаем из сообщения ".8+"(три знака) и лишние пробелы вначале и в конце
     var cooldown = Number(message.content.slice(3).trim()); // в минутах
-    //Если не задано, по умолчанию - 30 минут
+    //Если не задано или отрицательно, по умолчанию - 30 минут
     if(!cooldown){
         cooldown=30;
     }else if(cooldown<=0){
@@ -571,7 +574,7 @@ if(message.content.toLowerCase().startsWith(config.prefix + "8+")){
         discriminator: message.author.discriminator,
         tag: message.author.tag,
         time: new Date(), //текущее время
-        channel: message.channel.id,
+        channel: message.channel.id //канал, в котором записались в очередь,
         roleid: role.id,
         cooldown: cooldown //время ожидания (в минутах)
     });
@@ -638,14 +641,14 @@ if(message.content.toLowerCase()==config.prefix + "8-"){
 }
 
 
-// №№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№          
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@          
 // запись в очередь если сообщение начинается с 7+ 
 if(message.content.toLowerCase().startsWith(config.prefix + "7+")){ 
     // Ищем в массиве id юзера, есть ли уже юзер в очереди, если есть - то функция возвращает положение, если нет - то возвращает "-1"
     var place = q7.findIndex(item=>item.id==message.author.id);
     //Отрезаем из сообщения ".7+"(три знака) и лишние пробелы вначале и в конце
     var cooldown = Number(message.content.slice(3).trim()); // в минутах
-    //Если не задано, по умолчанию - 30 минут
+    //Если не задано или отрицательно, по умолчанию - 30 минут
     if(!cooldown){
         cooldown=30;
     }else if(cooldown<=0){
@@ -667,7 +670,7 @@ if(message.content.toLowerCase().startsWith(config.prefix + "7+")){
         discriminator: message.author.discriminator,
         tag: message.author.tag,
         time: new Date(), //текущее время
-        channel: message.channel.id,
+        channel: message.channel.id //канал, в котором записались в очередь,
         roleid: role.id,
         cooldown: cooldown //время ожидания (в минутах)
     });
@@ -733,14 +736,14 @@ if(message.content.toLowerCase()==config.prefix + "7-"){
     message.reply('вы удалены с очереди на кз7');
 }
 
-//№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 //Текущая версия
-if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("build 454");}
+if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("build 476");}
 
 }); // это остатки от client.on("message", message => { 
 
-//№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№
+//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 // Сюда засунем функцию удаления из очереди кз для таймера
 // Кстати, вне зависимости от того, в каком канале подписались на кз, уведомление об удалении будет отправлено в канал кз
