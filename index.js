@@ -288,7 +288,7 @@ if(message.content.toLowerCase().startsWith(config.prefix + "11+")){
         discriminator: message.author.discriminator,
         tag: message.author.tag,
         time: new Date(), //текущее время
-        channel: message.channel.id //канал, в котором записались в очередь
+        channel: message.channel.id, //канал, в котором записались в очередь
         roleid: role.id,
         cooldown: cooldown //время ожидания (в минутах)
     });
@@ -383,7 +383,7 @@ if(message.content.toLowerCase().startsWith(config.prefix + "10+")){
         discriminator: message.author.discriminator,
         tag: message.author.tag,
         time: new Date(), //текущее время
-        channel: message.channel.id //канал, в котором записались в очередь,
+        channel: message.channel.id, //канал, в котором записались в очередь,
         roleid: role.id,
         cooldown: cooldown //время ожидания (в минутах)
     });
@@ -479,7 +479,7 @@ if(message.content.toLowerCase().startsWith(config.prefix + "9+")){
         discriminator: message.author.discriminator,
         tag: message.author.tag,
         time: new Date(), //текущее время
-        channel: message.channel.id //канал, в котором записались в очередь,
+        channel: message.channel.id, //канал, в котором записались в очередь,
         roleid: role.id,
         cooldown: cooldown //время ожидания (в минутах)
     });
@@ -574,7 +574,7 @@ if(message.content.toLowerCase().startsWith(config.prefix + "8+")){
         discriminator: message.author.discriminator,
         tag: message.author.tag,
         time: new Date(), //текущее время
-        channel: message.channel.id //канал, в котором записались в очередь,
+        channel: message.channel.id, //канал, в котором записались в очередь,
         roleid: role.id,
         cooldown: cooldown //время ожидания (в минутах)
     });
@@ -670,7 +670,7 @@ if(message.content.toLowerCase().startsWith(config.prefix + "7+")){
         discriminator: message.author.discriminator,
         tag: message.author.tag,
         time: new Date(), //текущее время
-        channel: message.channel.id //канал, в котором записались в очередь,
+        channel: message.channel.id, //канал, в котором записались в очередь,
         roleid: role.id,
         cooldown: cooldown //время ожидания (в минутах)
     });
