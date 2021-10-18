@@ -110,7 +110,7 @@ if(message.content.toLowerCase()=='.botstat'){
     count = count + client.guilds.cache.get(i).memberCount; // прибавляем количество участников к счетчику
   });
   message.channel.send(listserver);
-  message.channel.send('На этих серверах ' + count + ' участников.');
+  message.channel.send('На этих серверах ' + count + ' участника.');
 };
 
 // показать ссылку на бота
