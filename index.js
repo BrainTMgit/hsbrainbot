@@ -75,9 +75,10 @@ if(message.content.toLowerCase()==config.prefix + "help"){
 		fields:[
 			{ name: ".help", value: "Выводит список всех команд." },
 			{ name: ".botstat", value: "Список серверов Discord, подключенных к боту." },
-           		{ name: ".botlink", value: "ссылка для добавления бота на свой сервер." },
+           		{ name: ".botlink", value: "Cсылка для добавления бота на свой сервер." },
 			{ name: ".ver", value: "Здесь вы можете узнать текущую версию бота." },
-			{ name: ".test", value: "Тестовая команда. Зарезервирована для miniBot"}
+			{ name: ".test", value: "Тестовая команда. Зарезервирована для miniBot." },
+			{ name: ".role", value: "Присвоение тестовой роли на сервере." }
 		]
 	}});
 }
@@ -89,6 +90,7 @@ if(message.content.toLowerCase()=="бот извинись") //реакция н
 { message.reply('простите, пожалуйста.'); }
 if(message.content.toLowerCase()=="хороший бот") //реакция на тупого бота
 { message.reply("спасибо"); }
+
 
 // список серверов бота
 if(message.content.toLowerCase()=='.botstat'){
@@ -136,7 +138,7 @@ if(message.content.toLowerCase()=='.role remove'){
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 //Текущая версия
-if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("build 475");}
+if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("build 488");}
 
 }); // это остатки от client.on("message", message => { 
 
