@@ -84,7 +84,7 @@ if(message.content.toLowerCase()==config.prefix + "help"){
 			{ name: ".botstat", value: "Список серверов Discord, подключенных к боту." },
            		{ name: ".botlink", value: "ссылка для добавления бота на свой сервер." },
 			{ name: ".ver", value: "Здесь вы можете узнать текущую версию бота." },
-			{ name: ".test", value: "Тестовая команда. Зарезервирована для miniBot",
+			{ name: ".test", value: "Тестовая команда. Зарезервирована для miniBot"}
 		]
 	}});
 }
