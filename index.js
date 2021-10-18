@@ -53,13 +53,6 @@ client.on('guildMemberRemove', member => {
 	channel.send(`**${member.user.tag}** покинул наш сервер. Жаль, самое интересное только начиналось...`);
 }); // Остатки от guildMemberRemove
 
-//Инициализируем массивы для очередей кз
-var q11 = [];
-var q10 = [];
-var q9 = [];
-var q8 = [];
-var q7 = [];
-
 // Пришло сообщение
 client.on("message", message => { 
 
@@ -118,21 +111,9 @@ if(message.content.toLowerCase()==config.prefix + "botlink"){
 	message.channel.send('https://discordapp.com/oauth2/authorize?&client_id=710207840056508536&scope=bot&permissions=8');
 }
 
-// показать ценник
-if(message.content.toLowerCase()==config.prefix + "price"){
-	message.channel.send({embed:{
-		color: 3447003,
-		title: "Текущий курс обмена артефактов",
-		description: "корпоративный бонус не менее +10%\nне более 50% артефактов одного вида",
-		fields:[{
-			name: "RS9",
-			value: "RS8 . . . . 2.0\nRS7 . . . . 2.5\nRS6 . . . . 3.0\nRS5 . . . . 4.5\nRS4 . . . . 5.5"
-		}]}});
-}
-
 // Выдача ролей
-if(message.content.toLowerCase()=='.rs s 11'){
-        role = message.guild.roles.cache.find(role => role.name == 'rs11');
+if(message.content.toLowerCase()=='.role add'){
+        role = message.guild.roles.cache.find(role => role.name == 'test');
         if(!role){
             message.reply('правильная роль не найдена. Обратитесь к администраторам сервера.');
         } else {
@@ -140,87 +121,15 @@ if(message.content.toLowerCase()=='.rs s 11'){
             message.reply('Вам присвоена роль @rs11')
         }
 }
-if(message.content.toLowerCase()=='.rs s 10'){
-        role = message.guild.roles.cache.find(role => role.name == 'rs10');
-        if(!role){
-            message.reply('правильная роль не найдена. Обратитесь к администраторам сервера.');
-        } else {
-            message.guild.member(message.author.id).roles.add(role);
-            message.reply('Вам присвоена роль @rs10')
-        }
-}
-if(message.content.toLowerCase()=='.rs s 9'){
-        role = message.guild.roles.cache.find(role => role.name == 'rs9');
-        if(!role){
-            message.reply('правильная роль не найдена. Обратитесь к администраторам сервера.');
-        } else {
-            message.guild.member(message.author.id).roles.add(role);
-            message.reply('Вам присвоена роль @rs9')
-        }
-}
-if(message.content.toLowerCase()=='.rs s 8'){
-        role = message.guild.roles.cache.find(role => role.name == 'rs8');
-        if(!role){
-            message.reply('правильная роль не найдена. Обратитесь к администраторам сервера.');
-        } else {
-            message.guild.member(message.author.id).roles.add(role);
-            message.reply('Вам присвоена роль @rs8')
-        }
-}
-if(message.content.toLowerCase()=='.rs s 7'){
-        role = message.guild.roles.cache.find(role => role.name == 'rs7');
-        if(!role){
-            message.reply('правильная роль не найдена. Обратитесь к администраторам сервера.');
-        } else {
-            message.guild.member(message.author.id).roles.add(role);
-            message.reply('Вам присвоена роль @rs7')
-        }
-}
 
 // Удаление ролей
-if(message.content.toLowerCase()=='.rs u 11'){
-        role = message.guild.roles.cache.find(role => role.name == 'rs11');
+if(message.content.toLowerCase()=='.role remove'){
+        role = message.guild.roles.cache.find(role => role.name == 'test');
         if(!role){
             message.reply('правильная роль не найдена. Обратитесь к администраторам сервера.');
         } else {
             message.guild.member(message.author.id).roles.remove(role);
             message.reply('у вас больше нет роли @rs11')
-        }
-}
-if(message.content.toLowerCase()=='.rs u 10'){
-        role = message.guild.roles.cache.find(role => role.name == 'rs10');
-        if(!role){
-            message.reply('правильная роль не найдена. Обратитесь к администраторам сервера.');
-        } else {
-            message.guild.member(message.author.id).roles.remove(role);
-            message.reply('у вас больше нет роли @rs10')
-        }
-}
-if(message.content.toLowerCase()=='.rs u 9'){
-        role = message.guild.roles.cache.find(role => role.name == 'rs9')
-        if(!role){
-            message.reply('правильная роль не найдена. Обратитесь к администраторам сервера.');
-        } else {
-            message.guild.member(message.author.id).roles.remove(role);
-            message.reply('у вас больше нет роли @rs9')
-        }
-}
-if(message.content.toLowerCase()=='.rs u 8'){
-        role = message.guild.roles.cache.find(role => role.name == 'rs8');
-        if(!role){
-            message.reply('правильная роль не найдена. Обратитесь к администраторам сервера.');
-        } else {
-            message.guild.member(message.author.id).roles.remove(role);
-            message.reply('у вас больше нет роли @rs8')
-        }
-}
-if(message.content.toLowerCase()=='.rs u 7'){
-        role = message.guild.roles.cache.find(role => role.name == 'rs7');
-        if(!role){
-            message.reply('правильная роль не найдена. Обратитесь к администраторам сервера.');
-        } else {
-            message.guild.member(message.author.id).roles.remove(role);
-            message.reply('у вас больше нет роли @rs7')
         }
 }
 
