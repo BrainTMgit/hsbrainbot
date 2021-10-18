@@ -118,7 +118,7 @@ if(message.content.toLowerCase()=='.role add'){
             message.reply('правильная роль не найдена. Обратитесь к администраторам сервера.');
         } else {
             message.guild.member(message.author.id).roles.add(role);
-            message.reply('Вам присвоена роль @rs11')
+            message.reply('Вам присвоена роль @test')
         }
 }
 
@@ -129,7 +129,7 @@ if(message.content.toLowerCase()=='.role remove'){
             message.reply('правильная роль не найдена. Обратитесь к администраторам сервера.');
         } else {
             message.guild.member(message.author.id).roles.remove(role);
-            message.reply('у вас больше нет роли @rs11')
+            message.reply('у вас больше нет роли @test')
         }
 }
 
