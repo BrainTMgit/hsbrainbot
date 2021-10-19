@@ -9,13 +9,13 @@ const command = require('./command.js');
 // справка discord.js.org
 const Discord = require('discord.js');
 const client = new Discord.Client();
-client.login(process.env.DISCORD_TOKEN); // коннектимся к дискорду (хотя эту строчку обычно в конце пишут) // а еще я забыл куда прописывается discord_token
+client.login(process.env.DISCORD_TOKEN); // коннектимся к дискорду (хотя эту строчку обычно в конце пишут), discord_token прописан на стороне хостинга
 
 /*
 // подключаем Яндекс.Диск
 // смотри хелп тут npmjs.com/package/yandex-disk
 var YandexDisk = require('yandex-disk').YandexDisk;
-var disk = new YandexDisk(process.env.YANDEX_LOGIN, process.env.YANDEX_PASSWORD); // доступ по логину и паролю
+var disk = new YandexDisk(process.env.YANDEX_LOGIN, process.env.YANDEX_PASSWORD); // доступ по логину и паролю, логин и пароль прописаны на стороне хостинга
 */
 
 // Говорят, что это важный пункт, чтобы бот обрабатывал события только после этого пункта.
@@ -138,6 +138,6 @@ if(message.content.toLowerCase()=='.role remove'){
 }
 
 //Текущая версия
-if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("build 488");}
+if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("build 496");}
 
 }); // это остатки от client.on("message", message => {
