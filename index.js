@@ -3,7 +3,7 @@
 const config = require('./config.json'); // в конфиге прописан токен и префикс
 
 // подключаем отдельный файл с коммандами
-const command = requier('./command.js');
+const command = require('./command.js');
 
 // подключаем discord.js для дальнейшего использования
 // справка discord.js.org
