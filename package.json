@@ -1,7 +1,7 @@
 {
   "name": "BrainBot",
   "version": "0.1.0",
-  "description": "Hades Star Discord bot",
+  "description": "Discord bot",
   "main": "index.js",
   "scripts":
   {
