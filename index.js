@@ -32,7 +32,7 @@ client.on('ready', () => {
         // для каждого сервера выбирается основной канал системных сообщений
 		let channel = client.guilds.cache.get(i).systemChannel;
 		// если канал выбран - туда отправляется сообщение о рестарте бота
-		if(channel){channel.send('BrainBot restarted!\nПо всем вопросам работы бота обращаться к <@605817048337219597>');};
+		if(channel){channel.send(client.user.username + ' restarted!\nПо всем вопросам работы бота обращаться к <@605817048337219597>');};
 	});
 }); // остаток от client.on('ready', () => {
 
