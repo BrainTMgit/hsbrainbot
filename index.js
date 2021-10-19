@@ -2,16 +2,21 @@
 // подключаем конфиг с паролями , токеном и префиксом
 const config = require('./config.json'); // в конфиге прописан токен и префикс
 
+// подключаем отдельный файл с коммандами
+const command = requier('./command.js');
+
 // подключаем discord.js для дальнейшего использования
 // справка discord.js.org
 const Discord = require('discord.js');
 const client = new Discord.Client();
-client.login(process.env.DISCORD_TOKEN); // коннектимся к дискорду (хотя эту строчку обычно в конце пишут)
+client.login(process.env.DISCORD_TOKEN); // коннектимся к дискорду (хотя эту строчку обычно в конце пишут) // а еще я забыл куда прописывается discord_token
 
+/*
 // подключаем Яндекс.Диск
 // смотри хелп тут npmjs.com/package/yandex-disk
 var YandexDisk = require('yandex-disk').YandexDisk;
 var disk = new YandexDisk(process.env.YANDEX_LOGIN, process.env.YANDEX_PASSWORD); // доступ по логину и паролю
+*/
 
 // Говорят, что это важный пункт, чтобы бот обрабатывал события только после этого пункта.
 // Заодно бот отписывается в админском канале о рестарте. Так, на всякий случай.
@@ -29,8 +34,6 @@ client.on('ready', () => {
 		// если канал выбран - туда отправляется сообщение о рестарте бота
 		if(channel){channel.send('BrainBot restarted!\nПо всем вопросам работы бота обращаться к <@605817048337219597>');};
 	});
-
-    
 }); // остаток от client.on('ready', () => {
 
 // реакция на приход нового юзера на сервер
@@ -56,7 +59,7 @@ client.on('guildMemberRemove', member => {
 // Пришло сообщение
 client.on("message", message => { 
 
-// проверка сообщения    
+// проверка сообщения
 if(message.author.bot){ // ингорируем сообщения ботов
         return;
     } else {
@@ -64,11 +67,11 @@ if(message.author.bot){ // ингорируем сообщения ботов
             return message.channel.send('Бот не поддерживает личную переписку');
     }
 };
-    
+
 // Хелпер
 // Если текст сообщения равен префиксу плюс help, то происходит код в {} Часть кода .toLowerCase() превращает текст в строчный.
 if(message.content.toLowerCase()==config.prefix + "help"){
-	message.channel.send({embed:{
+	message.channel.send({embed:{	//создается embed
 		color: 3447003,
 		title: "Список поддерживаемых комманд:",
 		description: "Дополняется по мере обновления бота. В связи с особенностями хостинга бот перезапускается ~ раз в сутки. Боту стыдно за это.",
@@ -91,13 +94,12 @@ if(message.content.toLowerCase()=="бот извинись") //реакция н
 if(message.content.toLowerCase()=="хороший бот") //реакция на тупого бота
 { message.reply("спасибо"); }
 
-
 // список серверов бота
 if(message.content.toLowerCase()=='.botstat'){
   // возвращает массив ключей - ID серверов, подключенных к боту
   const allservers = Array.from(client.guilds.cache.keys());
   // создаем строку сообщения
-  var listserver = 'BrainBot подключен к ' + allservers.length + ' серверам:';
+  var listserver = 'BrainBot подключен к ' + allservers.length + ' серверам:'; // можно после поменять окончание слова серверам..
   var count = 0; // будущий счетчик участников
   allservers.forEach(function(i){
     server = client.guilds.cache.get(i).name; // получаем имя сервера
@@ -105,7 +107,7 @@ if(message.content.toLowerCase()=='.botstat'){
     count = count + client.guilds.cache.get(i).memberCount; // прибавляем количество участников к счетчику
   });
   message.channel.send(listserver);
-  message.channel.send('На этих серверах ' + count + ' участник(а).');
+  message.channel.send('На этих серверах ' + count + ' участник(а).'); // можно после поменять окончание слова участник...
 };
 
 // показать ссылку на бота
@@ -117,7 +119,7 @@ if(message.content.toLowerCase()==config.prefix + "botlink"){
 if(message.content.toLowerCase()=='.role add'){
         role = message.guild.roles.cache.find(role => role.name == 'test');
         if(!role){
-            message.reply('правильная роль не найдена. Обратитесь к администраторам сервера.');
+            message.reply('Правильная роль не найдена. Обратитесь к администраторам сервера.');
         } else {
             message.guild.member(message.author.id).roles.add(role);
             message.reply('Вам присвоена роль @test')
@@ -128,26 +130,14 @@ if(message.content.toLowerCase()=='.role add'){
 if(message.content.toLowerCase()=='.role remove'){
         role = message.guild.roles.cache.find(role => role.name == 'test');
         if(!role){
-            message.reply('правильная роль не найдена. Обратитесь к администраторам сервера.');
+            message.reply('Правильная роль не найдена. Обратитесь к администраторам сервера.');
         } else {
             message.guild.member(message.author.id).roles.remove(role);
-            message.reply('у вас больше нет роли @test')
+            message.reply('У вас больше нет роли @test')
         }
 }
-
-//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 //Текущая версия
 if(message.content.toLowerCase()==config.prefix + "ver") {message.channel.send("build 488");}
 
-}); // это остатки от client.on("message", message => { 
-
-
-
-
-
-
-
-
-
-
+}); // это остатки от client.on("message", message => {
