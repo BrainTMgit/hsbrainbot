@@ -15,7 +15,7 @@ client.login(process.env.DISCORD_TOKEN); // коннектимся к диско
 // подключаем Яндекс.Диск
 // смотри хелп тут npmjs.com/package/yandex-disk
 var YandexDisk = require('yandex-disk').YandexDisk;
-var disk = new YandexDisk(process.env.YANDEX_LOGIN, process.env.YANDEX_PASSWORD); // доступ по логину и паролю, логин и пароль прописаны на стороне хостинга
+var disk = new YandexDisk(process.env.YANDEX_LOGIN, process.env.YANDEX_PASSWORD); // доступ по логину и паролю, логин и пароль прописаны на стороне хостинга https://dashboard.heroku.com/apps/hsbrainbot/settings
 */
 
 // Говорят, что это важный пункт, чтобы бот обрабатывал события только после этого пункта.
